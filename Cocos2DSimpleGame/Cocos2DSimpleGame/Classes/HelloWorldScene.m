@@ -170,15 +170,16 @@
 
 - (void) move:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [touch locationInNode:self];
-    CGPoint offset    = ccpSub(touchLocation, _player.position);
+    CGPoint offset = ccpSub(touchLocation, _player.position);
     float offsetModule = sqrt(offset.x*offset.x+offset.y*offset.y);
     float offsetModuleX = offset.x/offsetModule;
     float offsetModuleY = offset.y/offsetModule;
     CGPoint versorV = ccp(offsetModuleX, offsetModuleY);
     //Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
     //[_physicsWorld addChild:projectile];
-    _player.velocity=versorV;
-    _player.isTouched=YES;
+    _player.velocity = versorV;
+    _player.final_position = touchLocation;
+    _player.isTouched = YES;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster projectileCollision:(CCNode *)projectile {

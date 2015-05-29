@@ -12,6 +12,7 @@
 
 @property (nonatomic) int health;
 @property (nonatomic) CGPoint velocity;
+@property (nonatomic) CGPoint final_position;
 @property (nonatomic) BOOL isTouched;
 
 + (Player*) spriteWithImageNamed:(NSString*)name;
