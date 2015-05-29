@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>103C3DBE2C0C2A8C29AA8649BA4F8B78A9963865</key>
-		<string>https://github.com/gromarion/IOS.git</string>
+		<string>https://github.com/gromarion/IOS</string>
 		<key>D07A8A0ED775E2D3F2F1E5A5A9F2098C14B6A33C</key>
 		<string>https://github.com/gromarion/iphone-demo.git</string>
 	</dict>
@@ -25,7 +25,7 @@
 		<string>../../../../iphone-demo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/gromarion/IOS.git</string>
+	<string>https://github.com/gromarion/IOS</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

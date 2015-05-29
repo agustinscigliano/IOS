@@ -11,6 +11,7 @@
 #import "IntroScene.h"
 #import "Monster.h"
 #import "Player.h"
+#import "Projectile.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -166,11 +167,7 @@
     CGPoint targetPosition = ccp(targetX,targetY);
     
     // 3
-    CCSprite *projectile = [CCSprite spriteWithImageNamed:@"projectile.png"];
-    projectile.position = _player.position;
-    projectile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:projectile.contentSize.width/2.0f andCenter:projectile.anchorPointInPoints];
-    projectile.physicsBody.collisionGroup = @"playerGroup";
-    projectile.physicsBody.collisionType  = @"projectileCollision";
+    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
     [_physicsWorld addChild:projectile];
     
     // 4
