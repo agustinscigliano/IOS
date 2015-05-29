@@ -216,10 +216,6 @@
 		5B09AC10188B330600E8F2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC0F188B330600E8F2B7 /* AppDelegate.m */; };
 		5B09AC13188B330600E8F2B7 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */; };
 		5B09AC16188B330600E8F2B7 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC15188B330600E8F2B7 /* IntroScene.m */; };
-		5B09AC1A188B330600E8F2B7 /* NewtonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC19188B330600E8F2B7 /* NewtonScene.m */; };
-		5B09AC1D188B330600E8F2B7 /* NewtonSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC1C188B330600E8F2B7 /* NewtonSphere.m */; };
-		5B09AC20188B330600E8F2B7 /* LightBulb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC1F188B330600E8F2B7 /* LightBulb.m */; };
-		5B09AC23188B330600E8F2B7 /* Rope.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC22188B330600E8F2B7 /* Rope.m */; };
 		5B09AC25188B330600E8F2B7 /* fire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC24188B330600E8F2B7 /* fire.plist */; };
 		5B09AC27188B330600E8F2B7 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC26188B330600E8F2B7 /* fire.png */; };
 		5B09AC29188B330600E8F2B7 /* newton-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC28188B330600E8F2B7 /* newton-ipadhd.plist */; };
@@ -684,15 +680,6 @@
 		5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		5B09AC14188B330600E8F2B7 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		5B09AC15188B330600E8F2B7 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
-		5B09AC17188B330600E8F2B7 /* NewtonConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonConstants.h; path = Classes/NewtonConstants.h; sourceTree = "<group>"; };
-		5B09AC18188B330600E8F2B7 /* NewtonScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonScene.h; path = Classes/NewtonScene.h; sourceTree = "<group>"; };
-		5B09AC19188B330600E8F2B7 /* NewtonScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NewtonScene.m; path = Classes/NewtonScene.m; sourceTree = "<group>"; };
-		5B09AC1B188B330600E8F2B7 /* NewtonSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonSphere.h; path = Classes/NewtonSphere.h; sourceTree = "<group>"; };
-		5B09AC1C188B330600E8F2B7 /* NewtonSphere.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NewtonSphere.m; path = Classes/NewtonSphere.m; sourceTree = "<group>"; };
-		5B09AC1E188B330600E8F2B7 /* LightBulb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LightBulb.h; path = Classes/LightBulb.h; sourceTree = "<group>"; };
-		5B09AC1F188B330600E8F2B7 /* LightBulb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LightBulb.m; path = Classes/LightBulb.m; sourceTree = "<group>"; };
-		5B09AC21188B330600E8F2B7 /* Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Rope.h; path = Classes/Rope.h; sourceTree = "<group>"; };
-		5B09AC22188B330600E8F2B7 /* Rope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Rope.m; path = Classes/Rope.m; sourceTree = "<group>"; };
 		5B09AC24188B330600E8F2B7 /* fire.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fire.plist; path = Resources/fire.plist; sourceTree = "<group>"; };
 		5B09AC26188B330600E8F2B7 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		5B09AC28188B330600E8F2B7 /* newton-ipadhd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "newton-ipadhd.plist"; path = "Resources/newton-ipadhd.plist"; sourceTree = "<group>"; };
@@ -1611,15 +1598,6 @@
 				5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */,
 				5B09AC14188B330600E8F2B7 /* IntroScene.h */,
 				5B09AC15188B330600E8F2B7 /* IntroScene.m */,
-				5B09AC17188B330600E8F2B7 /* NewtonConstants.h */,
-				5B09AC18188B330600E8F2B7 /* NewtonScene.h */,
-				5B09AC19188B330600E8F2B7 /* NewtonScene.m */,
-				5B09AC1B188B330600E8F2B7 /* NewtonSphere.h */,
-				5B09AC1C188B330600E8F2B7 /* NewtonSphere.m */,
-				5B09AC1E188B330600E8F2B7 /* LightBulb.h */,
-				5B09AC1F188B330600E8F2B7 /* LightBulb.m */,
-				5B09AC21188B330600E8F2B7 /* Rope.h */,
-				5B09AC22188B330600E8F2B7 /* Rope.m */,
 				479143E11ABCE06C00E46B2D /* Monster.h */,
 				479143E21ABCE10700E46B2D /* Monster.m */,
 				4793735A1AC57B7700E81B8B /* Shell.h */,
@@ -1850,7 +1828,6 @@
 				5B09AAEF188B330500E8F2B7 /* OALAudioTrack.m in Sources */,
 				5B09AA32188B330400E8F2B7 /* CCProgressNode.m in Sources */,
 				5B09AA25188B330400E8F2B7 /* CCPhysicsBody.m in Sources */,
-				5B09AC20188B330600E8F2B7 /* LightBulb.m in Sources */,
 				5B09AAAA188B330400E8F2B7 /* CCWindow.m in Sources */,
 				5B09A9BF188B330400E8F2B7 /* CCActionProgressTimer.m in Sources */,
 				5B09AB75188B330500E8F2B7 /* plane.c in Sources */,
@@ -1860,18 +1837,15 @@
 				5B09AB1F188B330500E8F2B7 /* OALAudioSession.m in Sources */,
 				5B09AB96188B330500E8F2B7 /* CCBLocalizationManager.m in Sources */,
 				5B09AA82188B330400E8F2B7 /* CCTiledMapObjectGroup.m in Sources */,
-				5B09AC1D188B330600E8F2B7 /* NewtonSphere.m in Sources */,
 				5B09AB7F188B330500E8F2B7 /* vec3.c in Sources */,
 				5B09AA02188B330400E8F2B7 /* CCLayoutBox.m in Sources */,
 				5B09A9FF188B330400E8F2B7 /* CCLayout.m in Sources */,
 				5B09AB22188B330500E8F2B7 /* OALSuspendHandler.m in Sources */,
 				5B09AB81188B330500E8F2B7 /* vec4.c in Sources */,
 				5B09AA93188B330400E8F2B7 /* CCDirectorIOS.m in Sources */,
-				5B09AC1A188B330600E8F2B7 /* NewtonScene.m in Sources */,
 				5B09AA6A188B330400E8F2B7 /* CCSpriteFrameCache.m in Sources */,
 				5B09AB29188B330500E8F2B7 /* mach_timing.c in Sources */,
 				5B09AB0D188B330500E8F2B7 /* ALListener.m in Sources */,
-				5B09AC23188B330600E8F2B7 /* Rope.m in Sources */,
 				5B09A9E6188B330400E8F2B7 /* ccFPSImages.m in Sources */,
 				5B09AABD188B330400E8F2B7 /* ccUtils.c in Sources */,
 				5B09AA2E188B330400E8F2B7 /* CCPhysicsShape.m in Sources */,
