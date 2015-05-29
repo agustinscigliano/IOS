@@ -156,36 +156,19 @@
 // -----------------------------------------------------------------------
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    // 1
-    CGPoint touchLocation = [touch locationInNode:self];
-    
-    // 2
-    CGPoint offset    = ccpSub(touchLocation, _player.position);
-    float offsetModule = sqrt(offset.x*offset.x+offset.y*offset.y);
-    float offsetModuleX = offset.x/offsetModule;
-    float offsetModuleY = offset.y/offsetModule;
-    CGPoint versorV = ccp(offsetModuleX, offsetModuleY);
-    
-//    float   ratio     = offset.y/offset.x;
-//    int     targetX   = _player.contentSize.width/2 + self.contentSize.width;
-//    int     targetY   = (targetX*ratio) + _player.position.y;
-//    CGPoint targetPosition = ccp(targetX,targetY);
-    
-    // 3
-    //Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
-    //[_physicsWorld addChild:projectile];
-    _player.velocity=versorV;
-    _player.isTouched=YES;
-    
-    // 4
-//    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:1.5f position:targetPosition];
-//    CCActionRemove *actionRemove = [CCActionRemove action];
-//    [projectile runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
-    
-    [[OALSimpleAudio sharedInstance] playEffect:@"pew-pew-lei.caf"];
+    [self move: touch withEvent: event];
+    //[[OALSimpleAudio sharedInstance] playEffect:@"pew-pew-lei.caf"];
 }
 
-- (void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
+- (void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
+    [self move: touch withEvent: event];
+}
+
+- (void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    _player.isTouched = NO;
+}
+
+- (void) move:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [touch locationInNode:self];
     CGPoint offset    = ccpSub(touchLocation, _player.position);
     float offsetModule = sqrt(offset.x*offset.x+offset.y*offset.y);

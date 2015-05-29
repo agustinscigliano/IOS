@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#define SPEED ((int) 200)
 
 @implementation Player
 
@@ -24,7 +25,7 @@
 {
     if(self.isTouched)
     {
-        [self setPosition:ccp(self.position.x+_velocity.x*100*delta, self.position.y+_velocity.y*100*delta)];
+        [self setPosition:ccp(self.position.x+_velocity.x*SPEED*delta, self.position.y+_velocity.y*SPEED*delta)];
         
         
     }
