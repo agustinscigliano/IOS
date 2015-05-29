@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cocos2DSimpleGame/Monster.m"
-            timestampString = "449157465.335898"
+            timestampString = "454600870.052177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "@implementation Monster"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cocos2DSimpleGame/Monster.m"
-            timestampString = "449157465.335898"
+            timestampString = "454600870.052177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-addUpperShellToNode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cocos2DSimpleGame/Monster.m"
-            timestampString = "449157465.335898"
+            timestampString = "454600870.052177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-addUpperShellToNode:"
             landmarkType = "5">
          </BreakpointContent>
