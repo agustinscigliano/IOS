@@ -10,7 +10,6 @@
 
 @interface Projectile : CCSprite
 
-
 + (Projectile*) spriteWithImageNamed:(NSString*)name position:(CGPoint)position;
 
 @end

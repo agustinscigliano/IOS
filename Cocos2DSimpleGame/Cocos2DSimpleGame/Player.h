@@ -11,6 +11,8 @@
 @interface Player : CCSprite
 
 @property (nonatomic) int health;
+@property (nonatomic) CGPoint velocity;
+@property (nonatomic) BOOL isTouched;
 
 + (Player*) spriteWithImageNamed:(NSString*)name;
 

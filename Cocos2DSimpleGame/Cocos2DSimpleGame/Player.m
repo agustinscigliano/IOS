@@ -20,4 +20,14 @@
     return player;
 }
 
+-(void) update:(CCTime)delta
+{
+    if(self.isTouched)
+    {
+        [self setPosition:ccp(self.position.x+_velocity.x*100*delta, self.position.y+_velocity.y*100*delta)];
+        
+        
+    }
+}
+
 @end

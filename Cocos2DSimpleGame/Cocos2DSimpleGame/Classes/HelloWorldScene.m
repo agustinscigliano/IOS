@@ -20,7 +20,7 @@
 @implementation HelloWorldScene
 {
     // 1
-    CCSprite *_player;
+    Player *_player;
     CCPhysicsNode *_physicsWorld;
 }
 
@@ -161,21 +161,41 @@
     
     // 2
     CGPoint offset    = ccpSub(touchLocation, _player.position);
-    float   ratio     = offset.y/offset.x;
-    int     targetX   = _player.contentSize.width/2 + self.contentSize.width;
-    int     targetY   = (targetX*ratio) + _player.position.y;
-    CGPoint targetPosition = ccp(targetX,targetY);
+    float offsetModule = sqrt(offset.x*offset.x+offset.y*offset.y);
+    float offsetModuleX = offset.x/offsetModule;
+    float offsetModuleY = offset.y/offsetModule;
+    CGPoint versorV = ccp(offsetModuleX, offsetModuleY);
+    
+//    float   ratio     = offset.y/offset.x;
+//    int     targetX   = _player.contentSize.width/2 + self.contentSize.width;
+//    int     targetY   = (targetX*ratio) + _player.position.y;
+//    CGPoint targetPosition = ccp(targetX,targetY);
     
     // 3
-    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
-    [_physicsWorld addChild:projectile];
+    //Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
+    //[_physicsWorld addChild:projectile];
+    _player.velocity=versorV;
+    _player.isTouched=YES;
     
     // 4
-    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:1.5f position:targetPosition];
-    CCActionRemove *actionRemove = [CCActionRemove action];
-    [projectile runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
+//    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:1.5f position:targetPosition];
+//    CCActionRemove *actionRemove = [CCActionRemove action];
+//    [projectile runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
     
     [[OALSimpleAudio sharedInstance] playEffect:@"pew-pew-lei.caf"];
+}
+
+- (void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
+    CGPoint touchLocation = [touch locationInNode:self];
+    CGPoint offset    = ccpSub(touchLocation, _player.position);
+    float offsetModule = sqrt(offset.x*offset.x+offset.y*offset.y);
+    float offsetModuleX = offset.x/offsetModule;
+    float offsetModuleY = offset.y/offsetModule;
+    CGPoint versorV = ccp(offsetModuleX, offsetModuleY);
+    //Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
+    //[_physicsWorld addChild:projectile];
+    _player.velocity=versorV;
+    _player.isTouched=YES;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster projectileCollision:(CCNode *)projectile {
