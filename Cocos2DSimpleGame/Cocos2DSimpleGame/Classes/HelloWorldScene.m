@@ -10,6 +10,7 @@
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
 #import "Monster.h"
+#import "Player.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -55,12 +56,10 @@
     [self addChild:_physicsWorld];
     
     // 5
-    _player = [CCSprite spriteWithImageNamed:@"player.png"];
-    _player.position  = ccp(self.contentSize.width/8,self.contentSize.height/2);
-    _player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _player.contentSize} cornerRadius:0]; // 1
-    _player.physicsBody.collisionGroup = @"playerGroup"; // 2
-    _player.physicsBody.collisionType = @"playerCollision";
+    _player = [Player spriteWithImageNamed:@"player.png"];
+    _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
+    
     
     // 6
     //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];

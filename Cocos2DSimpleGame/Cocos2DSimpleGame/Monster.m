@@ -35,9 +35,7 @@
     int step = 100;
     [self setPosition: ccp(self.position.x - step*delta, self.position.y - _y_value*delta)];
     
-    if (self.position.x < 0) {
-        [self runAction: [CCActionRemove action]];
-    } else if (arc4random() % 10 == 0) {
+    if (arc4random() % 10 == 0) {
         int lowerBound = -step;
         int upperBound = step;
         _y_value = lowerBound + arc4random() % (upperBound - lowerBound);
