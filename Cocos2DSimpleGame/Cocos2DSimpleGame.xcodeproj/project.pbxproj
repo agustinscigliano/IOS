@@ -11,6 +11,7 @@
 		4793735C1AC57C3B00E81B8B /* Shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735B1AC57C3B00E81B8B /* Shell.m */; };
 		479373601AC5966300E81B8B /* Phantom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735F1AC5966300E81B8B /* Phantom.m */; };
 		47EE65901B18A723006F8A00 /* shell.png in Resources */ = {isa = PBXBuildFile; fileRef = 47EE658F1B18A723006F8A00 /* shell.png */; };
+		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
 		5B09A96B188B330300E8F2B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A96A188B330300E8F2B7 /* OpenAL.framework */; };
@@ -244,6 +245,8 @@
 		4793735E1AC5963C00E81B8B /* Phantom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phantom.h; sourceTree = "<group>"; };
 		4793735F1AC5966300E81B8B /* Phantom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phantom.m; sourceTree = "<group>"; };
 		47EE658F1B18A723006F8A00 /* shell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shell.png; sourceTree = "<group>"; };
+		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09A966188B330300E8F2B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B09A968188B330300E8F2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1580,6 +1583,8 @@
 				4793735B1AC57C3B00E81B8B /* Shell.m */,
 				4793735E1AC5963C00E81B8B /* Phantom.h */,
 				4793735F1AC5966300E81B8B /* Phantom.m */,
+				47EE65911B18AA06006F8A00 /* Player.h */,
+				47EE65921B18AAA0006F8A00 /* Player.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1733,6 +1738,7 @@
 				5B09AB3D188B330500E8F2B7 /* CCButton.m in Sources */,
 				5B09AAE8188B330500E8F2B7 /* OALAudioActions.m in Sources */,
 				5B09AB2D188B330500E8F2B7 /* NSMutableArray+WeakReferences.m in Sources */,
+				47EE65931B18AAA0006F8A00 /* Player.m in Sources */,
 				5B09AAA7188B330400E8F2B7 /* CCGLView.m in Sources */,
 				479373601AC5966300E81B8B /* Phantom.m in Sources */,
 				5B09AB71188B330500E8F2B7 /* mat4.c in Sources */,
