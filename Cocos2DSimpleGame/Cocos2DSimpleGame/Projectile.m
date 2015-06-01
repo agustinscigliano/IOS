@@ -11,6 +11,8 @@
 #import "cocos2d.h"
 #import "Projectile.h"
 
+#define DAMAGE ((int) 5)
+
 @implementation Projectile
 
 + (Projectile*) spriteWithImageNamed:(NSString *)name position: (CGPoint)position
@@ -20,6 +22,7 @@
     projectile.physicsBody.collisionGroup = @"playerGroup";
     projectile.physicsBody.collisionType  = @"projectileCollision";
     projectile.position=position;
+    projectile.damage = DAMAGE;
     return projectile;
 }
 

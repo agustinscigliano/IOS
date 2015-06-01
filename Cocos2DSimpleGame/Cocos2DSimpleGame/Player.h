@@ -11,6 +11,8 @@
 @interface Player : CCSprite
 
 @property (nonatomic) int health;
+@property (nonatomic) CCTime fire_rate;
+@property (nonatomic) int bullet_speed;
 @property (nonatomic) CGPoint velocity;
 @property (nonatomic) CGPoint final_position;
 @property (nonatomic) BOOL isTouched;

@@ -10,6 +10,8 @@
 
 @interface Projectile : CCSprite
 
+@property (nonatomic) int damage;
+
 + (Projectile*) spriteWithImageNamed:(NSString*)name position:(CGPoint)position;
 
 @end

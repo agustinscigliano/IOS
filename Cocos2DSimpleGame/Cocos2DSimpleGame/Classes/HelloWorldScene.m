@@ -83,8 +83,13 @@
 }
 
 - (void)addMonster:(CCTime)dt {
-
     [self addGhost:dt];
+}
+
+- (void)shootNormalBullet:(CCTime)dt {
+    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
+    projectile.physicsBody.velocity = ccp(_player.bullet_speed, 0);
+    [_physicsWorld addChild:projectile];
 }
 
 - (void)addGhost:(CCTime)dt {
@@ -141,6 +146,7 @@
     // Pr frame update is automatically enabled, if update is overridden
     
     [self schedule:@selector(addMonster:) interval:1.5];
+    [self schedule:@selector(shootNormalBullet:) interval: _player.fire_rate];
 }
 
 // -----------------------------------------------------------------------
