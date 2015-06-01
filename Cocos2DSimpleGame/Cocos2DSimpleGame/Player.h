@@ -19,4 +19,7 @@
 
 + (Player*) spriteWithImageNamed:(NSString*)name;
 
+- (void) takeDamage:(int) damage;
+- (void) recoverHealth: (int) health;
+
 @end

@@ -35,4 +35,18 @@
     }
 }
 
+- (void) takeDamage:(int)damage
+{
+    _health -= damage;
+}
+
+- (void) recoverHealth:(int)health
+{
+    if (_health + health > 100) {
+        _health = 100;
+    } else {
+        _health += health;
+    }
+}
+
 @end
