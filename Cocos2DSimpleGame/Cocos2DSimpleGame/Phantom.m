@@ -14,7 +14,6 @@
 
 - (void) update:(CCTime)delta
 {
-//    [self setPosition:ccp(self.parent.position.x, self.parent.position.y)];
 }
 
 @end

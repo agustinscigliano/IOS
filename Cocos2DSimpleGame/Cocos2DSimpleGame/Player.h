@@ -16,10 +16,13 @@
 @property (nonatomic) CGPoint velocity;
 @property (nonatomic) CGPoint final_position;
 @property (nonatomic) BOOL isTouched;
+@property (nonatomic) int score;
+@property (nonatomic) NSString* plane_name;
 
 + (Player*) spriteWithImageNamed:(NSString*)name;
 
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
+- (void) animate:(CCTime) dt;
 
 @end

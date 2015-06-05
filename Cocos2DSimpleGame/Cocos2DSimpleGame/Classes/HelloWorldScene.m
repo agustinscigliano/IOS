@@ -57,7 +57,7 @@
     [self addChild:_physicsWorld];
     
     // 5
-    _player = [Player spriteWithImageNamed:@"player.png"];
+    _player = [Player spriteWithImageNamed:@"p51-1.png"];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
@@ -88,7 +88,7 @@
 
 - (void)shootNormalBullet:(CCTime)dt {
     Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
-    projectile.physicsBody.velocity = ccp(_player.bullet_speed, 0);
+    projectile.physicsBody.velocity = ccp(_player.bullet_speed + _player.physicsBody.velocity.x, 0);
     [_physicsWorld addChild:projectile];
 }
 
@@ -147,6 +147,12 @@
     
     [self schedule:@selector(addMonster:) interval:1.5];
     [self schedule:@selector(shootNormalBullet:) interval: _player.fire_rate];
+    [self schedule:@selector(animatePlayer:) interval: 0.01];
+}
+
+- (void)animatePlayer:(CCTime) dt
+{
+    [_player animate:dt];
 }
 
 // -----------------------------------------------------------------------

@@ -12,8 +12,12 @@
 #define POSITION_DELTA ((float) 5.0)
 #define DEFAULT_SHOOTING_TIME ((float) 0.5)
 #define DEFAULT_BULLET_SPEED ((int) 750)
+#define FRAMES ((int) 5)
 
-@implementation Player
+@implementation Player {
+    int frame_number;
+    NSString* plane_name;
+}
 
 + (Player*) spriteWithImageNamed:(NSString *)name
 {
@@ -23,6 +27,7 @@
     player.physicsBody.collisionType = @"playerCollision";
     player.fire_rate = DEFAULT_SHOOTING_TIME;
     player.bullet_speed = DEFAULT_BULLET_SPEED;
+    player.plane_name = @"p51";
     return player;
 }
 
@@ -47,6 +52,16 @@
     } else {
         _health += health;
     }
+}
+
+- (void) animate:(CCTime)dt
+{
+    NSString *path = [NSString stringWithFormat:@"%@-%d.png", _plane_name, frame_number];
+    [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:path]];
+    frame_number++;
+    if (frame_number == FRAMES + 1)
+        frame_number=1;
+    
 }
 
 @end
