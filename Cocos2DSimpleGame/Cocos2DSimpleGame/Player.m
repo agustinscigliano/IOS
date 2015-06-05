@@ -21,6 +21,7 @@
     player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, player.contentSize} cornerRadius:0]; // 1
     player.physicsBody.collisionGroup = @"playerGroup"; // 2
     player.physicsBody.collisionType = @"playerCollision";
+    player.physicsBody.type = CCPhysicsBodyTypeStatic;
     player.fire_rate = DEFAULT_SHOOTING_TIME;
     player.bullet_speed = DEFAULT_BULLET_SPEED;
     return player;
