@@ -18,14 +18,18 @@
 - (id) init {
     self = [super init];
     if (self) {
+        self.plane_name = @"p51-";
+        frame_number = 1;
+        NSString *plane_image_path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
+        self = [super initWithImageNamed: plane_image_path];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionGroup = @"playerGroup";
         self.physicsBody.collisionType = @"playerCollision";
         self.physicsBody.type = CCPhysicsBodyTypeStatic;
         self.fire_rate = DEFAULT_SHOOTING_RATE;
         self.bullet_speed = DEFAULT_BULLET_SPEED;
-        self.plane_name = @"p51";
-        frame_number = 1;
+        self.scaleX = PLAYER_SCALE;
+        self.scaleY = PLAYER_SCALE;
     }
     return self;
 }
@@ -55,7 +59,8 @@
 
 - (void) animate:(CCTime)dt
 {
-    NSString *path = [NSString stringWithFormat:@"%@-%d.png", _plane_name, frame_number];
+    NSString *path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
+    NSLog(@"PATH = %@\n", path);
     [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:path]];
     frame_number++;
     if (frame_number == MAX_FRAMES_FOR_PLANES)

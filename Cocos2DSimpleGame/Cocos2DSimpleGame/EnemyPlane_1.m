@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #include "EnemyPlane_1.h"
+#include "Misile.h"
+#include "HelloWorldScene.h"
 
 @implementation EnemyPlane_1 {
     int frame_number;
@@ -16,20 +18,35 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self = [super initWithImageNamed: ENEMY_PLANE_1_IMAGE];
+        frame_number=1;
+        NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", ENEMY_PLANE_1_IMAGE, frame_number];
+        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
         self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];
-        self.physicsBody.collisionType  = ENEMY_COLLISION;
-        self.physicsBody.mass = 100;
-        self.physicsBody.friction = 0;
-        frame_number=1;
+        self.physicsBody.collisionType = ENEMY_COLLISION;
+        self.physicsBody.velocity = ccp(-100, 0);
+        self.scaleX = ENEMY_PLANE_1_SCALE;
+        self.scaleY = ENEMY_PLANE_1_SCALE;
     }
     return self;
 }
 
+- (void) update:(CCTime)delta {
+    if (arc4random()%100 > 98) {
+        [self shootEnemy:delta];
+    }
+}
+
+- (void)shootEnemy:(CCTime)dt{
+    Misile *misile = [Misile spriteWithImageNamed:@"misile.png" position:self.position];
+    misile.physicsBody.velocity = ccp(ENEMY_PLANE_1_BULLET_SPEED + self.physicsBody.velocity.x, 0);
+    CCPhysicsNode* pw = ((HelloWorldScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
+    [pw addChild:misile];
+}
+
 - (void) animate:(CCTime) dt {
-    NSString *frame_path = [NSString stringWithFormat:@"bf-109e-%d.png", frame_number];
+    NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", ENEMY_PLANE_1_IMAGE, frame_number];
     [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
     frame_number++;
     if (frame_number == MAX_FRAMES_FOR_PLANES)

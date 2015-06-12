@@ -51,9 +51,6 @@
     if (arc4random()%100 > 98) {
         [self shootEnemy:delta];
     }
-    
-    
-    
 }
 
 -(void)shootEnemy:(CCTime)dt{

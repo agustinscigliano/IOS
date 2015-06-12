@@ -9,11 +9,14 @@
 #ifndef Cocos2DSimpleGame_Constants_h
 #define Cocos2DSimpleGame_Constants_h
 
-#define ENEMY_PLANE_1_IMAGE @"bf-109e"
-#define ENEMY_PLANE_2_IMAGE @"fw-190a"
-#define ENEMY_PLANE_3_IMAGE @"ju-87"
+#define ENEMY_PLANE_1_IMAGE @"bf-109e-"
+#define ENEMY_PLANE_2_IMAGE @"fw-190a-"
+#define ENEMY_PLANE_3_IMAGE @"ju-87-"
 #define ENEMY_COLLISION @"enemyCollision"
-#define PROJECTILE_COLLISION @"projectile-collision"
+#define PROJECTILE_COLLISION @"projectileCollision"
+#define ENEMY_PLANE_1_SCALE 0.5f
+#define PLAYER_SCALE 0.5f
+#define ENEMY_PLANE_1_BULLET_SPEED -100
 #define DEFAULT_SHOOTING_RATE 0.5f
 #define DEFAULT_BULLET_SPEED 750
 #define MAX_FRAMES_FOR_PLANES 5

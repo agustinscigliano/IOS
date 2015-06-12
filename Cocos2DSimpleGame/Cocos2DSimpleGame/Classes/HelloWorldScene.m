@@ -13,6 +13,7 @@
 #import "Player.h"
 #import "Projectile.h"
 #import "Misile.h"
+#import "EnemyFactory.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -57,7 +58,7 @@
     [self addChild:_physicsWorld];
     
     // 5
-    _player = [Player spriteWithImageNamed:@"p51-1.png"];
+    _player = [[Player alloc] init];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
@@ -98,7 +99,7 @@
 }
 
 - (void)addPlane:(CCTime)dt {
-    EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] init];
+    EnemyPlane_1 *enemy_plane1 = [EnemyFactory createEnemyPlane1:self];
     
     // 1
     int minY = enemy_plane1.contentSize.height / 2;
