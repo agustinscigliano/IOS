@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#include "Constants.h"
 
 @interface Projectile : CCSprite
 

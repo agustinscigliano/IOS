@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#include "Constants.h"
 
 @interface Player : CCSprite
 
@@ -19,8 +20,7 @@
 @property (nonatomic) int score;
 @property (nonatomic) NSString* plane_name;
 
-+ (Player*) spriteWithImageNamed:(NSString*)name;
-
+- (id) init;
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
 - (void) animate:(CCTime) dt;

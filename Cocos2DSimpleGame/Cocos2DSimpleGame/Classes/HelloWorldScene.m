@@ -9,7 +9,7 @@
 
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
-#import "Monster.h"
+#import "EnemyPlane_1.h"
 #import "Player.h"
 #import "Projectile.h"
 #import "Misile.h"
@@ -82,8 +82,8 @@
 	return self;
 }
 
-- (void)addMonster:(CCTime)dt {
-    [self addGhost:dt];
+- (void)addEnemy:(CCTime)dt {
+    [self addPlane:dt];
 }
 
 - (void)shoot:(CCTime)dt {
@@ -97,15 +97,15 @@
     [_physicsWorld addChild:projectile];
 }
 
-- (void)addGhost:(CCTime)dt {
-    Monster *monster = [Monster spriteWithImageNamed:@"monster.png"];
+- (void)addPlane:(CCTime)dt {
+    EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] init];
     
     // 1
-    int minY = monster.contentSize.height / 2;
-    int maxY = self.contentSize.height - monster.contentSize.height / 2;
+    int minY = enemy_plane1.contentSize.height / 2;
+    int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
     int rangeY = maxY - minY;
     int randomY = (arc4random() % rangeY) + minY;
-    monster.position = ccp(self.contentSize.width, randomY);
+    enemy_plane1.position = ccp(self.contentSize.width, randomY);
     //
     //    // 1
     //    int minY = monster.contentSize.height / 2;
@@ -114,7 +114,7 @@
     //    int randomY = (arc4random() % rangeY) + minY;
     //
     //    // 2
-    [_physicsWorld addChild:monster];
+    [_physicsWorld addChild:enemy_plane1];
     
     //
     //    // 3
@@ -149,7 +149,7 @@
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Pr frame update is automatically enabled, if update is overridden
     
-    [self schedule:@selector(addMonster:) interval:1.5];
+    [self schedule:@selector(addEnemy:) interval:1.5];
     [self schedule:@selector(shoot:) interval: _player.fire_rate];
     [self schedule:@selector(animatePlayer:) interval: 0.01];
 }
@@ -157,7 +157,6 @@
 - (void)animatePlayer:(CCTime) dt
 {
     [_player animate:dt];
-    [self schedule:@selector(shoot:) interval: _player.fire_rate];
 }
 
 // -----------------------------------------------------------------------
@@ -199,8 +198,8 @@
     _player.isTouched = YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster projectileCollision:(CCNode *)projectile {
-    [monster removeFromParent];
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(CCNode *)enemy projectileCollision:(CCNode *)projectile {
+    [enemy removeFromParent];
     [projectile removeFromParent];
     _score++;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
@@ -214,8 +213,8 @@
     return YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player monsterCollision:(CCNode *)monster {
-    [monster removeFromParent];
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyCollision:(CCNode *)enemy {
+    [enemy removeFromParent];
     _score--;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
     return YES;

@@ -19,18 +19,13 @@
 {
     Projectile *projectile = [super spriteWithImageNamed:name];
     projectile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:projectile.contentSize.width/2.0f andCenter:projectile.anchorPointInPoints];
-
-    
-    projectile.physicsBody.collisionMask = @[@"monsterCollision"];
-//    projectile.physicsBody.collisionGroup = @"playerGroup";
-    projectile.physicsBody.collisionCategories = @[@"projectileCollision"];
-    projectile.physicsBody.collisionType  = @"projectileCollision";
+    projectile.physicsBody.collisionMask = @[ENEMY_COLLISION];
+    projectile.physicsBody.collisionCategories = @[PROJECTILE_COLLISION];
+    projectile.physicsBody.collisionType  = PROJECTILE_COLLISION;
     projectile.position=position;
     projectile.damage = DAMAGE;
     return projectile;
 }
-
-
 
 @end
 
