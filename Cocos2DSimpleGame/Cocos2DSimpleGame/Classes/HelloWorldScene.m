@@ -12,6 +12,7 @@
 #import "Monster.h"
 #import "Player.h"
 #import "Projectile.h"
+#import "Misile.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -21,7 +22,6 @@
 {
     // 1
     Player *_player;
-    CCPhysicsNode *_physicsWorld;
 }
 
 // -----------------------------------------------------------------------
@@ -50,7 +50,7 @@
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.6f green:0.6f blue:0.6f alpha:1.0f]];
     [self addChild:background];
     
-    _physicsWorld = [CCPhysicsNode node];
+    self.physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
     _physicsWorld.debugDraw = YES;
     _physicsWorld.collisionDelegate = self;
@@ -86,9 +86,14 @@
     [self addGhost:dt];
 }
 
-- (void)shootNormalBullet:(CCTime)dt {
-    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
-    projectile.physicsBody.velocity = ccp(_player.bullet_speed + _player.physicsBody.velocity.x, 0);
+- (void)shoot:(CCTime)dt {
+        [self shootNormalBullet:dt who:_player where:_player.bullet_speed + _player.physicsBody.velocity.x];
+}
+
+
+- (void)shootNormalBullet:(CCTime)dt who:(CCSprite*)sp where: (int) bs {
+    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:sp.position];
+    projectile.physicsBody.velocity = ccp(bs, 0);
     [_physicsWorld addChild:projectile];
 }
 
@@ -109,7 +114,6 @@
     //    int randomY = (arc4random() % rangeY) + minY;
     //
     //    // 2
-
     [_physicsWorld addChild:monster];
     
     //
@@ -146,13 +150,14 @@
     // Pr frame update is automatically enabled, if update is overridden
     
     [self schedule:@selector(addMonster:) interval:1.5];
-    [self schedule:@selector(shootNormalBullet:) interval: _player.fire_rate];
+    [self schedule:@selector(shoot:) interval: _player.fire_rate];
     [self schedule:@selector(animatePlayer:) interval: 0.01];
 }
 
 - (void)animatePlayer:(CCTime) dt
 {
     [_player animate:dt];
+    [self schedule:@selector(shoot:) interval: _player.fire_rate];
 }
 
 // -----------------------------------------------------------------------
@@ -198,6 +203,20 @@
     [monster removeFromParent];
     [projectile removeFromParent];
     _score++;
+    [_label setString:[NSString stringWithFormat:@"%d", _score]];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player misileCollision:(CCNode *)misile {
+    [misile removeFromParent];
+    _score--;
+    [_label setString:[NSString stringWithFormat:@"%d", _score]];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player monsterCollision:(CCNode *)monster {
+    [monster removeFromParent];
+    _score--;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
     return YES;
 }

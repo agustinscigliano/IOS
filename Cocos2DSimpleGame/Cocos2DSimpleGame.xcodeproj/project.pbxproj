@@ -231,6 +231,8 @@
 		5B09AC4C188B34D600E8F2B7 /* projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC43188B34D600E8F2B7 /* projectile.png */; };
 		5B09AC4D188B34D600E8F2B7 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC45188B34D600E8F2B7 /* background-music-aac.caf */; };
 		5B09AC4E188B34D600E8F2B7 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC46188B34D600E8F2B7 /* pew-pew-lei.caf */; };
+		FB14347E1B222DA700E65CAF /* Misile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14347D1B222DA700E65CAF /* Misile.m */; };
+		FB1434831B223ADC00E65CAF /* misile.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1434821B223ADC00E65CAF /* misile.png */; };
 		FB5BBC4B1B18BBCE0014A8AE /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */; };
 /* End PBXBuildFile section */
 
@@ -697,6 +699,9 @@
 		5B09AC43188B34D600E8F2B7 /* projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile.png; sourceTree = "<group>"; };
 		5B09AC45188B34D600E8F2B7 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		5B09AC46188B34D600E8F2B7 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		FB14347D1B222DA700E65CAF /* Misile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Misile.m; sourceTree = "<group>"; };
+		FB14347F1B222E6500E65CAF /* Misile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Misile.h; sourceTree = "<group>"; };
+		FB1434821B223ADC00E65CAF /* misile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = misile.png; sourceTree = "<group>"; };
 		FB5BBC491B18BBCE0014A8AE /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projectile.h; sourceTree = "<group>"; };
 		FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projectile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1587,6 +1592,8 @@
 		5B09AC0D188B330600E8F2B7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FB14347D1B222DA700E65CAF /* Misile.m */,
+				FB14347F1B222E6500E65CAF /* Misile.h */,
 				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				5B09AC0E188B330600E8F2B7 /* AppDelegate.h */,
@@ -1626,6 +1633,7 @@
 				479B8B4C1B221995000E38CA /* p51-3.png */,
 				479B8B4D1B221995000E38CA /* p51-4.png */,
 				479B8B4E1B221995000E38CA /* p51-5.png */,
+				FB1434821B223ADC00E65CAF /* misile.png */,
 				47EE658F1B18A723006F8A00 /* shell.png */,
 				5B09AC3E188B34D600E8F2B7 /* monster-hd.png */,
 				5B09AC3F188B34D600E8F2B7 /* monster.png */,
@@ -1729,6 +1737,7 @@
 				479B8B4F1B221995000E38CA /* p51-1.png in Resources */,
 				5B09A987188B330300E8F2B7 /* Default-Landscape~ipad.png in Resources */,
 				5B09A99C188B330300E8F2B7 /* Icon-Small.png in Resources */,
+				FB1434831B223ADC00E65CAF /* misile.png in Resources */,
 				5B09A99A188B330300E8F2B7 /* Icon-Small-50.png in Resources */,
 				5B09AC47188B34D600E8F2B7 /* monster-hd.png in Resources */,
 				5B09AB83188B330500E8F2B7 /* LICENSE_Kazmath.txt in Resources */,
@@ -1865,6 +1874,7 @@
 				5B09AC13188B330600E8F2B7 /* HelloWorldScene.m in Sources */,
 				5B09AB73188B330500E8F2B7 /* neon_matrix_impl.c in Sources */,
 				5B09A9F8188B330400E8F2B7 /* CCLabelTTF.m in Sources */,
+				FB14347E1B222DA700E65CAF /* Misile.m in Sources */,
 				5B09AAAD188B330400E8F2B7 /* NSEvent+CC.m in Sources */,
 				5B09AB0A188B330500E8F2B7 /* ALDevice.m in Sources */,
 				5B09AB7D188B330500E8F2B7 /* vec2.c in Sources */,

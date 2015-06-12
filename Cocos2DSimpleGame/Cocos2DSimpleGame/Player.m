@@ -10,7 +10,7 @@
 #import "Player.h"
 #define SPEED ((int) 200)
 #define POSITION_DELTA ((float) 5.0)
-#define DEFAULT_SHOOTING_TIME ((float) 0.5)
+#define DEFAULT_SHOOTING_TIME ((float) 3)
 #define DEFAULT_BULLET_SPEED ((int) 750)
 #define FRAMES ((int) 5)
 
@@ -22,9 +22,10 @@
 + (Player*) spriteWithImageNamed:(NSString *)name
 {
     Player *player = [super spriteWithImageNamed:name];
-    player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, player.contentSize} cornerRadius:0]; // 1
-    player.physicsBody.collisionGroup = @"playerGroup"; // 2
+    player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, player.contentSize} cornerRadius:0];
+    player.physicsBody.collisionGroup = @"playerGroup";
     player.physicsBody.collisionType = @"playerCollision";
+    player.physicsBody.type = CCPhysicsBodyTypeStatic;
     player.fire_rate = DEFAULT_SHOOTING_TIME;
     player.bullet_speed = DEFAULT_BULLET_SPEED;
     player.plane_name = @"p51";

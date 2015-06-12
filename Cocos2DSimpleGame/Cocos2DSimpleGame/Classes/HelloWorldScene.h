@@ -23,6 +23,8 @@
 @property (nonatomic) int score;
 @property (nonatomic) CCLabelTTF* label;
 
+@property (nonatomic, strong) CCPhysicsNode* physicsWorld;
+
 + (HelloWorldScene *)scene;
 - (id)init;
 

@@ -12,7 +12,7 @@
 
 @property (nonatomic) int y_value;
 @property (nonatomic) int shell_radius;
-
+@property (nonatomic) int bullet_speed;
 + (Monster*) spriteWithImageNamed:(NSString*)name;
 
 @end
