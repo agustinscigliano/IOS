@@ -38,6 +38,7 @@
 		47C493421B2C60CF0007FA9F /* Explosion2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493401B2C60CF0007FA9F /* Explosion2.caf */; };
 		47C493451B2C652B0007FA9F /* Explosion3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493431B2C652B0007FA9F /* Explosion3.caf */; };
 		47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493441B2C652B0007FA9F /* Explosion4.caf */; };
+		47C493481B2C67350007FA9F /* Shoot1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493471B2C67350007FA9F /* Shoot1.caf */; };
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
@@ -299,6 +300,7 @@
 		47C493401B2C60CF0007FA9F /* Explosion2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion2.caf; sourceTree = "<group>"; };
 		47C493431B2C652B0007FA9F /* Explosion3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion3.caf; sourceTree = "<group>"; };
 		47C493441B2C652B0007FA9F /* Explosion4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion4.caf; sourceTree = "<group>"; };
+		47C493471B2C67350007FA9F /* Shoot1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shoot1.caf; sourceTree = "<group>"; };
 		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1693,6 +1695,7 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				47C493471B2C67350007FA9F /* Shoot1.caf */,
 				47C493431B2C652B0007FA9F /* Explosion3.caf */,
 				47C493441B2C652B0007FA9F /* Explosion4.caf */,
 				47C4933F1B2C60CF0007FA9F /* Explosion1.caf */,
@@ -1787,6 +1790,7 @@
 				479B8B4F1B221995000E38CA /* p51.png in Resources */,
 				5B09A987188B330300E8F2B7 /* Default-Landscape~ipad.png in Resources */,
 				47C4932E1B2BAB190007FA9F /* Explosion1-9.png in Resources */,
+				47C493481B2C67350007FA9F /* Shoot1.caf in Resources */,
 				47C493321B2BAB190007FA9F /* Explosion1-13.png in Resources */,
 				47C493411B2C60CF0007FA9F /* Explosion1.caf in Resources */,
 				5B09A99C188B330300E8F2B7 /* Icon-Small.png in Resources */,

@@ -20,6 +20,7 @@
 #define MUZZLE_IMAGE @"muzzle.png"
 #define BULLET_IMAGE @"bullet.png"
 #define EXPLOSION_SOUND_FILE_NAME @"Explosion"
+#define SHOOT_SOUND_FILE_NAME @"Shoot"
 #define MUZZLE_SCALE 0.1
 #define ENEMY_PLANE_1_SCALE 0.25
 #define PLAYER_SCALE 0.25
