@@ -14,11 +14,12 @@
     int frame_number;
 }
 
-- (id) initWithPosition:(CGPoint)position {
+- (id) initWithPosition:(CGPoint)position withScale: (float) scale {
     frame_number = 1;
     NSString* image_path = [NSString stringWithFormat: @"%@%d.png", EXPLOSION_1_IMAGE, frame_number];
     self = [super initWithImageNamed: image_path];
     self.position = position;
+    self.scale = scale;
     return self;
 }
 

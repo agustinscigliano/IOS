@@ -13,7 +13,7 @@
 
 @interface Explosion1 : CCSprite
 
-- (id) initWithPosition: (CGPoint) position;
+- (id) initWithPosition: (CGPoint) position withScale: (float) scale;
 - (void) animate: (CCTime) dt;
 
 @end

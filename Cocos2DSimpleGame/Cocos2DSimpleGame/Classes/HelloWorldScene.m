@@ -185,8 +185,8 @@
     _player.isTouched = NO;
 }
 
-- (void) createExplosionWithPosition: (CGPoint) position {
-    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: position];
+- (void) createExplosionWithPosition: (CGPoint) position withScale: (float) scale {
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: position withScale: scale];
     [explosion_1 schedule:@selector(animate:) interval:	0.05];
     [_physicsWorld addChild: explosion_1];
 }
@@ -198,8 +198,6 @@
     float offsetModuleX = offset.x/offsetModule;
     float offsetModuleY = offset.y/offsetModule;
     CGPoint versorV = ccp(offsetModuleX, offsetModuleY);
-    //Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:_player.position];
-    //[_physicsWorld addChild:projectile];
     _player.velocity = versorV;
     _player.final_position = touchLocation;
     _player.isTouched = YES;
@@ -207,7 +205,7 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(CCNode *)enemy projectileCollision:(CCNode *)projectile {
     [projectile removeFromParent];
-    [self createExplosionWithPosition: enemy.position];
+    [self createExplosionWithPosition: enemy.position withScale: 1.0f];
     [enemy removeFromParent];
     _score++;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
@@ -215,6 +213,7 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player misileCollision:(CCNode *)misile {
+    [self createExplosionWithPosition: misile.position withScale: 0.5f];
     [misile removeFromParent];
     _score--;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
@@ -222,7 +221,7 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyCollision:(CCNode *)enemy {
-    [self createExplosionWithPosition: enemy.position];
+    [self createExplosionWithPosition: enemy.position withScale: 1.0f];
     [enemy removeFromParent];
     _score--;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
