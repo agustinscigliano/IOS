@@ -48,7 +48,7 @@
     [[OALSimpleAudio sharedInstance] playBg:@"background-music-aac.caf" loop:YES];
     
     // 4
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.6f green:0.6f blue:0.6f alpha:1.0f]];
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
     [self addChild:background];
     
     self.physicsWorld = [CCPhysicsNode node];
