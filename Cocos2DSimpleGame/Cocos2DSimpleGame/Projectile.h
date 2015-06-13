@@ -13,6 +13,6 @@
 
 @property (nonatomic) int damage;
 
-+ (Projectile*) spriteWithImageNamed:(NSString*)name position:(CGPoint)position;
+- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed;
 
 @end

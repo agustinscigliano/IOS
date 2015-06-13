@@ -88,13 +88,12 @@
 }
 
 - (void)shoot:(CCTime)dt {
-        [self shootNormalBullet:dt who:_player where:_player.bullet_speed + _player.physicsBody.velocity.x];
+    [self shootNormalBullet:dt from:ccp(_player.position.x + 75, _player.position.y) withSpeed: _player.bullet_speed + _player.physicsBody.velocity.x];
 }
 
 
-- (void)shootNormalBullet:(CCTime)dt who:(CCSprite*)sp where: (int) bs {
-    Projectile *projectile = [Projectile spriteWithImageNamed:@"projectile.png" position:sp.position];
-    projectile.physicsBody.velocity = ccp(bs, 0);
+- (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
+    Projectile *projectile = [[Projectile alloc] initWithPosition: position withSpeed: speed];
     [_physicsWorld addChild:projectile];
 }
 

@@ -15,16 +15,18 @@
 
 @implementation Projectile
 
-+ (Projectile*) spriteWithImageNamed:(NSString *)name position: (CGPoint)position
-{
-    Projectile *projectile = [super spriteWithImageNamed:name];
-    projectile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:projectile.contentSize.width/2.0f andCenter:projectile.anchorPointInPoints];
-    projectile.physicsBody.collisionMask = @[ENEMY_COLLISION];
-    projectile.physicsBody.collisionCategories = @[PROJECTILE_COLLISION];
-    projectile.physicsBody.collisionType  = PROJECTILE_COLLISION;
-    projectile.position=position;
-    projectile.damage = DAMAGE;
-    return projectile;
+- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed {
+    self = [super initWithImageNamed: @"bullet.png"];
+    self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
+    self.physicsBody.collisionMask = @[ENEMY_COLLISION];
+    self.physicsBody.collisionCategories = @[PROJECTILE_COLLISION];
+    self.physicsBody.collisionType  = PROJECTILE_COLLISION;
+    self.physicsBody.velocity = ccp(speed, 0);
+    self.position = position;
+    self.damage = DAMAGE;
+    self.scaleX = 0.25;
+    self.scaleY = 0.025;
+    return self;
 }
 
 @end
