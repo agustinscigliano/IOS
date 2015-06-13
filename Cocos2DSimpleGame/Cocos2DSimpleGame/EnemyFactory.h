@@ -7,10 +7,10 @@
 //
 
 #include "EnemyPlane_1.h"
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 @interface EnemyFactory : NSObject
 
-+ (EnemyPlane_1 *)createEnemyPlane1: (HelloWorldScene *) scene;
++ (EnemyPlane_1 *)createEnemyPlane1: (GameScene *) scene;
 
 @end

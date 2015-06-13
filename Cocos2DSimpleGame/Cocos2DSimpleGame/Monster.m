@@ -13,7 +13,7 @@
 #import "Shell.h"
 #import "Phantom.h"
 #import "Misile.h"
-#import "HelloWorldScene.h"
+#import "GameScene.h"
 
 #define DEFAULT_BULLET_SPEED ((int) 400)
 
@@ -57,7 +57,7 @@
     Misile *misile = [Misile spriteWithImageNamed:@"misile.png" position:self.position];
     misile.physicsBody.velocity = ccp(self.bullet_speed,0);
     
-    CCPhysicsNode* pw = ((HelloWorldScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
+    CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
     [pw addChild:misile];
 }
 

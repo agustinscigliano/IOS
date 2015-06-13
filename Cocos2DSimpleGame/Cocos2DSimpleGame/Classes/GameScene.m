@@ -1,5 +1,5 @@
 //
-//  HelloWorldScene.m
+//  GameScene.m
 //  Cocos2DSimpleGame
 //
 //  Created by Martin Walsh on 18/01/2014.
@@ -7,7 +7,7 @@
 //
 // -----------------------------------------------------------------------
 
-#import "HelloWorldScene.h"
+#import "GameScene.h"
 #import "IntroScene.h"
 #import "EnemyPlane_1.h"
 #import "Player.h"
@@ -18,10 +18,10 @@
 #import "Muzzle.h"
 
 // -----------------------------------------------------------------------
-#pragma mark - HelloWorldScene
+#pragma mark - GameScene
 // -----------------------------------------------------------------------
 
-@implementation HelloWorldScene
+@implementation GameScene
 {
     // 1
     Player *_player;
@@ -31,7 +31,7 @@
 #pragma mark - Create & Destroy
 // -----------------------------------------------------------------------
 
-+ (HelloWorldScene *)scene
++ (GameScene *)scene
 {
     return [[self alloc] init];
 }

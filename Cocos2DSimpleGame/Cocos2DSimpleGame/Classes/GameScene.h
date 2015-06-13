@@ -1,5 +1,5 @@
 //
-//  HelloWorldScene.h
+//  GameScene.h
 //  Cocos2DSimpleGame
 //
 //  Created by Martin Walsh on 18/01/2014.
@@ -16,7 +16,7 @@
 /**
  *  The main scene
  */
-@interface HelloWorldScene : CCScene <CCPhysicsCollisionDelegate>
+@interface GameScene : CCScene <CCPhysicsCollisionDelegate>
 
 // -----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 
-+ (HelloWorldScene *)scene;
++ (GameScene *)scene;
 - (id)init;
 
 // -----------------------------------------------------------------------

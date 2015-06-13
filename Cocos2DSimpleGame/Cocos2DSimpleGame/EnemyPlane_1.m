@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #include "EnemyPlane_1.h"
 #include "Misile.h"
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 @implementation EnemyPlane_1
 
@@ -37,7 +37,7 @@
 - (void)shootEnemy:(CCTime)dt{
     Misile *misile = [Misile spriteWithImageNamed:@"misile.png" position:self.position];
     misile.physicsBody.velocity = ccp(ENEMY_PLANE_1_BULLET_SPEED + self.physicsBody.velocity.x, 0);
-    CCPhysicsNode* pw = ((HelloWorldScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
+    CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
     [pw addChild:misile];
 }
 

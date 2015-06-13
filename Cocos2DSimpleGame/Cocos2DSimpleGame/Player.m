@@ -70,8 +70,8 @@
     [muzzle schedule:@selector(animate:) interval:0.05];
     [physics_world addChild:projectile];
     [physics_world addChild:muzzle];
-    NSString* shoot_sound_path = [NSString stringWithFormat: @"%@1.caf", SHOOT_SOUND_FILE_NAME];
-    [[OALSimpleAudio sharedInstance] playBg: shoot_sound_path volume:0.1 pan:0.5 loop:NO];
+//    NSString* shoot_sound_path = [NSString stringWithFormat: @"%@1.caf", SHOOT_SOUND_FILE_NAME];
+//    [[OALSimpleAudio sharedInstance] playBg: shoot_sound_path volume:0.1 pan:0.5 loop:NO];
 }
 
 @end

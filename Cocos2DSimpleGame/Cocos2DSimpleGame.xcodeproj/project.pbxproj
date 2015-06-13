@@ -243,7 +243,7 @@
 		5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B09AC07188B330600E8F2B7 /* LICENSE_Chipmunk.txt */; };
 		5B09AC0C188B330600E8F2B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC0B188B330600E8F2B7 /* main.m */; };
 		5B09AC10188B330600E8F2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC0F188B330600E8F2B7 /* AppDelegate.m */; };
-		5B09AC13188B330600E8F2B7 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */; };
+		5B09AC13188B330600E8F2B7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC12188B330600E8F2B7 /* GameScene.m */; };
 		5B09AC16188B330600E8F2B7 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09AC15188B330600E8F2B7 /* IntroScene.m */; };
 		FB14347E1B222DA700E65CAF /* Misile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14347D1B222DA700E65CAF /* Misile.m */; };
 		FB1434831B223ADC00E65CAF /* misile.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1434821B223ADC00E65CAF /* misile.png */; };
@@ -727,8 +727,8 @@
 		5B09AC0B188B330600E8F2B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		5B09AC0E188B330600E8F2B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		5B09AC0F188B330600E8F2B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		5B09AC11188B330600E8F2B7 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
+		5B09AC11188B330600E8F2B7 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		5B09AC12188B330600E8F2B7 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
 		5B09AC14188B330600E8F2B7 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		5B09AC15188B330600E8F2B7 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		FB14347D1B222DA700E65CAF /* Misile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Misile.m; sourceTree = "<group>"; };
@@ -1630,8 +1630,8 @@
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				5B09AC0E188B330600E8F2B7 /* AppDelegate.h */,
 				5B09AC0F188B330600E8F2B7 /* AppDelegate.m */,
-				5B09AC11188B330600E8F2B7 /* HelloWorldScene.h */,
-				5B09AC12188B330600E8F2B7 /* HelloWorldScene.m */,
+				5B09AC11188B330600E8F2B7 /* GameScene.h */,
+				5B09AC12188B330600E8F2B7 /* GameScene.m */,
 				5B09AC14188B330600E8F2B7 /* IntroScene.h */,
 				5B09AC15188B330600E8F2B7 /* IntroScene.m */,
 				479143E11ABCE06C00E46B2D /* Monster.h */,
@@ -1933,7 +1933,7 @@
 				5B09AA59188B330400E8F2B7 /* ccShaders.m in Sources */,
 				5B09AB6D188B330500E8F2B7 /* matrix.c in Sources */,
 				5B09AA7F188B330400E8F2B7 /* CCTiledMapLayer.m in Sources */,
-				5B09AC13188B330600E8F2B7 /* HelloWorldScene.m in Sources */,
+				5B09AC13188B330600E8F2B7 /* GameScene.m in Sources */,
 				5B09AB73188B330500E8F2B7 /* neon_matrix_impl.c in Sources */,
 				5B09A9F8188B330400E8F2B7 /* CCLabelTTF.m in Sources */,
 				FB14347E1B222DA700E65CAF /* Misile.m in Sources */,

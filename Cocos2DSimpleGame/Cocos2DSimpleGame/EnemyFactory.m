@@ -12,7 +12,7 @@
 
 @implementation EnemyFactory
 
-+ (EnemyPlane_1 *)createEnemyPlane1: (HelloWorldScene *) scene {
++ (EnemyPlane_1 *)createEnemyPlane1: (GameScene *) scene {
     EnemyPlane_1 *enemy_plane_1 = [[EnemyPlane_1 alloc] init];
     return enemy_plane_1;
 }
