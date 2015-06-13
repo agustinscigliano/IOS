@@ -185,6 +185,12 @@
     _player.isTouched = NO;
 }
 
+- (void) createExplosionWithPosition: (CGPoint) position {
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: position];
+    [explosion_1 schedule:@selector(animate:) interval:	0.05];
+    [_physicsWorld addChild: explosion_1];
+}
+
 - (void) move:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [touch locationInNode:self];
     CGPoint offset = ccpSub(touchLocation, _player.position);
@@ -201,10 +207,8 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(CCNode *)enemy projectileCollision:(CCNode *)projectile {
     [projectile removeFromParent];
-    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition:enemy.position];
+    [self createExplosionWithPosition: enemy.position];
     [enemy removeFromParent];
-    [explosion_1 schedule:@selector(animate:) interval:	0.03];
-    [_physicsWorld addChild: explosion_1];
     _score++;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
     return YES;
@@ -218,6 +222,7 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyCollision:(CCNode *)enemy {
+    [self createExplosionWithPosition: enemy.position];
     [enemy removeFromParent];
     _score--;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
