@@ -23,8 +23,7 @@
         NSString *plane_image_path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
         self = [super initWithImageNamed: plane_image_path];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
-        self.physicsBody.collisionGroup = @"playerGroup";
-        self.physicsBody.collisionType = @"playerCollision";
+        self.physicsBody.collisionType = PLAYER_COLLISION;
         self.physicsBody.type = CCPhysicsBodyTypeStatic;
         self.fire_rate = DEFAULT_SHOOTING_RATE;
         self.bullet_speed = DEFAULT_BULLET_SPEED;
@@ -34,8 +33,7 @@
     return self;
 }
 
-- (void) update:(CCTime)delta
-{
+- (void) update:(CCTime)delta {
     CGPoint position_difference = ccpSub(_final_position, self.position);
     if(_isTouched && sqrt(pow(position_difference.x, 2) + pow(position_difference.y, 2)) > POSITION_DELTA)
     {
@@ -43,13 +41,11 @@
     }
 }
 
-- (void) takeDamage:(int)damage
-{
+- (void) takeDamage:(int)damage {
     _health -= damage;
 }
 
-- (void) recoverHealth:(int)health
-{
+- (void) recoverHealth:(int)health {
     if (_health + health > 100) {
         _health = 100;
     } else {
@@ -57,10 +53,8 @@
     }
 }
 
-- (void) animate:(CCTime)dt
-{
+- (void) animate:(CCTime)dt {
     NSString *path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
-    NSLog(@"PATH = %@\n", path);
     [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:path]];
     frame_number++;
     if (frame_number == MAX_FRAMES_FOR_PLANES)

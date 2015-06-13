@@ -15,6 +15,7 @@
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
 #define MISSILE_COLLISION @"misileCollision"
+#define PLAYER_COLLISION @"playerCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define ENEMY_PLANE_1_SCALE 0.5f
 #define PLAYER_SCALE 0.5f
