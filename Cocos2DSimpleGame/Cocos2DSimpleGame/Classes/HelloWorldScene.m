@@ -47,8 +47,6 @@
     // 3
     self.userInteractionEnabled = YES;
     
-    [[OALSimpleAudio sharedInstance] playBg:@"background-music-aac.caf" loop:YES];
-    
     // 4
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
     [self addChild:background];

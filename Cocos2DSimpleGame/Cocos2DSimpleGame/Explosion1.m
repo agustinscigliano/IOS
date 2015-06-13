@@ -20,6 +20,7 @@
     self = [super initWithImageNamed: image_path];
     self.position = position;
     self.scale = scale;
+    [self playRandomExplosionSound];
     return self;
 }
 
@@ -29,6 +30,12 @@
     frame_number++;
     if (frame_number == MAX_FRAMES_FOR_EXPLOSION_1)
         [self removeFromParent];
+}
+
+- (void) playRandomExplosionSound {
+    int image_number = (arc4random() % EXPLOSION_SOUNDS_AMOUNT) + 1;
+    NSString* explosion_sound_path = [NSString stringWithFormat: @"%@%d.caf", EXPLOSION_SOUND_FILE_NAME, image_number];
+    [[OALSimpleAudio sharedInstance] playBg: explosion_sound_path volume:0.1 pan:0.5 loop:NO];
 }
 
 @end

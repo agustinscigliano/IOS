@@ -19,6 +19,7 @@
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define BULLET_IMAGE @"bullet.png"
+#define EXPLOSION_SOUND_FILE_NAME @"Explosion"
 #define MUZZLE_SCALE 0.1
 #define ENEMY_PLANE_1_SCALE 0.25
 #define PLAYER_SCALE 0.25
@@ -30,5 +31,6 @@
 #define MAX_FRAMES_FOR_EXPLOSION_1 16
 #define MAX_FRAMES_FOR_MUZZLE 5
 #define ENEMY_PLANE_1_SPEED -100
+#define EXPLOSION_SOUNDS_AMOUNT 4
 
 #endif
