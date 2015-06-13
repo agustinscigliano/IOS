@@ -11,16 +11,12 @@
 #include "Misile.h"
 #include "HelloWorldScene.h"
 
-@implementation EnemyPlane_1 {
-    int frame_number;
-}
+@implementation EnemyPlane_1
 
 - (id) init {
     self = [super init];
     if (self) {
-        frame_number=1;
-        NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", ENEMY_PLANE_1_IMAGE, frame_number];
-        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
+        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: ENEMY_PLANE_1_IMAGE]];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
         self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];

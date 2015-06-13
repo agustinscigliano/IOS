@@ -9,9 +9,9 @@
 #ifndef Cocos2DSimpleGame_Constants_h
 #define Cocos2DSimpleGame_Constants_h
 
-#define ENEMY_PLANE_1_IMAGE @"bf-109e-"
-#define ENEMY_PLANE_2_IMAGE @"fw-190a-"
-#define ENEMY_PLANE_3_IMAGE @"ju-87-"
+#define ENEMY_PLANE_1_IMAGE @"bf-109e.png"
+#define ENEMY_PLANE_2_IMAGE @"fw-190a.png"
+#define ENEMY_PLANE_3_IMAGE @"ju-87.png"
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
 #define MISSILE_COLLISION @"misileCollision"

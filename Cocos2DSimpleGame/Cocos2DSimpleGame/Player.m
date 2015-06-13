@@ -14,18 +14,14 @@
 #define POSITION_DELTA 5.0f
 
 @implementation Player {
-    
-    int frame_number;
     CCPhysicsNode* physics_world;
 }
 
 - (id) init {
     self = [super init];
     if (self) {
-        self.plane_name = @"p51-";
-        frame_number = 1;
-        NSString *plane_image_path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
-        self = [super initWithImageNamed: plane_image_path];
+        self.plane_name = @"p51.png";
+        self = [super initWithImageNamed: self.plane_name];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionType = PLAYER_COLLISION;
         self.physicsBody.type = CCPhysicsBodyTypeStatic;
