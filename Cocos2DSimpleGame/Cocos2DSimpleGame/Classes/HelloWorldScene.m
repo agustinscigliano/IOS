@@ -15,6 +15,7 @@
 #import "Misile.h"
 #import "EnemyFactory.h"
 #import "Explosion1.h"
+#import "Muzzle.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -95,7 +96,10 @@
 
 - (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
     Projectile *projectile = [[Projectile alloc] initWithPosition: position withSpeed: speed];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: position];
+    [muzzle schedule:@selector(animate:) interval:0.05];
     [_physicsWorld addChild:projectile];
+    [_physicsWorld addChild:muzzle];
 }
 
 - (void)addPlane:(CCTime)dt {
@@ -107,27 +111,8 @@
     int rangeY = maxY - minY;
     int randomY = (arc4random() % rangeY) + minY;
     enemy_plane1.position = ccp(self.contentSize.width, randomY);
-    //
-    //    // 1
-    //    int minY = monster.contentSize.height / 2;
-    //    int maxY = self.contentSize.height - monster.contentSize.height / 2;
-    //    int rangeY = maxY - minY;
-    //    int randomY = (arc4random() % rangeY) + minY;
-    //
-    //    // 2
+    [enemy_plane1 schedule:@selector(animate:) interval: 0.01];
     [_physicsWorld addChild:enemy_plane1];
-    
-    //
-    //    // 3
-    //    int minDuration = 2.0;
-    //    int maxDuration = 4.0;
-    //    int rangeDuration = maxDuration - minDuration;
-    //    int randomDuration = (arc4random() % rangeDuration) + minDuration;
-    //
-    // 4
-    //    CCAction *actionMove = [CCActionMoveTo actionWithDuration:randomDuration position:CGPointMake(-monster.contentSize.width/2, randomY)];
-    //    CCAction *actionRemove = [CCActionRemove action];
-    //    [monster runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
 }
 
 // -----------------------------------------------------------------------

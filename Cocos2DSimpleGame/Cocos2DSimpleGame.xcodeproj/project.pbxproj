@@ -40,6 +40,8 @@
 		47C493341B2BAB190007FA9F /* Explosion1-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493231B2BAB190007FA9F /* Explosion1-15.png */; };
 		47C493351B2BAB190007FA9F /* Explosion1-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493241B2BAB190007FA9F /* Explosion1-16.png */; };
 		47C493381B2BB1990007FA9F /* Explosion1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C493371B2BB1990007FA9F /* Explosion1.m */; };
+		47C4933A1B2BB91F0007FA9F /* muzzle.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493391B2BB91F0007FA9F /* muzzle.png */; };
+		47C4933E1B2BBE0A0007FA9F /* Muzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C4933D1B2BBE0A0007FA9F /* Muzzle.m */; };
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
@@ -304,6 +306,9 @@
 		47C493241B2BAB190007FA9F /* Explosion1-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Explosion1-16.png"; sourceTree = "<group>"; };
 		47C493361B2BB11C0007FA9F /* Explosion1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion1.h; sourceTree = "<group>"; };
 		47C493371B2BB1990007FA9F /* Explosion1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosion1.m; sourceTree = "<group>"; };
+		47C493391B2BB91F0007FA9F /* muzzle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muzzle.png; sourceTree = "<group>"; };
+		47C4933C1B2BBD710007FA9F /* Muzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Muzzle.h; sourceTree = "<group>"; };
+		47C4933D1B2BBE0A0007FA9F /* Muzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Muzzle.m; sourceTree = "<group>"; };
 		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1654,6 +1659,8 @@
 				47BF05C51B2B2913009D3E93 /* EnemyFactory.h */,
 				47C493361B2BB11C0007FA9F /* Explosion1.h */,
 				47C493371B2BB1990007FA9F /* Explosion1.m */,
+				47C4933C1B2BBD710007FA9F /* Muzzle.h */,
+				47C4933D1B2BBE0A0007FA9F /* Muzzle.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1670,6 +1677,7 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				47C493391B2BB91F0007FA9F /* muzzle.png */,
 				47C493141B2BAB190007FA9F /* bullet.png */,
 				47C493151B2BAB190007FA9F /* Explosion1-1.png */,
 				47C493161B2BAB190007FA9F /* Explosion1-2.png */,
@@ -1822,6 +1830,7 @@
 				5B09A994188B330300E8F2B7 /* Icon-76@2x.png in Resources */,
 				5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */,
 				5B09A9A2188B330300E8F2B7 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				47C4933A1B2BB91F0007FA9F /* muzzle.png in Resources */,
 				5B09A992188B330300E8F2B7 /* Icon-76.png in Resources */,
 				47C4932B1B2BAB190007FA9F /* Explosion1-6.png in Resources */,
 				479B8B531B221995000E38CA /* p51-5.png in Resources */,
@@ -1989,6 +1998,7 @@
 				5B09AB01188B330500E8F2B7 /* ALCaptureDevice.m in Sources */,
 				5B09AA3D188B330400E8F2B7 /* CCResponderManager.m in Sources */,
 				5B09A9D5188B330400E8F2B7 /* CCConfiguration.m in Sources */,
+				47C4933E1B2BBE0A0007FA9F /* Muzzle.m in Sources */,
 				5B09AB18188B330500E8F2B7 /* ALWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
