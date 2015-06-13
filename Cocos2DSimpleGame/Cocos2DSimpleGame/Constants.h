@@ -18,14 +18,17 @@
 #define PLAYER_COLLISION @"playerCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
-#define MUZZLE_SCALE 0.25
+#define BULLET_IMAGE @"bullet.png"
+#define MUZZLE_SCALE 0.1
 #define ENEMY_PLANE_1_SCALE 0.25
 #define PLAYER_SCALE 0.25
+#define BULLET_SCALE_X 0.25
+#define BULLET_SCALE_Y 0.02
 #define ENEMY_PLANE_1_BULLET_SPEED -100
-#define DEFAULT_SHOOTING_RATE 0.5f
+#define DEFAULT_SHOOTING_RATE 0.5
 #define DEFAULT_BULLET_SPEED 750
-#define MAX_FRAMES_FOR_PLANES 5
 #define MAX_FRAMES_FOR_EXPLOSION_1 16
 #define MAX_FRAMES_FOR_MUZZLE 5
+#define ENEMY_PLANE_1_SPEED -100
 
 #endif

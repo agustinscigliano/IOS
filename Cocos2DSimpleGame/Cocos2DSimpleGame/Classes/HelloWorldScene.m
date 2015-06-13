@@ -60,7 +60,7 @@
     [self addChild:_physicsWorld];
     
     // 5
-    _player = [[Player alloc] init];
+    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
@@ -89,19 +89,6 @@
     [self addPlane:dt];
 }
 
-- (void)shoot:(CCTime)dt {
-    [self shootNormalBullet:dt from:ccp(_player.position.x + 75, _player.position.y) withSpeed: _player.bullet_speed + _player.physicsBody.velocity.x];
-}
-
-
-- (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
-    Projectile *projectile = [[Projectile alloc] initWithPosition: position withSpeed: speed];
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: position];
-    [muzzle schedule:@selector(animate:) interval:0.05];
-    [_physicsWorld addChild:projectile];
-    [_physicsWorld addChild:muzzle];
-}
-
 - (void)addPlane:(CCTime)dt {
     EnemyPlane_1 *enemy_plane1 = [EnemyFactory createEnemyPlane1:self];
     
@@ -111,7 +98,6 @@
     int rangeY = maxY - minY;
     int randomY = (arc4random() % rangeY) + minY;
     enemy_plane1.position = ccp(self.contentSize.width, randomY);
-    [enemy_plane1 schedule:@selector(animate:) interval: 0.01];
     [_physicsWorld addChild:enemy_plane1];
 }
 
@@ -134,15 +120,8 @@
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Pr frame update is automatically enabled, if update is overridden
-    
+    [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
     [self schedule:@selector(addEnemy:) interval:1.5];
-    [self schedule:@selector(shoot:) interval: _player.fire_rate];
-    [self schedule:@selector(animatePlayer:) interval: 0.01];
-}
-
-- (void)animatePlayer:(CCTime) dt
-{
-    [_player animate:dt];
 }
 
 // -----------------------------------------------------------------------

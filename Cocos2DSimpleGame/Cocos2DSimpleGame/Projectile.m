@@ -10,13 +10,14 @@
 #import <stdlib.h>
 #import "cocos2d.h"
 #import "Projectile.h"
+#import "Constants.h"
 
 #define DAMAGE ((int) 5)
 
 @implementation Projectile
 
 - (id) initWithPosition:(CGPoint)position withSpeed: (int) speed {
-    self = [super initWithImageNamed: @"bullet.png"];
+    self = [super initWithImageNamed: BULLET_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
     self.physicsBody.collisionMask = @[ENEMY_COLLISION];
     self.physicsBody.collisionCategories = @[PROJECTILE_COLLISION];
@@ -24,8 +25,8 @@
     self.physicsBody.velocity = ccp(speed, 0);
     self.position = position;
     self.damage = DAMAGE;
-    self.scaleX = 0.25;
-    self.scaleY = 0.025;
+    self.scaleX = BULLET_SCALE_X;
+    self.scaleY = BULLET_SCALE_Y;
     return self;
 }
 

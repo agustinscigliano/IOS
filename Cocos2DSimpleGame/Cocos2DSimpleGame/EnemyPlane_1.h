@@ -12,6 +12,5 @@
 @interface EnemyPlane_1 : CCSprite
 
 - (id) init;
-- (void) animate:(CCTime) dt;
 
 @end

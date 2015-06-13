@@ -20,9 +20,8 @@
 @property (nonatomic) int score;
 @property (nonatomic) NSString* plane_name;
 
-- (id) init;
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
-- (void) animate:(CCTime) dt;
 
 @end

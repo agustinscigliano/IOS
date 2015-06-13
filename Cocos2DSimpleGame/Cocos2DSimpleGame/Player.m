@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "Projectile.h"
+#import "Muzzle.h"
 #define SPEED 200
 #define POSITION_DELTA 5.0f
 
 @implementation Player {
+    
     int frame_number;
+    CCPhysicsNode* physics_world;
 }
 
 - (id) init {
@@ -30,6 +34,12 @@
         self.scaleX = PLAYER_SCALE;
         self.scaleY = PLAYER_SCALE;
     }
+    return self;
+}
+
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld {
+    self = [self init];
+    physics_world = physicsWorld;
     return self;
 }
 
@@ -53,12 +63,17 @@
     }
 }
 
-- (void) animate:(CCTime)dt {
-    NSString *path = [NSString stringWithFormat:@"%@%d.png", _plane_name, frame_number];
-    [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:path]];
-    frame_number++;
-    if (frame_number == MAX_FRAMES_FOR_PLANES)
-        frame_number = 1;
+- (void)shoot:(CCTime)dt {
+    //ACA HABRIA QUE AGREGAR "IF TAL POWER UP THEN DISPARO_ZARPADO... ELSE SHOOT_NORMAL_BULLET"
+    [self shootNormalBullet:dt from:ccp(self.position.x + 50, self.position.y) withSpeed: self.bullet_speed + self.physicsBody.velocity.x];
+}
+
+- (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
+    Projectile *projectile = [[Projectile alloc] initWithPosition: position withSpeed: speed];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(position.x - 25, position.y)];
+    [muzzle schedule:@selector(animate:) interval:0.05];
+    [physics_world addChild:projectile];
+    [physics_world addChild:muzzle];
 }
 
 @end

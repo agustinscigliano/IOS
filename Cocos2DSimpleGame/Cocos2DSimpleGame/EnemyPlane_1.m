@@ -25,7 +25,7 @@
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
         self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];
         self.physicsBody.collisionType = ENEMY_COLLISION;
-        self.physicsBody.velocity = ccp(-100, 0);
+        self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);
         self.scaleX = ENEMY_PLANE_1_SCALE;
         self.scaleY = ENEMY_PLANE_1_SCALE;
     }
@@ -43,14 +43,6 @@
     misile.physicsBody.velocity = ccp(ENEMY_PLANE_1_BULLET_SPEED + self.physicsBody.velocity.x, 0);
     CCPhysicsNode* pw = ((HelloWorldScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
     [pw addChild:misile];
-}
-
-- (void) animate:(CCTime) dt {
-    NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", ENEMY_PLANE_1_IMAGE, frame_number];
-    [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
-    frame_number++;
-    if (frame_number == MAX_FRAMES_FOR_PLANES)
-        frame_number = 1;
 }
 
 @end
