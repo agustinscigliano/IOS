@@ -14,6 +14,7 @@
 #import "Projectile.h"
 #import "Misile.h"
 #import "EnemyFactory.h"
+#import "Explosion1.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -199,8 +200,11 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(CCNode *)enemy projectileCollision:(CCNode *)projectile {
-    [enemy removeFromParent];
     [projectile removeFromParent];
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition:enemy.position];
+    [enemy removeFromParent];
+    [explosion_1 schedule:@selector(animate:) interval:	0.03];
+    [_physicsWorld addChild: explosion_1];
     _score++;
     [_label setString:[NSString stringWithFormat:@"%d", _score]];
     return YES;

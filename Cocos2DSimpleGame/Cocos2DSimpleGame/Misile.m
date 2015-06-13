@@ -10,6 +10,7 @@
 #import <stdlib.h>
 #import "cocos2d.h"
 #import "Misile.h"
+#import "Constants.h"
 
 #define DAMAGE ((int) 5)
 
@@ -21,9 +22,9 @@
     misile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:misile.contentSize.width/2.0f andCenter:misile.anchorPointInPoints];
 //    misile.physicsBody.collisionGroup = @"monsterGroup";
     misile.physicsBody.collisionCategories = @[@"misileCollision"];
-    misile.physicsBody.collisionMask = @[@"monsterCollision"];
+    misile.physicsBody.collisionMask = @[ENEMY_COLLISION];
     misile.physicsBody.collisionType  = @"misileCollision";
-    misile.position=position;
+    misile.position = position;
     misile.damage = DAMAGE;
     return misile;
 }

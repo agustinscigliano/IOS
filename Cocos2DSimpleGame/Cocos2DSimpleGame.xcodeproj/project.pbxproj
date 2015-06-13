@@ -39,6 +39,7 @@
 		47C493331B2BAB190007FA9F /* Explosion1-14.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493221B2BAB190007FA9F /* Explosion1-14.png */; };
 		47C493341B2BAB190007FA9F /* Explosion1-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493231B2BAB190007FA9F /* Explosion1-15.png */; };
 		47C493351B2BAB190007FA9F /* Explosion1-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 47C493241B2BAB190007FA9F /* Explosion1-16.png */; };
+		47C493381B2BB1990007FA9F /* Explosion1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C493371B2BB1990007FA9F /* Explosion1.m */; };
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
@@ -301,6 +302,8 @@
 		47C493221B2BAB190007FA9F /* Explosion1-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Explosion1-14.png"; sourceTree = "<group>"; };
 		47C493231B2BAB190007FA9F /* Explosion1-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Explosion1-15.png"; sourceTree = "<group>"; };
 		47C493241B2BAB190007FA9F /* Explosion1-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Explosion1-16.png"; sourceTree = "<group>"; };
+		47C493361B2BB11C0007FA9F /* Explosion1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion1.h; sourceTree = "<group>"; };
+		47C493371B2BB1990007FA9F /* Explosion1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosion1.m; sourceTree = "<group>"; };
 		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1649,6 +1652,8 @@
 				47BF05B51B2B0693009D3E93 /* Constants.h */,
 				47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */,
 				47BF05C51B2B2913009D3E93 /* EnemyFactory.h */,
+				47C493361B2BB11C0007FA9F /* Explosion1.h */,
+				47C493371B2BB1990007FA9F /* Explosion1.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1977,6 +1982,7 @@
 				5B09A9F1188B330400E8F2B7 /* CCLabelAtlas.m in Sources */,
 				5B09AA8C188B330400E8F2B7 /* cocos2d.m in Sources */,
 				5B09AB14188B330500E8F2B7 /* ALSource.m in Sources */,
+				47C493381B2BB1990007FA9F /* Explosion1.m in Sources */,
 				5B09AA1C188B330400E8F2B7 /* CCParticleSystem.m in Sources */,
 				5B09AA41188B330400E8F2B7 /* CCScene.m in Sources */,
 				5B09AA6F188B330400E8F2B7 /* CCTexture.m in Sources */,

@@ -14,11 +14,14 @@
 #define ENEMY_PLANE_3_IMAGE @"ju-87-"
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
+#define MISSILE_COLLISION @"misileCollision"
+#define EXPLOSION_1_IMAGE @"Explosion1-"
 #define ENEMY_PLANE_1_SCALE 0.5f
 #define PLAYER_SCALE 0.5f
 #define ENEMY_PLANE_1_BULLET_SPEED -100
 #define DEFAULT_SHOOTING_RATE 0.5f
 #define DEFAULT_BULLET_SPEED 750
 #define MAX_FRAMES_FOR_PLANES 5
+#define MAX_FRAMES_FOR_EXPLOSION_1 16
 
 #endif
