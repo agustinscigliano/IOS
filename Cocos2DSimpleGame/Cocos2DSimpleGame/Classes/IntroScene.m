@@ -34,16 +34,26 @@
     self = [super init];
     if (!self) return(nil);
     
-    // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
-    [self addChild:background];
+    //Background image
+    CCSprite *clouds = [[CCSprite alloc] initWithImageNamed:@"clouds.png"];
+    clouds.scale = 0.5f;
+    clouds.positionType = CCPositionTypeNormalized;
+    clouds.position = ccp(0.5f, 0.5f);
+    [self addChild:clouds];
     
-    // Hello world
+    // 1943 Logo
     CCSprite *logo = [[CCSprite alloc] initWithImageNamed:@"1943.png"];
     logo.scale = 0.5f;
     logo.positionType = CCPositionTypeNormalized;
     logo.position = ccp(0.5f, 0.75f);
     [self addChild:logo];
+    
+    //p51-mustang logo
+    CCSprite *p51_logo = [[CCSprite alloc] initWithImageNamed:@"p51-logo.png"];
+    p51_logo.scale = 0.5f;
+    p51_logo.positionType = CCPositionTypeNormalized;
+    p51_logo.position = ccp(0.15f, 0.75f);
+    [self addChild:p51_logo];
     
     // Spinning scene button
     CCButton *spinningButton = [CCButton buttonWithTitle:@"Start" fontName:@"Courier New" fontSize:24.0f];
