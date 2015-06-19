@@ -10,6 +10,7 @@
 		475C0F1B1B34404600D65899 /* 1943.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1A1B34404600D65899 /* 1943.png */; };
 		475C0F1D1B34427200D65899 /* p51-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1C1B34427200D65899 /* p51-logo.png */; };
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
+		475C0F251B34490B00D65899 /* game-music.caf in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F241B34490B00D65899 /* game-music.caf */; };
 		479143E31ABCE10700E46B2D /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 479143E21ABCE10700E46B2D /* Monster.m */; };
 		4793735C1AC57C3B00E81B8B /* Shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735B1AC57C3B00E81B8B /* Shell.m */; };
 		479373601AC5966300E81B8B /* Phantom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735F1AC5966300E81B8B /* Phantom.m */; };
@@ -267,6 +268,7 @@
 		475C0F1A1B34404600D65899 /* 1943.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1943.png; sourceTree = "<group>"; };
 		475C0F1C1B34427200D65899 /* p51-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p51-logo.png"; sourceTree = "<group>"; };
 		475C0F221B34471C00D65899 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
+		475C0F241B34490B00D65899 /* game-music.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-music.caf"; sourceTree = "<group>"; };
 		479143E11ABCE06C00E46B2D /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		479143E21ABCE10700E46B2D /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		4793735A1AC57B7700E81B8B /* Shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shell.h; sourceTree = "<group>"; };
@@ -1704,6 +1706,7 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F241B34490B00D65899 /* game-music.caf */,
 				47C493471B2C67350007FA9F /* Shoot1.caf */,
 				47C493431B2C652B0007FA9F /* Explosion3.caf */,
 				47C493441B2C652B0007FA9F /* Explosion4.caf */,
@@ -1811,6 +1814,7 @@
 				47C493281B2BAB190007FA9F /* Explosion1-3.png in Resources */,
 				47C4932C1B2BAB190007FA9F /* Explosion1-7.png in Resources */,
 				47C493451B2C652B0007FA9F /* Explosion3.caf in Resources */,
+				475C0F251B34490B00D65899 /* game-music.caf in Resources */,
 				47C493311B2BAB190007FA9F /* Explosion1-12.png in Resources */,
 				5B09AB83188B330500E8F2B7 /* LICENSE_Kazmath.txt in Resources */,
 				5B09A98E188B330300E8F2B7 /* Icon-72.png in Resources */,

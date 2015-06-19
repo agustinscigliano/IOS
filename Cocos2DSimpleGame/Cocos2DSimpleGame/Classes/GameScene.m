@@ -79,6 +79,7 @@
     _label.position = ccp(0.15f, 0.95f); // Top Left of screen
     _label.color = [CCColor redColor];
     [self addChild:_label];
+    [[OALSimpleAudio sharedInstance] playBg:@"game-music.caf" loop:YES];
 
 	return self;
 }

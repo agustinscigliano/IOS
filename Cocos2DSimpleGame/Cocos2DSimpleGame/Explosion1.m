@@ -35,7 +35,7 @@
 - (void) playRandomExplosionSound {
     int image_number = (arc4random() % EXPLOSION_SOUNDS_AMOUNT) + 1;
     NSString* explosion_sound_path = [NSString stringWithFormat: @"%@%d.caf", EXPLOSION_SOUND_FILE_NAME, image_number];
-    [[OALSimpleAudio sharedInstance] playBg: explosion_sound_path volume:0.1 pan:0.5 loop:NO];
+    [[OALSimpleAudio sharedInstance] playEffect: explosion_sound_path volume:0.5 pitch:1.0 pan:0.5 loop: NO];
 }
 
 @end
