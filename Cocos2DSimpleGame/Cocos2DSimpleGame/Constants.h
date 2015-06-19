@@ -20,6 +20,7 @@
 #define BULLET_COLLISION @"bulletCollision"
 #define HEALTH_COLLISION @"healthCollision"
 #define EXPLOSION_COLLISION @"explosionCollision"
+#define TRIPPLE_SHOT_COLLISION @"trippleShotCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define SPARKLE_IMAGE @"sparkle.png"

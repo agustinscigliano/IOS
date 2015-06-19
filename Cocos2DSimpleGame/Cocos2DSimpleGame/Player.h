@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL isTouched;
 @property (nonatomic) int score;
 @property (nonatomic) NSString* plane_name;
+@property (nonatomic) BOOL triple_shoot_power_up;
 
 - (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name withScreenSize: (int) screen_size;
 - (void) takeDamage:(int) damage;

@@ -22,6 +22,7 @@
 #import "GameOver.h"
 #import "Health.h"
 #import "Sparkle.h"
+#import "TrippleShot.h"
 
 @implementation GameScene {
     Player *_player;
@@ -43,7 +44,7 @@
     
     self.physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
-    _physicsWorld.debugDraw = YES;
+    _physicsWorld.debugDraw = NO;
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
@@ -93,7 +94,7 @@
 
 - (void)addPlane:(CCTime)dt {
     EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] initWithPhysicsWorld:_physicsWorld];
-    
+
     int minY = enemy_plane1.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
     int rangeY = maxY - minY;
@@ -185,6 +186,12 @@
     [health removeFromParent];
     [_player recoverHealth: health.health];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player trippleShotCollision:(TrippleShot *)trippleShot {
+    [trippleShot removeFromParent];
+    _player.triple_shoot_power_up = YES;
     return YES;
 }
 

@@ -21,7 +21,7 @@
 - (id) initWithPosition:(CGPoint)position withSpeed: (int) speed screenSize: (int) screen_size {
     self = [super initWithImageNamed: BULLET_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
-    self.physicsBody.collisionMask = @[ENEMY_COLLISION];
+    self.physicsBody.collisionMask = @[ENEMY_COLLISION, PROJECTILE_COLLISION];
     self.physicsBody.collisionCategories = @[PROJECTILE_COLLISION];
     self.physicsBody.collisionType  = PROJECTILE_COLLISION;
     self.physicsBody.velocity = ccp(speed, 0);

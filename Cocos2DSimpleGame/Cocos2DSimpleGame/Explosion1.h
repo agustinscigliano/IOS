@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Razeware LLC. All rights reserved.
 //
 
-#ifndef Cocos2DSimpleGame_Explosion1_h
-#define Cocos2DSimpleGame_Explosion1_h
-
 #import "cocos2d.h"
 
 @interface Explosion1 : CCSprite
@@ -20,4 +17,3 @@
 
 @end
 
-#endif
