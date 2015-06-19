@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		475C0F1B1B34404600D65899 /* 1943.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1A1B34404600D65899 /* 1943.png */; };
 		479143E31ABCE10700E46B2D /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 479143E21ABCE10700E46B2D /* Monster.m */; };
 		4793735C1AC57C3B00E81B8B /* Shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735B1AC57C3B00E81B8B /* Shell.m */; };
 		479373601AC5966300E81B8B /* Phantom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735F1AC5966300E81B8B /* Phantom.m */; };
@@ -261,6 +262,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		475C0F1A1B34404600D65899 /* 1943.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1943.png; sourceTree = "<group>"; };
 		479143E11ABCE06C00E46B2D /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		479143E21ABCE10700E46B2D /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		4793735A1AC57B7700E81B8B /* Shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shell.h; sourceTree = "<group>"; };
@@ -1667,6 +1669,7 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F1A1B34404600D65899 /* 1943.png */,
 				47C493391B2BB91F0007FA9F /* muzzle.png */,
 				47C493141B2BAB190007FA9F /* bullet.png */,
 				47C493151B2BAB190007FA9F /* Explosion1-1.png */,
@@ -1778,6 +1781,7 @@
 				47C4932F1B2BAB190007FA9F /* Explosion1-10.png in Resources */,
 				47C493271B2BAB190007FA9F /* Explosion1-2.png in Resources */,
 				5B09AB9A188B330500E8F2B7 /* LICENSE_CCBReader.txt in Resources */,
+				475C0F1B1B34404600D65899 /* 1943.png in Resources */,
 				5B09A98C188B330300E8F2B7 /* Icon@2x.png in Resources */,
 				5B09A99E188B330300E8F2B7 /* Icon-Small@2x.png in Resources */,
 				47C4932D1B2BAB190007FA9F /* Explosion1-8.png in Resources */,

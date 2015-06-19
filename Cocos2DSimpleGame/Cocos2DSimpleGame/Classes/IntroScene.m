@@ -35,18 +35,18 @@
     if (!self) return(nil);
     
     // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
     [self addChild:background];
     
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Chalkduster" fontSize:36.0f];
-    label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
-    [self addChild:label];
+    CCSprite *logo = [[CCSprite alloc] initWithImageNamed:@"1943.png"];
+    logo.scale = 0.5f;
+    logo.positionType = CCPositionTypeNormalized;
+    logo.position = ccp(0.5f, 0.75f);
+    [self addChild:logo];
     
     // Spinning scene button
-    CCButton *spinningButton = [CCButton buttonWithTitle:@"[ Simple Sprite ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    CCButton *spinningButton = [CCButton buttonWithTitle:@"Start" fontName:@"Courier New" fontSize:24.0f];
     spinningButton.positionType = CCPositionTypeNormalized;
     spinningButton.position = ccp(0.5f, 0.35f);
     [spinningButton setTarget:self selector:@selector(onSpinningClicked:)];
