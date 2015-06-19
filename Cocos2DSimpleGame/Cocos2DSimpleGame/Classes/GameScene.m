@@ -21,6 +21,7 @@
 #import "EnemyBullet.h"
 #import "GameOver.h"
 #import "Health.h"
+#import "Sparkle.h"
 
 @implementation GameScene {
     Player *_player;
@@ -128,7 +129,7 @@
 }
 
 - (void) createExplosionWithPosition: (CGPoint) position withScale: (float) scale {
-    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: position withScale: scale];
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: position withScale: scale withVelocityX:0];
     [explosion_1 schedule:@selector(animate:) interval:	0.05];
     [_physicsWorld addChild: explosion_1];
 }
@@ -163,7 +164,7 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyBulletCollision:(EnemyBullet *)bullet {
-    [self createExplosionWithPosition: ccp(bullet.position.x - 25, bullet.position.y) withScale: 0.5f];
+    [_physicsWorld addChild: [[Sparkle alloc] initWithPosition:bullet.position]];
     [bullet removeFromParent];
     [_player takeDamage: bullet.damage];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
@@ -184,6 +185,13 @@
     [health removeFromParent];
     [_player recoverHealth: health.health];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player explosionCollision:(Explosion1 *)explosion {
+    [_player takeDamage: explosion.damage];
+    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    [self checkIfPLayerLost];
     return YES;
 }
 

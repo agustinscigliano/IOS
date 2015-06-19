@@ -13,7 +13,9 @@
 
 @interface Explosion1 : CCSprite
 
-- (id) initWithPosition: (CGPoint) position withScale: (float) scale;
+@property (nonatomic) int damage;
+
+- (id) initWithPosition:(CGPoint)position withScale: (float) scale withVelocityX: (int) velocity_x;
 - (void) animate: (CCTime) dt;
 
 @end

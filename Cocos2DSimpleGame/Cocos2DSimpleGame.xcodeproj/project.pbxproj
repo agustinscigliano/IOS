@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47177E591B34BA7000D5B820 /* sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 47177E581B34BA7000D5B820 /* sparkle.png */; };
+		47177E5C1B34BAB800D5B820 /* Sparkle.m in Sources */ = {isa = PBXBuildFile; fileRef = 47177E5B1B34BAB800D5B820 /* Sparkle.m */; };
 		475C0F1B1B34404600D65899 /* 1943.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1A1B34404600D65899 /* 1943.png */; };
 		475C0F1D1B34427200D65899 /* p51-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1C1B34427200D65899 /* p51-logo.png */; };
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
@@ -279,6 +281,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47177E581B34BA7000D5B820 /* sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkle.png; sourceTree = "<group>"; };
+		47177E5A1B34BA8A00D5B820 /* Sparkle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sparkle.h; sourceTree = "<group>"; };
+		47177E5B1B34BAB800D5B820 /* Sparkle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sparkle.m; sourceTree = "<group>"; };
 		475C0F1A1B34404600D65899 /* 1943.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1943.png; sourceTree = "<group>"; };
 		475C0F1C1B34427200D65899 /* p51-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p51-logo.png"; sourceTree = "<group>"; };
 		475C0F221B34471C00D65899 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
@@ -1699,6 +1704,8 @@
 				475C0F491B348E0100D65899 /* GameOver.m */,
 				475C0F4F1B34937200D65899 /* Health.h */,
 				475C0F501B34937E00D65899 /* Health.m */,
+				47177E5A1B34BA8A00D5B820 /* Sparkle.h */,
+				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1715,6 +1722,7 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				47177E581B34BA7000D5B820 /* sparkle.png */,
 				475C0F4D1B34936500D65899 /* health.png */,
 				475C0F431B348AF900D65899 /* hurricane.png */,
 				475C0F441B348AF900D65899 /* spitfire.png */,
@@ -1866,6 +1874,7 @@
 				5B09A99C188B330300E8F2B7 /* Icon-Small.png in Resources */,
 				475C0F321B346E0500D65899 /* game-menu-music.mp3 in Resources */,
 				47C4932A1B2BAB190007FA9F /* Explosion1-5.png in Resources */,
+				47177E591B34BA7000D5B820 /* sparkle.png in Resources */,
 				FB1434831B223ADC00E65CAF /* misile.png in Resources */,
 				5B09A99A188B330300E8F2B7 /* Icon-Small-50.png in Resources */,
 				47C493281B2BAB190007FA9F /* Explosion1-3.png in Resources */,
@@ -2015,6 +2024,7 @@
 				5B09AB73188B330500E8F2B7 /* neon_matrix_impl.c in Sources */,
 				5B09A9F8188B330400E8F2B7 /* CCLabelTTF.m in Sources */,
 				FB14347E1B222DA700E65CAF /* Misile.m in Sources */,
+				47177E5C1B34BAB800D5B820 /* Sparkle.m in Sources */,
 				5B09AAAD188B330400E8F2B7 /* NSEvent+CC.m in Sources */,
 				5B09AB0A188B330500E8F2B7 /* ALDevice.m in Sources */,
 				5B09AB7D188B330500E8F2B7 /* vec2.c in Sources */,

@@ -14,12 +14,18 @@
     int frame_number;
 }
 
-- (id) initWithPosition:(CGPoint)position withScale: (float) scale {
+- (id) initWithPosition:(CGPoint)position withScale: (float) scale withVelocityX: (int) velocity_x {
     frame_number = 1;
     NSString* image_path = [NSString stringWithFormat: @"%@%d.png", EXPLOSION_1_IMAGE, frame_number];
     self = [super initWithImageNamed: image_path];
+    self.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:self.contentSize.width/2.0f andCenter:self.anchorPointInPoints];
+    self.physicsBody.sensor = YES;
+    self.physicsBody.collisionCategories = @[EXPLOSION_COLLISION];
+    self.physicsBody.collisionType  = EXPLOSION_COLLISION;
     self.position = position;
     self.scale = scale;
+    self.physicsBody.velocity = ccp(velocity_x, 0);
+    self.damage = DEFAULT_EXPLOSION_DAMAGE;
     [self playRandomExplosionSound];
     return self;
 }

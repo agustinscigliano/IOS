@@ -44,7 +44,7 @@
 }
 
 - (void) takeDamage: (int) damage {
-    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: self.position withScale: 1.0f];
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: self.position withScale: 1.0f withVelocityX:self.physicsBody.velocity.x];
     [explosion_1 schedule:@selector(animate:) interval:	0.05];
     [_physics_world addChild: explosion_1];
     [self healthPowerUp: _physics_world];
@@ -57,7 +57,7 @@
     }
 }
 
-- (void)shootEnemy:(CCTime)dt{
+- (void)shootEnemy:(CCTime)dt {
     EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(self.position.x - 25, self.position.y)];

@@ -19,12 +19,15 @@
 #define PLAYER_COLLISION @"playerCollision"
 #define BULLET_COLLISION @"bulletCollision"
 #define HEALTH_COLLISION @"healthCollision"
+#define EXPLOSION_COLLISION @"explosionCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
+#define SPARKLE_IMAGE @"sparkle.png"
 #define BULLET_IMAGE @"bullet.png"
 #define EXPLOSION_SOUND_FILE_NAME @"Explosion"
 #define SHOOT_SOUND_FILE_NAME @"Shoot"
 #define MUZZLE_SCALE 0.1
+#define SPARKLE_SCALE 0.5
 #define PLANE_SCALE 0.25
 #define BULLET_SCALE_X 0.25
 #define BULLET_SCALE_Y 0.02
@@ -40,5 +43,6 @@
 #define CLOUD_SPEED -100
 #define HEALTH_SCALE 0.05
 #define HEALTH_VALUE 25
+#define DEFAULT_EXPLOSION_DAMAGE 10
 
 #endif
