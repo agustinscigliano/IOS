@@ -16,6 +16,14 @@
 		475C0F2F1B34680A00D65899 /* cloud-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F2C1B34680A00D65899 /* cloud-2.png */; };
 		475C0F301B34680A00D65899 /* cloud-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F2D1B34680A00D65899 /* cloud-3.png */; };
 		475C0F321B346E0500D65899 /* game-menu-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F311B346E0500D65899 /* game-menu-music.mp3 */; };
+		475C0F351B34701000D65899 /* Cloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F341B34701000D65899 /* Cloud.m */; };
+		475C0F381B34806A00D65899 /* EnemyPlane_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F371B34806A00D65899 /* EnemyPlane_2.m */; };
+		475C0F3B1B3481B100D65899 /* fw-19.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F391B3481B100D65899 /* fw-19.png */; };
+		475C0F3C1B3481B100D65899 /* ju-87.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F3A1B3481B100D65899 /* ju-87.png */; };
+		475C0F3F1B3481D300D65899 /* EnemyPlane_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F3E1B3481D300D65899 /* EnemyPlane_3.m */; };
+		475C0F421B3483D600D65899 /* EnemyBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F411B3483D600D65899 /* EnemyBullet.m */; };
+		475C0F451B348AF900D65899 /* hurricane.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F431B348AF900D65899 /* hurricane.png */; };
+		475C0F461B348AF900D65899 /* spitfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F441B348AF900D65899 /* spitfire.png */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -277,6 +285,18 @@
 		475C0F2C1B34680A00D65899 /* cloud-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-2.png"; sourceTree = "<group>"; };
 		475C0F2D1B34680A00D65899 /* cloud-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-3.png"; sourceTree = "<group>"; };
 		475C0F311B346E0500D65899 /* game-menu-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-menu-music.mp3"; sourceTree = "<group>"; };
+		475C0F331B34700500D65899 /* Cloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
+		475C0F341B34701000D65899 /* Cloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cloud.m; sourceTree = "<group>"; };
+		475C0F361B34805200D65899 /* EnemyPlane_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_2.h; sourceTree = "<group>"; };
+		475C0F371B34806A00D65899 /* EnemyPlane_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_2.m; sourceTree = "<group>"; };
+		475C0F391B3481B100D65899 /* fw-19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fw-19.png"; sourceTree = "<group>"; };
+		475C0F3A1B3481B100D65899 /* ju-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ju-87.png"; sourceTree = "<group>"; };
+		475C0F3D1B3481C400D65899 /* EnemyPlane_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_3.h; sourceTree = "<group>"; };
+		475C0F3E1B3481D300D65899 /* EnemyPlane_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_3.m; sourceTree = "<group>"; };
+		475C0F401B34838300D65899 /* EnemyBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyBullet.h; sourceTree = "<group>"; };
+		475C0F411B3483D600D65899 /* EnemyBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyBullet.m; sourceTree = "<group>"; };
+		475C0F431B348AF900D65899 /* hurricane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hurricane.png; sourceTree = "<group>"; };
+		475C0F441B348AF900D65899 /* spitfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spitfire.png; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1636,11 +1656,19 @@
 			children = (
 				5B09AC0E188B330600E8F2B7 /* AppDelegate.h */,
 				5B09AC0F188B330600E8F2B7 /* AppDelegate.m */,
+				475C0F331B34700500D65899 /* Cloud.h */,
+				475C0F341B34701000D65899 /* Cloud.m */,
 				47BF05B51B2B0693009D3E93 /* Constants.h */,
+				475C0F401B34838300D65899 /* EnemyBullet.h */,
+				475C0F411B3483D600D65899 /* EnemyBullet.m */,
 				47BF05C51B2B2913009D3E93 /* EnemyFactory.h */,
 				47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */,
 				47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */,
 				47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */,
+				475C0F361B34805200D65899 /* EnemyPlane_2.h */,
+				475C0F371B34806A00D65899 /* EnemyPlane_2.m */,
+				475C0F3D1B3481C400D65899 /* EnemyPlane_3.h */,
+				475C0F3E1B3481D300D65899 /* EnemyPlane_3.m */,
 				47C493361B2BB11C0007FA9F /* Explosion1.h */,
 				47C493371B2BB1990007FA9F /* Explosion1.m */,
 				5B09AC11188B330600E8F2B7 /* GameScene.h */,
@@ -1673,6 +1701,10 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F431B348AF900D65899 /* hurricane.png */,
+				475C0F441B348AF900D65899 /* spitfire.png */,
+				475C0F391B3481B100D65899 /* fw-19.png */,
+				475C0F3A1B3481B100D65899 /* ju-87.png */,
 				475C0F2B1B34680A00D65899 /* cloud-1.png */,
 				475C0F2C1B34680A00D65899 /* cloud-2.png */,
 				475C0F2D1B34680A00D65899 /* cloud-3.png */,
@@ -1789,6 +1821,7 @@
 				47C493261B2BAB190007FA9F /* Explosion1-1.png in Resources */,
 				5B09A983188B330300E8F2B7 /* Default@2x.png in Resources */,
 				5B09A996188B330300E8F2B7 /* Icon-120.png in Resources */,
+				475C0F3C1B3481B100D65899 /* ju-87.png in Resources */,
 				47C4932F1B2BAB190007FA9F /* Explosion1-10.png in Resources */,
 				47C493271B2BAB190007FA9F /* Explosion1-2.png in Resources */,
 				5B09AB9A188B330500E8F2B7 /* LICENSE_CCBReader.txt in Resources */,
@@ -1808,6 +1841,7 @@
 				479B8B4F1B221995000E38CA /* p51.png in Resources */,
 				5B09A987188B330300E8F2B7 /* Default-Landscape~ipad.png in Resources */,
 				47C4932E1B2BAB190007FA9F /* Explosion1-9.png in Resources */,
+				475C0F461B348AF900D65899 /* spitfire.png in Resources */,
 				47C493481B2C67350007FA9F /* Shoot1.caf in Resources */,
 				475C0F2E1B34680A00D65899 /* cloud-1.png in Resources */,
 				47C493321B2BAB190007FA9F /* Explosion1-13.png in Resources */,
@@ -1825,6 +1859,7 @@
 				5B09A98E188B330300E8F2B7 /* Icon-72.png in Resources */,
 				5B09AADC188B330500E8F2B7 /* LICENSE_cocos2d.txt in Resources */,
 				5B09A985188B330300E8F2B7 /* Default-568h@2x.png in Resources */,
+				475C0F451B348AF900D65899 /* hurricane.png in Resources */,
 				5B09A9A5188B330300E8F2B7 /* iTunesArtwork in Resources */,
 				47C493331B2BAB190007FA9F /* Explosion1-14.png in Resources */,
 				5B09A9A0188B330300E8F2B7 /* Icon-Spotlight-iOS7.png in Resources */,
@@ -1834,6 +1869,7 @@
 				5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */,
 				47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */,
 				5B09A9A2188B330300E8F2B7 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				475C0F3B1B3481B100D65899 /* fw-19.png in Resources */,
 				47C4933A1B2BB91F0007FA9F /* muzzle.png in Resources */,
 				5B09A992188B330300E8F2B7 /* Icon-76.png in Resources */,
 				47C4932B1B2BAB190007FA9F /* Explosion1-6.png in Resources */,
@@ -1890,6 +1926,7 @@
 				5B09AB4A188B330500E8F2B7 /* CCSlider.m in Sources */,
 				5B09AA85188B330400E8F2B7 /* CCTMXXMLParser.m in Sources */,
 				5B09AAC5188B330400E8F2B7 /* CGPointExtension.m in Sources */,
+				475C0F381B34806A00D65899 /* EnemyPlane_2.m in Sources */,
 				5B09AB50188B330500E8F2B7 /* CCTextField.m in Sources */,
 				5B09AABB188B330400E8F2B7 /* CCProfiling.m in Sources */,
 				5B09AAE2188B330500E8F2B7 /* OALAction.m in Sources */,
@@ -1921,9 +1958,11 @@
 				5B09AA06188B330400E8F2B7 /* CCMotionStreak.m in Sources */,
 				5B09A9B6188B330400E8F2B7 /* CCActionInstant.m in Sources */,
 				5B09AAB0188B330400E8F2B7 /* base64.c in Sources */,
+				475C0F421B3483D600D65899 /* EnemyBullet.m in Sources */,
 				5B09AAEF188B330500E8F2B7 /* OALAudioTrack.m in Sources */,
 				5B09AA32188B330400E8F2B7 /* CCProgressNode.m in Sources */,
 				5B09AA25188B330400E8F2B7 /* CCPhysicsBody.m in Sources */,
+				475C0F3F1B3481D300D65899 /* EnemyPlane_3.m in Sources */,
 				5B09AAAA188B330400E8F2B7 /* CCWindow.m in Sources */,
 				5B09A9BF188B330400E8F2B7 /* CCActionProgressTimer.m in Sources */,
 				5B09AB75188B330500E8F2B7 /* plane.c in Sources */,
@@ -1968,6 +2007,7 @@
 				5B09AB77188B330500E8F2B7 /* quaternion.c in Sources */,
 				5B09AA2B188B330400E8F2B7 /* CCPhysicsNode.m in Sources */,
 				5B09AB11188B330500E8F2B7 /* ALSoundSourcePool.m in Sources */,
+				475C0F351B34701000D65899 /* Cloud.m in Sources */,
 				5B09AA20188B330400E8F2B7 /* CCParticleSystemBase.m in Sources */,
 				5B09AAB7188B330400E8F2B7 /* CCColor.m in Sources */,
 				FB5BBC4B1B18BBCE0014A8AE /* Projectile.m in Sources */,

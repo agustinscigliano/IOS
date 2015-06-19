@@ -16,11 +16,9 @@
 
 @implementation Misile
 
-+ (Misile*) spriteWithImageNamed:(NSString *)name position: (CGPoint)position
-{
++ (Misile*) spriteWithImageNamed:(NSString *)name position: (CGPoint)position {
     Misile *misile = [super spriteWithImageNamed:name];
     misile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:misile.contentSize.width/2.0f andCenter:misile.anchorPointInPoints];
-//    misile.physicsBody.collisionGroup = @"monsterGroup";
     misile.physicsBody.collisionCategories = @[@"misileCollision"];
     misile.physicsBody.collisionMask = @[ENEMY_COLLISION];
     misile.physicsBody.collisionType  = @"misileCollision";
@@ -34,6 +32,5 @@
         [self removeFromParent];
     }
 }
-
 
 @end

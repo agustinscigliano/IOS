@@ -49,7 +49,7 @@
     [self addChild:p51_plane_name];
     
     // Spitfire plane
-    CCSpriteFrame *spitfire = [CCSpriteFrame frameWithImageNamed:@"p51.png"];
+    CCSpriteFrame *spitfire = [CCSpriteFrame frameWithImageNamed:@"spitfire.png"];
     CCButton *spitfireButton = [CCButton buttonWithTitle:nil spriteFrame:spitfire];
     spitfireButton.positionType = CCPositionTypeNormalized;
     spitfireButton.position = ccp(0.15f, 0.5f);
@@ -70,7 +70,7 @@
     [self addChild:spitfire_plane_name];
     
     // Hurricane plane
-    CCSpriteFrame *hurricane = [CCSpriteFrame frameWithImageNamed:@"p51.png"];
+    CCSpriteFrame *hurricane = [CCSpriteFrame frameWithImageNamed:@"hurricane.png"];
     CCButton *hurricaneButton = [CCButton buttonWithTitle:nil spriteFrame:hurricane];
     hurricaneButton.positionType = CCPositionTypeNormalized;
     hurricaneButton.position = ccp(0.15f, 0.25f);
@@ -99,12 +99,12 @@
 }
 
 - (void)onSpitfireButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"p51.png"]
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"spitfire.png"]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 - (void)onHurricaneButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"p51.png"]
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"hurricane.png"]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 

@@ -17,6 +17,8 @@
 #import "Explosion1.h"
 #import "Muzzle.h"
 #import "Constants.h"
+#import "Cloud.h"
+#import "EnemyBullet.h"
 
 @implementation GameScene {
     Player *_player;
@@ -73,10 +75,22 @@
     [self addPlane:dt];
 }
 
+- (void)addCloud:(CCTime)dt {
+    CCSprite *cloud = [Cloud initCloud];
+
+    int minY = cloud.contentSize.height / 2;
+    int maxY = self.contentSize.height - cloud.contentSize.height / 2;
+    int rangeY = maxY - minY;
+    int randomY = (arc4random() % rangeY) + minY;
+    cloud.position = ccp(self.contentSize.width, randomY);
+    CCAction *action = [CCActionMoveTo actionWithDuration:5.0f position:ccp(-cloud.contentSize.width, randomY)];
+    [cloud runAction:action];
+    [self addChild: cloud];
+}
+
 - (void)addPlane:(CCTime)dt {
     EnemyPlane_1 *enemy_plane1 = [EnemyFactory createEnemyPlane1:self];
     
-    // 1
     int minY = enemy_plane1.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
     int rangeY = maxY - minY;
@@ -92,6 +106,7 @@
     [super onEnter];
     [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
     [self schedule:@selector(addEnemy:) interval:1.5];
+    [self schedule:@selector(addCloud:) interval:1.5];
 }
 
 - (void)onExit {
@@ -141,6 +156,14 @@
     [self createExplosionWithPosition: misile.position withScale: 0.5f];
     [misile removeFromParent];
     [_player takeDamage: misile.damage];
+    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyBulletCollision:(EnemyBullet *)bullet {
+    [self createExplosionWithPosition: ccp(bullet.position.x - 25, bullet.position.y) withScale: 0.5f];
+    [bullet removeFromParent];
+    [_player takeDamage: bullet.damage];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
     return YES;
 }

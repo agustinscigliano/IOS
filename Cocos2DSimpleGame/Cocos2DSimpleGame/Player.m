@@ -28,8 +28,7 @@
         self.physicsBody.type = CCPhysicsBodyTypeStatic;
         self.fire_rate = DEFAULT_SHOOTING_RATE;
         self.bullet_speed = DEFAULT_BULLET_SPEED;
-        self.scaleX = PLAYER_SCALE;
-        self.scaleY = PLAYER_SCALE;
+        self.scale = PLANE_SCALE;
         self.health = 100;
     }
     return self;
@@ -78,7 +77,7 @@
     [physics_world addChild:projectile];
     [physics_world addChild:muzzle];
 //    NSString* shoot_sound_path = [NSString stringWithFormat: @"%@1.caf", SHOOT_SOUND_FILE_NAME];
-//    [[OALSimpleAudio sharedInstance] playBg: shoot_sound_path volume:0.1 pan:0.5 loop:NO];
+//    [[OALSimpleAudio sharedInstance] playEf: shoot_sound_path volume:0.1 pan:0.5 loop:NO];
 }
 
 @end

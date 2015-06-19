@@ -1,23 +1,23 @@
 //
-//  EnemyPlane_1.m
+//  EnemyPlane_2.m
 //  Cocos2DSimpleGame
 //
-//  Created by German Romarion on 12/6/15.
+//  Created by German Romarion on 19/6/15.
 //  Copyright (c) 2015 Razeware LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#include "EnemyPlane_1.h"
-#include "EnemyBullet.h"
-#include "GameScene.h"
-#include "Muzzle.h"
 
-@implementation EnemyPlane_1
+#include "EnemyPlane_2.h"
+#include "Misile.h"
+#include "GameScene.h"
+
+@implementation EnemyPlane_2
 
 - (id) init {
     self = [super init];
     if (self) {
-        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: ENEMY_PLANE_1_IMAGE]];
+        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: ENEMY_PLANE_2_IMAGE]];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
         self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];
@@ -39,14 +39,10 @@
 }
 
 - (void)shootEnemy:(CCTime)dt{
-    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
+    Misile *misile = [Misile spriteWithImageNamed:@"misile.png" position:self.position];
+    misile.physicsBody.velocity = ccp(-DEFAULT_BULLET_SPEED + self.physicsBody.velocity.x, 0);
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(self.position.x - 25, self.position.y)];
-    muzzle.scaleX = -MUZZLE_SCALE;
-    muzzle.scaleY = MUZZLE_SCALE;
-    [muzzle schedule:@selector(animate:) interval:0.05];
-    [pw addChild:muzzle];
-    [pw addChild:bullet];
+    [pw addChild:misile];
 }
 
 @end

@@ -10,7 +10,7 @@
 #define Cocos2DSimpleGame_Constants_h
 
 #define ENEMY_PLANE_1_IMAGE @"bf-109e.png"
-#define ENEMY_PLANE_2_IMAGE @"fw-190a.png"
+#define ENEMY_PLANE_2_IMAGE @"fw-19.png"
 #define ENEMY_PLANE_3_IMAGE @"ju-87.png"
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
@@ -22,11 +22,9 @@
 #define EXPLOSION_SOUND_FILE_NAME @"Explosion"
 #define SHOOT_SOUND_FILE_NAME @"Shoot"
 #define MUZZLE_SCALE 0.1
-#define ENEMY_PLANE_1_SCALE 0.25
-#define PLAYER_SCALE 0.25
+#define PLANE_SCALE 0.25
 #define BULLET_SCALE_X 0.25
 #define BULLET_SCALE_Y 0.02
-#define ENEMY_PLANE_1_BULLET_SPEED -100
 #define DEFAULT_SHOOTING_RATE 0.5
 #define DEFAULT_BULLET_SPEED 750
 #define MAX_FRAMES_FOR_EXPLOSION_1 16
@@ -35,5 +33,7 @@
 #define EXPLOSION_SOUNDS_AMOUNT 4
 #define ENEMY_PLANE_1_SCORE 100
 #define PLANE_COLLISION_DAMAGE 25
+#define CLOUDS_AMOUNT 3
+#define CLOUD_SPEED -100
 
 #endif
