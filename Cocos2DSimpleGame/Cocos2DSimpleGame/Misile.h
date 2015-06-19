@@ -12,6 +12,6 @@
 
 @property (nonatomic) int damage;
 
-+ (Misile*) spriteWithImageNamed:(NSString*)name position:(CGPoint)position;
+- (id) initWithPosition:(CGPoint)position;
 
 @end

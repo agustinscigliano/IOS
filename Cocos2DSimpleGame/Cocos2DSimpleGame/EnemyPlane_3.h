@@ -1,5 +1,5 @@
 //
-//  EnemyPlane_3.h
+//  EnemyPlane_2.h
 //  Cocos2DSimpleGame
 //
 //  Created by German Romarion on 19/6/15.
@@ -13,6 +13,6 @@
 
 @property (nonatomic) int score;
 
-- (id) init;
-
+- (void) takeDamage: (int) damage;
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
 @end

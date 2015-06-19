@@ -12,8 +12,10 @@
 @interface GameScene : CCScene <CCPhysicsCollisionDelegate>
 
 @property (nonatomic) int score;
+@property (nonatomic) int level;
 @property (nonatomic) CCLabelTTF* score_label;
 @property (nonatomic) CCLabelTTF* fuselage_label;
+@property (nonatomic) CCLabelTTF* level_label;
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 

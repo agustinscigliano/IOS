@@ -10,6 +10,8 @@
 #import "GameScene.h"
 #import "IntroScene.h"
 #import "EnemyPlane_1.h"
+#import "EnemyPlane_2.h"
+#import "EnemyPlane_3.h"
 #import "Player.h"
 #import "Projectile.h"
 #import "Misile.h"
@@ -35,7 +37,7 @@
 - (id)initWithPlaneName:(NSString*) plane_name {
     self = [super init];
     if (!self) return(nil);
-    
+    self.level=0;
     self.userInteractionEnabled = YES;
     
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
@@ -43,7 +45,7 @@
     
     self.physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
-    _physicsWorld.debugDraw = YES;
+    _physicsWorld.debugDraw = NO;
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
@@ -68,6 +70,13 @@
     _fuselage_label.position = ccp(0.15f, 0.85f);
     _fuselage_label.color = [CCColor redColor];
     [self addChild:_fuselage_label];
+    
+    _level_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d", self.level] fontName:@"Courier New" fontSize:15.0f];
+    _level_label.positionType = CCPositionTypeNormalized;
+    _level_label.position = ccp(0.15f, 0.90f);
+    _level_label.color = [CCColor redColor];
+    [self addChild:_level_label];
+
 
     [[OALSimpleAudio sharedInstance] playBg:@"game-music.mp3" loop:YES];
 
@@ -78,12 +87,20 @@
     [self addPlane:dt];
 }
 
+- (void)addEnemy2:(CCTime)dt {
+    [self addPlane2:dt];
+}
+
+- (void)addEnemy3:(CCTime)dt {
+    [self addPlane3:dt];
+}
+
 - (void)addCloud:(CCTime)dt {
     CCSprite *cloud = [Cloud initCloud];
 
-    int minY = cloud.contentSize.height / 2;
+    int minY = cloud.contentSize.height / 4;
     int maxY = self.contentSize.height - cloud.contentSize.height / 2;
-    int rangeY = maxY - minY;
+    int rangeY = maxY;
     int randomY = (arc4random() % rangeY) + minY;
     cloud.position = ccp(self.contentSize.width, randomY);
     CCAction *action = [CCActionMoveTo actionWithDuration:5.0f position:ccp(-cloud.contentSize.width, randomY)];
@@ -93,7 +110,6 @@
 
 - (void)addPlane:(CCTime)dt {
     EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] initWithPhysicsWorld:_physicsWorld];
-    
     int minY = enemy_plane1.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
     int rangeY = maxY - minY;
@@ -102,13 +118,39 @@
     [_physicsWorld addChild:enemy_plane1];
 }
 
+- (void)addPlane2:(CCTime)dt {
+    if(self.level>=1){
+    EnemyPlane_2 *enemy_plane2 = [[EnemyPlane_2 alloc] initWithPhysicsWorld:_physicsWorld];
+    int minY = enemy_plane2.contentSize.height / 2;
+    int maxY = self.contentSize.height - enemy_plane2.contentSize.height / 2;
+    int rangeY = maxY - minY;
+    int randomY = (arc4random() % rangeY) + minY;
+    enemy_plane2.position = ccp(self.contentSize.width, randomY);
+    [_physicsWorld addChild:enemy_plane2];
+    }
+}
+
+- (void)addPlane3:(CCTime)dt {
+    if(self.level>=2){
+        EnemyPlane_3 *enemy_plane3 = [[EnemyPlane_3 alloc] initWithPhysicsWorld:_physicsWorld];
+        int minY = enemy_plane3.contentSize.height / 2;
+        int maxY = self.contentSize.height - enemy_plane3.contentSize.height / 2;
+        int rangeY = maxY - minY;
+        int randomY = (arc4random() % rangeY) + minY;
+        enemy_plane3.position = ccp(self.contentSize.width, randomY);
+        [_physicsWorld addChild:enemy_plane3];
+    }
+}
+
 - (void)dealloc {
 }
 
 - (void)onEnter {
     [super onEnter];
     [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
-    [self schedule:@selector(addEnemy:) interval:1.5];
+    [self schedule:@selector(addEnemy:) interval:1.5-self.level*0.2];
+    [self schedule:@selector(addEnemy2:) interval:2.5-self.level*0.2];
+    [self schedule:@selector(addEnemy3:) interval:3.5-self.level*0.2];
     [self schedule:@selector(addCloud:) interval:1.5];
 }
 
@@ -151,6 +193,14 @@
     [enemy takeDamage: projectile.damage];
     [_score_label setString:[NSString stringWithFormat:@"Score: %d", _player.score]];
     [_player addScore:1];
+    if ((_player.score - 1) % 5 == 0 && _player.score!=1) {
+        self.level+=1;
+        if(_level <= 9){
+        [_level_label setString:[NSString stringWithFormat:@"Level: %d",self.level]];
+        }else{
+            [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
+        }
+    }
     return YES;
 }
 

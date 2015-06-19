@@ -12,19 +12,22 @@
 #import "Misile.h"
 #import "Constants.h"
 
-#define DAMAGE ((int) 5)
+#define DAMAGE ((int) 10)
 
 @implementation Misile
 
-+ (Misile*) spriteWithImageNamed:(NSString *)name position: (CGPoint)position {
-    Misile *misile = [super spriteWithImageNamed:name];
-    misile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:misile.contentSize.width/2.0f andCenter:misile.anchorPointInPoints];
-    misile.physicsBody.collisionCategories = @[@"misileCollision"];
-    misile.physicsBody.collisionMask = @[ENEMY_COLLISION];
-    misile.physicsBody.collisionType  = @"misileCollision";
-    misile.position = position;
-    misile.damage = DAMAGE;
-    return misile;
+-(id)initWithPosition: (CGPoint)position {
+    self = [super initWithImageNamed:MISSILE_IMAGE];
+    self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
+    self.physicsBody.collisionCategories = @[MISSILE_COLLISION];
+    self.physicsBody.collisionMask = @[ENEMY_COLLISION];
+    self.physicsBody.collisionType  = MISSILE_COLLISION;
+    self.physicsBody.velocity = ccp(-MISILE_SPEED, 0);
+    self.scaleX = MISILE_SCALE_X;
+    self.scaleY = MISILE_SCALE_Y;
+    self.position = position;
+    _damage = DAMAGE;
+    return self;
 }
 
 - (void) update:(CCTime) delta {
