@@ -19,6 +19,7 @@
 #import "Constants.h"
 #import "Cloud.h"
 #import "EnemyBullet.h"
+#import "GameOver.h"
 
 @implementation GameScene {
     Player *_player;
@@ -157,6 +158,7 @@
     [misile removeFromParent];
     [_player takeDamage: misile.damage];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    [self checkIfPLayerLost];
     return YES;
 }
 
@@ -165,6 +167,7 @@
     [bullet removeFromParent];
     [_player takeDamage: bullet.damage];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    [self checkIfPLayerLost];
     return YES;
 }
 
@@ -173,7 +176,15 @@
     [enemy removeFromParent];
     [_player takeDamage: PLANE_COLLISION_DAMAGE];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+    [self checkIfPLayerLost];
     return YES;
+}
+
+- (void) checkIfPLayerLost {
+    if (_player.health <= 0) {
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:_player.score]
+                                   withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+    }
 }
 
 - (void)onBackClicked:(id)sender {
@@ -182,7 +193,7 @@
 
 - (void)goBackToMenu:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
+                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 @end

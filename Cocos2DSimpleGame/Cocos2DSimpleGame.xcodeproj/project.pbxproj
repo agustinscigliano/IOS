@@ -24,6 +24,8 @@
 		475C0F421B3483D600D65899 /* EnemyBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F411B3483D600D65899 /* EnemyBullet.m */; };
 		475C0F451B348AF900D65899 /* hurricane.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F431B348AF900D65899 /* hurricane.png */; };
 		475C0F461B348AF900D65899 /* spitfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F441B348AF900D65899 /* spitfire.png */; };
+		475C0F4A1B348E0100D65899 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F491B348E0100D65899 /* GameOver.m */; };
+		475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4B1B348FB800D65899 /* game-over.mp3 */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -297,6 +299,9 @@
 		475C0F411B3483D600D65899 /* EnemyBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyBullet.m; sourceTree = "<group>"; };
 		475C0F431B348AF900D65899 /* hurricane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hurricane.png; sourceTree = "<group>"; };
 		475C0F441B348AF900D65899 /* spitfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spitfire.png; sourceTree = "<group>"; };
+		475C0F481B348DF400D65899 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		475C0F491B348E0100D65899 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
+		475C0F4B1B348FB800D65899 /* game-over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-over.mp3"; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1685,6 +1690,8 @@
 				47EE65921B18AAA0006F8A00 /* Player.m */,
 				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
+				475C0F481B348DF400D65899 /* GameOver.h */,
+				475C0F491B348E0100D65899 /* GameOver.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1739,6 +1746,7 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F4B1B348FB800D65899 /* game-over.mp3 */,
 				475C0F311B346E0500D65899 /* game-menu-music.mp3 */,
 				475C0F261B344C2800D65899 /* game-music.mp3 */,
 				47C493471B2C67350007FA9F /* Shoot1.caf */,
@@ -1822,6 +1830,7 @@
 				5B09A983188B330300E8F2B7 /* Default@2x.png in Resources */,
 				5B09A996188B330300E8F2B7 /* Icon-120.png in Resources */,
 				475C0F3C1B3481B100D65899 /* ju-87.png in Resources */,
+				475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */,
 				47C4932F1B2BAB190007FA9F /* Explosion1-10.png in Resources */,
 				47C493271B2BAB190007FA9F /* Explosion1-2.png in Resources */,
 				5B09AB9A188B330500E8F2B7 /* LICENSE_CCBReader.txt in Resources */,
@@ -2025,6 +2034,7 @@
 				5B09AB7B188B330500E8F2B7 /* utility.c in Sources */,
 				5B09AADA188B330500E8F2B7 /* ZipUtils.m in Sources */,
 				5B09AAEB188B330500E8F2B7 /* OALUtilityActions.m in Sources */,
+				475C0F4A1B348E0100D65899 /* GameOver.m in Sources */,
 				5B09AA96188B330400E8F2B7 /* CCES2Renderer.m in Sources */,
 				5B09AB66188B330500E8F2B7 /* aabb.c in Sources */,
 				5B09AB90188B330500E8F2B7 /* CCBsequence.m in Sources */,
