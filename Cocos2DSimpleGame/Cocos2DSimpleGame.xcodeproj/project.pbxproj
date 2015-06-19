@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		47177E591B34BA7000D5B820 /* sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 47177E581B34BA7000D5B820 /* sparkle.png */; };
 		47177E5C1B34BAB800D5B820 /* Sparkle.m in Sources */ = {isa = PBXBuildFile; fileRef = 47177E5B1B34BAB800D5B820 /* Sparkle.m */; };
+		47177E641B34C90800D5B820 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 47177E631B34C90800D5B820 /* smoke.png */; };
+		47177E671B34D35300D5B820 /* TrippleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 47177E661B34D35300D5B820 /* TrippleShot.m */; };
+		47177E691B34D39100D5B820 /* triple-shot.png in Resources */ = {isa = PBXBuildFile; fileRef = 47177E681B34D39100D5B820 /* triple-shot.png */; };
+		47177E6B1B34D77000D5B820 /* rapid-fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 47177E6A1B34D77000D5B820 /* rapid-fire.png */; };
+		4717817E1B34D80500D5B820 /* RapidFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4717817D1B34D80500D5B820 /* RapidFire.m */; };
 		475C0F1B1B34404600D65899 /* 1943.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1A1B34404600D65899 /* 1943.png */; };
 		475C0F1D1B34427200D65899 /* p51-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1C1B34427200D65899 /* p51-logo.png */; };
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
@@ -284,6 +289,13 @@
 		47177E581B34BA7000D5B820 /* sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkle.png; sourceTree = "<group>"; };
 		47177E5A1B34BA8A00D5B820 /* Sparkle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sparkle.h; sourceTree = "<group>"; };
 		47177E5B1B34BAB800D5B820 /* Sparkle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sparkle.m; sourceTree = "<group>"; };
+		47177E631B34C90800D5B820 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
+		47177E651B34D34300D5B820 /* TrippleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrippleShot.h; sourceTree = "<group>"; };
+		47177E661B34D35300D5B820 /* TrippleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrippleShot.m; sourceTree = "<group>"; };
+		47177E681B34D39100D5B820 /* triple-shot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triple-shot.png"; sourceTree = "<group>"; };
+		47177E6A1B34D77000D5B820 /* rapid-fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rapid-fire.png"; sourceTree = "<group>"; };
+		47177E6C1B34D7D200D5B820 /* RapidFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidFire.h; sourceTree = "<group>"; };
+		4717817D1B34D80500D5B820 /* RapidFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidFire.m; sourceTree = "<group>"; };
 		475C0F1A1B34404600D65899 /* 1943.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1943.png; sourceTree = "<group>"; };
 		475C0F1C1B34427200D65899 /* p51-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p51-logo.png"; sourceTree = "<group>"; };
 		475C0F221B34471C00D65899 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
@@ -1686,8 +1698,12 @@
 				475C0F3E1B3481D300D65899 /* EnemyPlane_3.m */,
 				47C493361B2BB11C0007FA9F /* Explosion1.h */,
 				47C493371B2BB1990007FA9F /* Explosion1.m */,
+				475C0F481B348DF400D65899 /* GameOver.h */,
+				475C0F491B348E0100D65899 /* GameOver.m */,
 				5B09AC11188B330600E8F2B7 /* GameScene.h */,
 				5B09AC12188B330600E8F2B7 /* GameScene.m */,
+				475C0F4F1B34937200D65899 /* Health.h */,
+				475C0F501B34937E00D65899 /* Health.m */,
 				5B09AC14188B330600E8F2B7 /* IntroScene.h */,
 				5B09AC15188B330600E8F2B7 /* IntroScene.m */,
 				FB14347F1B222E6500E65CAF /* Misile.h */,
@@ -1700,12 +1716,12 @@
 				47EE65921B18AAA0006F8A00 /* Player.m */,
 				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
-				475C0F481B348DF400D65899 /* GameOver.h */,
-				475C0F491B348E0100D65899 /* GameOver.m */,
-				475C0F4F1B34937200D65899 /* Health.h */,
-				475C0F501B34937E00D65899 /* Health.m */,
 				47177E5A1B34BA8A00D5B820 /* Sparkle.h */,
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
+				47177E651B34D34300D5B820 /* TrippleShot.h */,
+				47177E661B34D35300D5B820 /* TrippleShot.m */,
+				47177E6C1B34D7D200D5B820 /* RapidFire.h */,
+				4717817D1B34D80500D5B820 /* RapidFire.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1722,20 +1738,13 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
-				47177E581B34BA7000D5B820 /* sparkle.png */,
-				475C0F4D1B34936500D65899 /* health.png */,
-				475C0F431B348AF900D65899 /* hurricane.png */,
-				475C0F441B348AF900D65899 /* spitfire.png */,
-				475C0F391B3481B100D65899 /* fw-19.png */,
-				475C0F3A1B3481B100D65899 /* ju-87.png */,
+				475C0F1A1B34404600D65899 /* 1943.png */,
+				47BF05C61B2B2EC9009D3E93 /* bf-109e.png */,
+				47C493141B2BAB190007FA9F /* bullet.png */,
 				475C0F2B1B34680A00D65899 /* cloud-1.png */,
 				475C0F2C1B34680A00D65899 /* cloud-2.png */,
 				475C0F2D1B34680A00D65899 /* cloud-3.png */,
 				475C0F221B34471C00D65899 /* clouds.png */,
-				475C0F1C1B34427200D65899 /* p51-logo.png */,
-				475C0F1A1B34404600D65899 /* 1943.png */,
-				47C493391B2BB91F0007FA9F /* muzzle.png */,
-				47C493141B2BAB190007FA9F /* bullet.png */,
 				47C493151B2BAB190007FA9F /* Explosion1-1.png */,
 				47C493161B2BAB190007FA9F /* Explosion1-2.png */,
 				47C493171B2BAB190007FA9F /* Explosion1-3.png */,
@@ -1752,9 +1761,19 @@
 				47C493221B2BAB190007FA9F /* Explosion1-14.png */,
 				47C493231B2BAB190007FA9F /* Explosion1-15.png */,
 				47C493241B2BAB190007FA9F /* Explosion1-16.png */,
-				47BF05C61B2B2EC9009D3E93 /* bf-109e.png */,
-				479B8B4A1B221995000E38CA /* p51.png */,
+				475C0F391B3481B100D65899 /* fw-19.png */,
+				475C0F4D1B34936500D65899 /* health.png */,
+				475C0F431B348AF900D65899 /* hurricane.png */,
+				475C0F3A1B3481B100D65899 /* ju-87.png */,
 				FB1434821B223ADC00E65CAF /* misile.png */,
+				47C493391B2BB91F0007FA9F /* muzzle.png */,
+				475C0F1C1B34427200D65899 /* p51-logo.png */,
+				479B8B4A1B221995000E38CA /* p51.png */,
+				47177E6A1B34D77000D5B820 /* rapid-fire.png */,
+				47177E631B34C90800D5B820 /* smoke.png */,
+				47177E581B34BA7000D5B820 /* sparkle.png */,
+				475C0F441B348AF900D65899 /* spitfire.png */,
+				47177E681B34D39100D5B820 /* triple-shot.png */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -1886,9 +1905,11 @@
 				5B09AADC188B330500E8F2B7 /* LICENSE_cocos2d.txt in Resources */,
 				5B09A985188B330300E8F2B7 /* Default-568h@2x.png in Resources */,
 				475C0F451B348AF900D65899 /* hurricane.png in Resources */,
+				47177E691B34D39100D5B820 /* triple-shot.png in Resources */,
 				5B09A9A5188B330300E8F2B7 /* iTunesArtwork in Resources */,
 				47C493331B2BAB190007FA9F /* Explosion1-14.png in Resources */,
 				5B09A9A0188B330300E8F2B7 /* Icon-Spotlight-iOS7.png in Resources */,
+				47177E6B1B34D77000D5B820 /* rapid-fire.png in Resources */,
 				47C493301B2BAB190007FA9F /* Explosion1-11.png in Resources */,
 				47BF05CB1B2B2EC9009D3E93 /* bf-109e.png in Resources */,
 				5B09A994188B330300E8F2B7 /* Icon-76@2x.png in Resources */,
@@ -1897,6 +1918,7 @@
 				475C0F4E1B34936500D65899 /* health.png in Resources */,
 				5B09A9A2188B330300E8F2B7 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				475C0F3B1B3481B100D65899 /* fw-19.png in Resources */,
+				47177E641B34C90800D5B820 /* smoke.png in Resources */,
 				47C4933A1B2BB91F0007FA9F /* muzzle.png in Resources */,
 				5B09A992188B330300E8F2B7 /* Icon-76.png in Resources */,
 				47C4932B1B2BAB190007FA9F /* Explosion1-6.png in Resources */,
@@ -1961,6 +1983,7 @@
 				5B09AA78188B330400E8F2B7 /* CCTexturePVR.m in Sources */,
 				5B09AB87188B330500E8F2B7 /* CCBAnimationManager.m in Sources */,
 				5B09AB6B188B330500E8F2B7 /* mat4stack.c in Sources */,
+				47177E671B34D35300D5B820 /* TrippleShot.m in Sources */,
 				5B09AA0A188B330400E8F2B7 /* CCNode.m in Sources */,
 				5B09A9F5188B330400E8F2B7 /* CCLabelBMFont.m in Sources */,
 				5B09A9B3188B330400E8F2B7 /* CCActionEase.m in Sources */,
@@ -1995,6 +2018,7 @@
 				5B09A9BF188B330400E8F2B7 /* CCActionProgressTimer.m in Sources */,
 				5B09AB75188B330500E8F2B7 /* plane.c in Sources */,
 				5B09AAF8188B330500E8F2B7 /* OALSimpleAudio.m in Sources */,
+				4717817E1B34D80500D5B820 /* RapidFire.m in Sources */,
 				5B09A9EA188B330400E8F2B7 /* CCGLProgram.m in Sources */,
 				5B09AC0C188B330600E8F2B7 /* main.m in Sources */,
 				5B09AB1F188B330500E8F2B7 /* OALAudioSession.m in Sources */,

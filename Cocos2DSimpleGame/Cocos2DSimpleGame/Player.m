@@ -30,6 +30,8 @@
         self.bullet_speed = DEFAULT_BULLET_SPEED;
         self.scale = PLANE_SCALE;
         self.health = 100;
+        _triple_shoot_power_up = NO;
+        _rapid_fire_power_up = NO;
     }
     return self;
 }
@@ -65,13 +67,35 @@
     _score += score;
 }
 
-- (void)shoot:(CCTime)dt {
-    //ACA HABRIA QUE AGREGAR "IF TAL POWER UP THEN DISPARO_ZARPADO... ELSE SHOOT_NORMAL_BULLET"
-    [self shootNormalBullet:dt from:ccp(self.position.x + 50, self.position.y) withSpeed: self.bullet_speed + self.physicsBody.velocity.x];
+- (void) updateFireRate: (CCTime) fire_rate {
+    _rapid_fire_power_up = YES;
+    [self unschedule: @selector(shoot:)];
+    [self schedule:@selector(shoot:) interval:fire_rate];
 }
 
-- (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
-    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: speed screenSize:_screen_size];
+- (void)shoot:(CCTime)dt {
+    if (_triple_shoot_power_up) {
+        [self trippleShot:dt from: ccp(self.position.x + 50, self.position.y)];
+    } else {
+        [self shootNormalBullet:dt from:ccp(self.position.x + 50, self.position.y)];
+    }
+}
+
+- (void)trippleShot: (CCTime)dt from: (CGPoint)position {
+    [self shootNormalBullet:dt from:position];
+    [self shootDiagonal:dt from:position direction: -1];
+    [self shootDiagonal:dt from:position direction: 1];
+}
+
+- (void)shootDiagonal:(CCTime)dt from:(CGPoint)position direction:(int)direction {
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:_screen_size];
+    projectile.rotation = -direction*5;
+    projectile.physicsBody.velocity = ccp(500, direction*100);
+    [physics_world addChild:projectile];
+}
+
+- (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position {
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:_screen_size];
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(position.x - 25, position.y)];
     [muzzle schedule:@selector(animate:) interval:0.05];
     [physics_world addChild:projectile];

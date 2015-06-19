@@ -13,6 +13,8 @@
 #include "Muzzle.h"
 #include "Explosion1.h"
 #include "Health.h"
+#include "TrippleShot.h"
+#include "RapidFire.h"
 
 @implementation EnemyPlane_1 {
     CCPhysicsNode *_physics_world;
@@ -48,12 +50,26 @@
     [explosion_1 schedule:@selector(animate:) interval:	0.05];
     [_physics_world addChild: explosion_1];
     [self healthPowerUp: _physics_world];
+    [self trippleShootPowerUp: _physics_world];
+    [self rapidFirePowerUp: _physics_world];
     [self removeFromParent];
 }
 
 - (void) healthPowerUp: (CCPhysicsNode*) physics_world {
     if (arc4random()%100 > 75) {
         [physics_world addChild: [[Health alloc] initWithPosition:self.position]];
+    }
+}
+
+- (void) trippleShootPowerUp: (CCPhysicsNode*) physics_world {
+    if (arc4random()%100 > 75) {
+        [physics_world addChild: [[TrippleShot alloc] initWithPosition:self.position]];
+    }
+}
+
+- (void)rapidFirePowerUp: (CCPhysicsNode*) physics_world {
+    if (arc4random()%100 > 75) {
+        [physics_world addChild: [[RapidFire alloc] initWithPosition:self.position]];
     }
 }
 
