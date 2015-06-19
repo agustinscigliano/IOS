@@ -13,6 +13,6 @@
 
 @property (nonatomic) int damage;
 
-- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed;
+- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed screenSize: (int) screen_size;
 
 @end

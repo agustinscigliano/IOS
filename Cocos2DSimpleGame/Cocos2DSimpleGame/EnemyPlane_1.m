@@ -29,7 +29,10 @@
 }
 
 - (void) update:(CCTime)delta {
-    if (arc4random()%100 > 98) {
+    if (self.position.x < -self.contentSize.width) {
+        [self removeFromParent];
+    }
+    else if (arc4random()%100 > 98) {
         [self shootEnemy:delta];
     }
 }

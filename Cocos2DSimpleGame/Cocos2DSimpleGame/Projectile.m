@@ -14,9 +14,11 @@
 
 #define DAMAGE ((int) 5)
 
-@implementation Projectile
+@implementation Projectile {
+    int _screen_size;
+}
 
-- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed {
+- (id) initWithPosition:(CGPoint)position withSpeed: (int) speed screenSize: (int) screen_size {
     self = [super initWithImageNamed: BULLET_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
     self.physicsBody.collisionMask = @[ENEMY_COLLISION];
@@ -27,7 +29,14 @@
     self.damage = DAMAGE;
     self.scaleX = BULLET_SCALE_X;
     self.scaleY = BULLET_SCALE_Y;
+    _screen_size = screen_size;
     return self;
+}
+
+- (void) update:(CCTime)delta {
+    if (self.position.x > _screen_size + self.contentSize.width || self.position.x < -self.contentSize.width) {
+        [self removeFromParent ];
+    }
 }
 
 @end

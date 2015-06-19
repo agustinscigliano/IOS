@@ -41,7 +41,7 @@
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
-    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld planeName: plane_name];
+    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld planeName: plane_name withScreenSize: self.contentSize.width];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     

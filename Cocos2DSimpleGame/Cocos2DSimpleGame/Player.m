@@ -15,6 +15,7 @@
 
 @implementation Player {
     CCPhysicsNode* physics_world;
+    int _screen_size;
 }
 
 - (id) initWithPlaneName: (NSString*) plane_name {
@@ -33,9 +34,10 @@
     return self;
 }
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name {
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name withScreenSize: (int) screen_size {
     self = [self initWithPlaneName: plane_name];
     physics_world = physicsWorld;
+    _screen_size = screen_size;
     return self;
 }
 
@@ -65,7 +67,7 @@
 }
 
 - (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position withSpeed: (int) speed {
-    Projectile *projectile = [[Projectile alloc] initWithPosition: position withSpeed: speed];
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: speed screenSize:_screen_size];
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(position.x - 25, position.y)];
     [muzzle schedule:@selector(animate:) interval:0.05];
     [physics_world addChild:projectile];
