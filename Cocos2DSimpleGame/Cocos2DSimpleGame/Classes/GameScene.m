@@ -16,6 +16,7 @@
 #import "EnemyFactory.h"
 #import "Explosion1.h"
 #import "Muzzle.h"
+#import "Constants.h"
 
 @implementation GameScene {
     Player *_player;
@@ -45,17 +46,24 @@
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
-    CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Courier New" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
     backButton.position = ccp(0.85f, 0.95f);
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
     
-    _label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", _score] fontName:@"Verdana-Bold" fontSize:15.0f];
-    _label.positionType = CCPositionTypeNormalized;
-    _label.position = ccp(0.15f, 0.95f);
-    _label.color = [CCColor redColor];
-    [self addChild:_label];
+    _score_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", _player.score] fontName:@"Courier New" fontSize:15.0f];
+    _score_label.positionType = CCPositionTypeNormalized;
+    _score_label.position = ccp(0.15f, 0.95f);
+    _score_label.color = [CCColor redColor];
+    [self addChild:_score_label];
+    
+    _fuselage_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health] fontName:@"Courier New" fontSize:15.0f];
+    _fuselage_label.positionType = CCPositionTypeNormalized;
+    _fuselage_label.position = ccp(0.15f, 0.85f);
+    _fuselage_label.color = [CCColor redColor];
+    [self addChild:_fuselage_label];
+
     [[OALSimpleAudio sharedInstance] playBg:@"game-music.mp3" loop:YES];
 
 	return self;
@@ -80,15 +88,13 @@
 - (void)dealloc {
 }
 
-- (void)onEnter
-{
+- (void)onEnter {
     [super onEnter];
     [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
     [self schedule:@selector(addEnemy:) interval:1.5];
 }
 
-- (void)onExit
-{
+- (void)onExit {
     [super onExit];
 }
 
@@ -126,34 +132,32 @@
     [projectile removeFromParent];
     [self createExplosionWithPosition: enemy.position withScale: 1.0f];
     [enemy removeFromParent];
-    _score++;
-    [_label setString:[NSString stringWithFormat:@"%d", _score]];
+    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _player.score]];
+    [_player addScore:1];
     return YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player misileCollision:(CCNode *)misile {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player misileCollision:(Misile *)misile {
     [self createExplosionWithPosition: misile.position withScale: 0.5f];
     [misile removeFromParent];
-    _score--;
-    [_label setString:[NSString stringWithFormat:@"%d", _score]];
+    [_player takeDamage: misile.damage];
+    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
     return YES;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyCollision:(CCNode *)enemy {
     [self createExplosionWithPosition: enemy.position withScale: 1.0f];
     [enemy removeFromParent];
-    _score--;
-    [_label setString:[NSString stringWithFormat:@"%d", _score]];
+    [_player takeDamage: PLANE_COLLISION_DAMAGE];
+    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
     return YES;
 }
 
-- (void)onBackClicked:(id)sender
-{
+- (void)onBackClicked:(id)sender {
     [self goBackToMenu:sender];
 }
 
-- (void)goBackToMenu:(id)sender
-{
+- (void)goBackToMenu:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
 }

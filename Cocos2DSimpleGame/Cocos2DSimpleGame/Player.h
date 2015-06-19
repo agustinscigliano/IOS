@@ -23,5 +23,6 @@
 - (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name withScreenSize: (int) screen_size;
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
+- (void) addScore: (int) score;
 
 @end

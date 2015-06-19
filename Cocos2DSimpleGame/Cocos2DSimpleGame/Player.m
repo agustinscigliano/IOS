@@ -30,6 +30,7 @@
         self.bullet_speed = DEFAULT_BULLET_SPEED;
         self.scaleX = PLAYER_SCALE;
         self.scaleY = PLAYER_SCALE;
+        self.health = 100;
     }
     return self;
 }
@@ -59,6 +60,10 @@
     } else {
         _health += health;
     }
+}
+
+- (void) addScore: (int) score {
+    _score += score;
 }
 
 - (void)shoot:(CCTime)dt {

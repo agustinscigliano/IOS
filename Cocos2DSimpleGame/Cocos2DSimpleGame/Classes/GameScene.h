@@ -21,7 +21,8 @@
 // -----------------------------------------------------------------------
 
 @property (nonatomic) int score;
-@property (nonatomic) CCLabelTTF* label;
+@property (nonatomic) CCLabelTTF* score_label;
+@property (nonatomic) CCLabelTTF* fuselage_label;
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 

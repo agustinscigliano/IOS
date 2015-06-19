@@ -11,6 +11,8 @@
 
 @interface EnemyPlane_1 : CCSprite
 
+@property (nonatomic) int score;
+
 - (id) init;
 
 @end

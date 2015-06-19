@@ -24,6 +24,7 @@
         self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);
         self.scaleX = ENEMY_PLANE_1_SCALE;
         self.scaleY = ENEMY_PLANE_1_SCALE;
+        self.score = ENEMY_PLANE_1_SCORE;
     }
     return self;
 }

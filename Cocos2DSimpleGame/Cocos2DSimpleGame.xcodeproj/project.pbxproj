@@ -12,6 +12,10 @@
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
 		475C0F271B344C2800D65899 /* game-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F261B344C2800D65899 /* game-music.mp3 */; };
 		475C0F2A1B344CF300D65899 /* PlaneSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F291B344CF300D65899 /* PlaneSelectionScene.m */; };
+		475C0F2E1B34680A00D65899 /* cloud-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F2B1B34680A00D65899 /* cloud-1.png */; };
+		475C0F2F1B34680A00D65899 /* cloud-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F2C1B34680A00D65899 /* cloud-2.png */; };
+		475C0F301B34680A00D65899 /* cloud-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F2D1B34680A00D65899 /* cloud-3.png */; };
+		475C0F321B346E0500D65899 /* game-menu-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F311B346E0500D65899 /* game-menu-music.mp3 */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -269,6 +273,10 @@
 		475C0F261B344C2800D65899 /* game-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-music.mp3"; sourceTree = "<group>"; };
 		475C0F281B344CBE00D65899 /* PlaneSelectionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneSelectionScene.h; sourceTree = "<group>"; };
 		475C0F291B344CF300D65899 /* PlaneSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneSelectionScene.m; sourceTree = "<group>"; };
+		475C0F2B1B34680A00D65899 /* cloud-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-1.png"; sourceTree = "<group>"; };
+		475C0F2C1B34680A00D65899 /* cloud-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-2.png"; sourceTree = "<group>"; };
+		475C0F2D1B34680A00D65899 /* cloud-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-3.png"; sourceTree = "<group>"; };
+		475C0F311B346E0500D65899 /* game-menu-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-menu-music.mp3"; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1626,29 +1634,29 @@
 		5B09AC0D188B330600E8F2B7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FB14347D1B222DA700E65CAF /* Misile.m */,
-				FB14347F1B222E6500E65CAF /* Misile.h */,
-				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
-				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				5B09AC0E188B330600E8F2B7 /* AppDelegate.h */,
 				5B09AC0F188B330600E8F2B7 /* AppDelegate.m */,
+				47BF05B51B2B0693009D3E93 /* Constants.h */,
+				47BF05C51B2B2913009D3E93 /* EnemyFactory.h */,
+				47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */,
+				47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */,
+				47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */,
+				47C493361B2BB11C0007FA9F /* Explosion1.h */,
+				47C493371B2BB1990007FA9F /* Explosion1.m */,
 				5B09AC11188B330600E8F2B7 /* GameScene.h */,
 				5B09AC12188B330600E8F2B7 /* GameScene.m */,
 				5B09AC14188B330600E8F2B7 /* IntroScene.h */,
 				5B09AC15188B330600E8F2B7 /* IntroScene.m */,
-				47EE65911B18AA06006F8A00 /* Player.h */,
-				47EE65921B18AAA0006F8A00 /* Player.m */,
-				47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */,
-				47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */,
-				47BF05B51B2B0693009D3E93 /* Constants.h */,
-				47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */,
-				47BF05C51B2B2913009D3E93 /* EnemyFactory.h */,
-				47C493361B2BB11C0007FA9F /* Explosion1.h */,
-				47C493371B2BB1990007FA9F /* Explosion1.m */,
+				FB14347F1B222E6500E65CAF /* Misile.h */,
+				FB14347D1B222DA700E65CAF /* Misile.m */,
 				47C4933C1B2BBD710007FA9F /* Muzzle.h */,
 				47C4933D1B2BBE0A0007FA9F /* Muzzle.m */,
 				475C0F281B344CBE00D65899 /* PlaneSelectionScene.h */,
 				475C0F291B344CF300D65899 /* PlaneSelectionScene.m */,
+				47EE65911B18AA06006F8A00 /* Player.h */,
+				47EE65921B18AAA0006F8A00 /* Player.m */,
+				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
+				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1665,6 +1673,9 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F2B1B34680A00D65899 /* cloud-1.png */,
+				475C0F2C1B34680A00D65899 /* cloud-2.png */,
+				475C0F2D1B34680A00D65899 /* cloud-3.png */,
 				475C0F221B34471C00D65899 /* clouds.png */,
 				475C0F1C1B34427200D65899 /* p51-logo.png */,
 				475C0F1A1B34404600D65899 /* 1943.png */,
@@ -1696,6 +1707,7 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F311B346E0500D65899 /* game-menu-music.mp3 */,
 				475C0F261B344C2800D65899 /* game-music.mp3 */,
 				47C493471B2C67350007FA9F /* Shoot1.caf */,
 				47C493431B2C652B0007FA9F /* Explosion3.caf */,
@@ -1785,7 +1797,9 @@
 				5B09A98C188B330300E8F2B7 /* Icon@2x.png in Resources */,
 				5B09A99E188B330300E8F2B7 /* Icon-Small@2x.png in Resources */,
 				47C4932D1B2BAB190007FA9F /* Explosion1-8.png in Resources */,
+				475C0F301B34680A00D65899 /* cloud-3.png in Resources */,
 				5B09A990188B330300E8F2B7 /* Icon-72@2x.png in Resources */,
+				475C0F2F1B34680A00D65899 /* cloud-2.png in Resources */,
 				5B09A981188B330300E8F2B7 /* Default.png in Resources */,
 				5B09A98A188B330300E8F2B7 /* Icon.png in Resources */,
 				47C493421B2C60CF0007FA9F /* Explosion2.caf in Resources */,
@@ -1795,9 +1809,11 @@
 				5B09A987188B330300E8F2B7 /* Default-Landscape~ipad.png in Resources */,
 				47C4932E1B2BAB190007FA9F /* Explosion1-9.png in Resources */,
 				47C493481B2C67350007FA9F /* Shoot1.caf in Resources */,
+				475C0F2E1B34680A00D65899 /* cloud-1.png in Resources */,
 				47C493321B2BAB190007FA9F /* Explosion1-13.png in Resources */,
 				47C493411B2C60CF0007FA9F /* Explosion1.caf in Resources */,
 				5B09A99C188B330300E8F2B7 /* Icon-Small.png in Resources */,
+				475C0F321B346E0500D65899 /* game-menu-music.mp3 in Resources */,
 				47C4932A1B2BAB190007FA9F /* Explosion1-5.png in Resources */,
 				FB1434831B223ADC00E65CAF /* misile.png in Resources */,
 				5B09A99A188B330300E8F2B7 /* Icon-Small-50.png in Resources */,

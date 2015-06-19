@@ -48,6 +48,8 @@
     startButton.position = ccp(0.5f, 0.35f);
     [startButton setTarget:self selector:@selector(onStartGameButtonClicked:)];
     [self addChild:startButton];
+    
+    [[OALSimpleAudio sharedInstance] playBg:@"game-menu-music.mp3" loop:YES];
 	
 	return self;
 }
