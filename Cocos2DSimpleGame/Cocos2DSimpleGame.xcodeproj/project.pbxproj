@@ -11,6 +11,7 @@
 		475C0F1D1B34427200D65899 /* p51-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1C1B34427200D65899 /* p51-logo.png */; };
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
 		475C0F271B344C2800D65899 /* game-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F261B344C2800D65899 /* game-music.mp3 */; };
+		475C0F2A1B344CF300D65899 /* PlaneSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F291B344CF300D65899 /* PlaneSelectionScene.m */; };
 		479143E31ABCE10700E46B2D /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 479143E21ABCE10700E46B2D /* Monster.m */; };
 		4793735C1AC57C3B00E81B8B /* Shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735B1AC57C3B00E81B8B /* Shell.m */; };
 		479373601AC5966300E81B8B /* Phantom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735F1AC5966300E81B8B /* Phantom.m */; };
@@ -269,6 +270,8 @@
 		475C0F1C1B34427200D65899 /* p51-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p51-logo.png"; sourceTree = "<group>"; };
 		475C0F221B34471C00D65899 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		475C0F261B344C2800D65899 /* game-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-music.mp3"; sourceTree = "<group>"; };
+		475C0F281B344CBE00D65899 /* PlaneSelectionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneSelectionScene.h; sourceTree = "<group>"; };
+		475C0F291B344CF300D65899 /* PlaneSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneSelectionScene.m; sourceTree = "<group>"; };
 		479143E11ABCE06C00E46B2D /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		479143E21ABCE10700E46B2D /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		4793735A1AC57B7700E81B8B /* Shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shell.h; sourceTree = "<group>"; };
@@ -1659,6 +1662,8 @@
 				47C493371B2BB1990007FA9F /* Explosion1.m */,
 				47C4933C1B2BBD710007FA9F /* Muzzle.h */,
 				47C4933D1B2BBE0A0007FA9F /* Muzzle.m */,
+				475C0F281B344CBE00D65899 /* PlaneSelectionScene.h */,
+				475C0F291B344CF300D65899 /* PlaneSelectionScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1912,6 +1917,7 @@
 				5B09AC16188B330600E8F2B7 /* IntroScene.m in Sources */,
 				5B09AA9A188B330400E8F2B7 /* CCGLView.m in Sources */,
 				5B09AA5D188B330400E8F2B7 /* CCSprite.m in Sources */,
+				475C0F2A1B344CF300D65899 /* PlaneSelectionScene.m in Sources */,
 				5B09A9B9188B330400E8F2B7 /* CCActionInterval.m in Sources */,
 				5B09AA28188B330400E8F2B7 /* CCPhysicsJoint.m in Sources */,
 				5B09AA06188B330400E8F2B7 /* CCMotionStreak.m in Sources */,

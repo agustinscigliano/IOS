@@ -9,7 +9,7 @@
 
 // Import the interfaces
 #import "IntroScene.h"
-#import "GameScene.h"
+#import "PlaneSelectionScene.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - IntroScene
@@ -73,8 +73,8 @@
 - (void)onSpinningClicked:(id)sender
 {
     // start spinning scene with transition
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
+    [[CCDirector sharedDirector] replaceScene:[PlaneSelectionScene scene]
+                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 // -----------------------------------------------------------------------

@@ -25,8 +25,7 @@
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 
-+ (GameScene *)scene;
-- (id)init;
++ (GameScene *)sceneWithPlane:(NSString*) plane_name;
 
 // -----------------------------------------------------------------------
 @end

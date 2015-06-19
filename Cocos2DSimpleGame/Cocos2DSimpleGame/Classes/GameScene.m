@@ -17,37 +17,21 @@
 #import "Explosion1.h"
 #import "Muzzle.h"
 
-// -----------------------------------------------------------------------
-#pragma mark - GameScene
-// -----------------------------------------------------------------------
-
-@implementation GameScene
-{
-    // 1
+@implementation GameScene {
     Player *_player;
 }
 
-// -----------------------------------------------------------------------
-#pragma mark - Create & Destroy
-// -----------------------------------------------------------------------
-
-+ (GameScene *)scene
-{
-    return [[self alloc] init];
++ (GameScene *)sceneWithPlane:(NSString*) plane_name {
+    return [[self alloc] initWithPlaneName: plane_name];
+    
 }
 
-// -----------------------------------------------------------------------
-
-- (id)init
-{
-    // 2
+- (id)initWithPlaneName:(NSString*) plane_name {
     self = [super init];
     if (!self) return(nil);
     
-    // 3
     self.userInteractionEnabled = YES;
     
-    // 4
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
     [self addChild:background];
     
@@ -57,26 +41,19 @@
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
-    // 5
-    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld];
+    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld planeName: plane_name];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
-    
-    // 6
-    //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
-    //[_player runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
-    
-    // 7
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
-    backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
+    backButton.position = ccp(0.85f, 0.95f);
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
     
     _label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", _score] fontName:@"Verdana-Bold" fontSize:15.0f];
     _label.positionType = CCPositionTypeNormalized;
-    _label.position = ccp(0.15f, 0.95f); // Top Left of screen
+    _label.position = ccp(0.15f, 0.95f);
     _label.color = [CCColor redColor];
     [self addChild:_label];
     [[OALSimpleAudio sharedInstance] playBg:@"game-music.mp3" loop:YES];
@@ -100,44 +77,23 @@
     [_physicsWorld addChild:enemy_plane1];
 }
 
-// -----------------------------------------------------------------------
-
-- (void)dealloc
-{
-    // clean up code goes here
+- (void)dealloc {
 }
-
-// -----------------------------------------------------------------------
-#pragma mark - Enter & Exit
-// -----------------------------------------------------------------------
 
 - (void)onEnter
 {
-    // always call super onEnter first
     [super onEnter];
-    
-    // In pre-v3, touch enable and scheduleUpdate was called here
-    // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
-    // Pr frame update is automatically enabled, if update is overridden
     [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
     [self schedule:@selector(addEnemy:) interval:1.5];
 }
 
-// -----------------------------------------------------------------------
-
 - (void)onExit
 {
-    // always call super onExit last
     [super onExit];
 }
 
-// -----------------------------------------------------------------------
-#pragma mark - Touch Handler
-// -----------------------------------------------------------------------
-
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     [self move: touch withEvent: event];
-    //[[OALSimpleAudio sharedInstance] playEffect:@"pew-pew-lei.caf"];
 }
 
 - (void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -191,31 +147,8 @@
     return YES;
 }
 
-//- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair shellCollision:(CCNode *)shell projectileCollision:(CCNode *)projectile {
-//    [shell removeFromParent];
-//    [projectile removeFromParent];
-//    return YES;
-//}
-
-//- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster playerCollision:(CCNode *)player
-//{
-//    [self goBackToMenu:nil];
-//    return YES;
-//}
-//
-//- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair shellCollision:(CCNode *)shell playerCollision:(CCNode *)player
-//{
-//    [self goBackToMenu:nil];
-//    return YES;
-//}
-
-// -----------------------------------------------------------------------
-#pragma mark - Button Callbacks
-// -----------------------------------------------------------------------
-
 - (void)onBackClicked:(id)sender
 {
-    // back to intro scene with transition
     [self goBackToMenu:sender];
 }
 
@@ -225,5 +158,4 @@
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
 }
 
-// -----------------------------------------------------------------------
 @end

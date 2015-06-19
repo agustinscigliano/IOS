@@ -17,10 +17,10 @@
     CCPhysicsNode* physics_world;
 }
 
-- (id) init {
+- (id) initWithPlaneName: (NSString*) plane_name {
     self = [super init];
     if (self) {
-        self.plane_name = @"p51.png";
+        self.plane_name = plane_name;
         self = [super initWithImageNamed: self.plane_name];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionType = PLAYER_COLLISION;
@@ -33,8 +33,8 @@
     return self;
 }
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld {
-    self = [self init];
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name {
+    self = [self initWithPlaneName: plane_name];
     physics_world = physicsWorld;
     return self;
 }
