@@ -15,7 +15,10 @@
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
 #define MISSILE_COLLISION @"misileCollision"
+#define ENEMY_BULLET_COLLISION @"enemyBulletCollision"
 #define PLAYER_COLLISION @"playerCollision"
+#define BULLET_COLLISION @"bulletCollision"
+#define HEALTH_COLLISION @"healthCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define BULLET_IMAGE @"bullet.png"
@@ -35,5 +38,7 @@
 #define PLANE_COLLISION_DAMAGE 25
 #define CLOUDS_AMOUNT 3
 #define CLOUD_SPEED -100
+#define HEALTH_SCALE 0.05
+#define HEALTH_VALUE 25
 
 #endif

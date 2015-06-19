@@ -17,11 +17,11 @@
 @implementation EnemyBullet
 
 -(id)initWithPosition: (CGPoint)position {
-    self = [super initWithImageNamed:@"bullet.png"];
+    self = [super initWithImageNamed:BULLET_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
-    self.physicsBody.collisionCategories = @[@"enemyBulletCollision"];
+    self.physicsBody.collisionCategories = @[ENEMY_BULLET_COLLISION];
     self.physicsBody.collisionMask = @[ENEMY_COLLISION];
-    self.physicsBody.collisionType  = @"enemyBulletCollision";
+    self.physicsBody.collisionType  = ENEMY_BULLET_COLLISION;
     self.physicsBody.velocity = ccp(-DEFAULT_BULLET_SPEED, 0);
     self.scaleX = BULLET_SCALE_X;
     self.scaleY = BULLET_SCALE_Y;

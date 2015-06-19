@@ -20,6 +20,7 @@
 #import "Cloud.h"
 #import "EnemyBullet.h"
 #import "GameOver.h"
+#import "Health.h"
 
 @implementation GameScene {
     Player *_player;
@@ -90,7 +91,7 @@
 }
 
 - (void)addPlane:(CCTime)dt {
-    EnemyPlane_1 *enemy_plane1 = [EnemyFactory createEnemyPlane1:self];
+    EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] initWithPhysicsWorld:_physicsWorld];
     
     int minY = enemy_plane1.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
@@ -144,10 +145,9 @@
     _player.isTouched = YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(CCNode *)enemy projectileCollision:(CCNode *)projectile {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(EnemyPlane_1 *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
-    [self createExplosionWithPosition: enemy.position withScale: 1.0f];
-    [enemy removeFromParent];
+    [enemy takeDamage: projectile.damage];
     [_score_label setString:[NSString stringWithFormat:@"Score: %d", _player.score]];
     [_player addScore:1];
     return YES;
@@ -177,6 +177,13 @@
     [_player takeDamage: PLANE_COLLISION_DAMAGE];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
     [self checkIfPLayerLost];
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player healthCollision:(Health *)health {
+    [health removeFromParent];
+    [_player recoverHealth: health.health];
+    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
     return YES;
 }
 

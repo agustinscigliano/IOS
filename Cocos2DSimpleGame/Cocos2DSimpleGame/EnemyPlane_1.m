@@ -11,10 +11,14 @@
 #include "EnemyBullet.h"
 #include "GameScene.h"
 #include "Muzzle.h"
+#include "Explosion1.h"
+#include "Health.h"
 
-@implementation EnemyPlane_1
+@implementation EnemyPlane_1 {
+    CCPhysicsNode *_physics_world;
+}
 
-- (id) init {
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world {
     self = [super init];
     if (self) {
         [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: ENEMY_PLANE_1_IMAGE]];
@@ -25,6 +29,7 @@
         self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);
         self.scale = PLANE_SCALE;
         self.score = ENEMY_PLANE_1_SCORE;
+        _physics_world = physics_world;
     }
     return self;
 }
@@ -35,6 +40,20 @@
     }
     else if (arc4random()%100 > 98) {
         [self shootEnemy:delta];
+    }
+}
+
+- (void) takeDamage: (int) damage {
+    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: self.position withScale: 1.0f];
+    [explosion_1 schedule:@selector(animate:) interval:	0.05];
+    [_physics_world addChild: explosion_1];
+    [self healthPowerUp: _physics_world];
+    [self removeFromParent];
+}
+
+- (void) healthPowerUp: (CCPhysicsNode*) physics_world {
+    if (arc4random()%100 > 75) {
+        [physics_world addChild: [[Health alloc] initWithPosition:self.position]];
     }
 }
 

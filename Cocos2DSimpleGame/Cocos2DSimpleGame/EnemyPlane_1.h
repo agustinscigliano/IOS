@@ -13,6 +13,7 @@
 
 @property (nonatomic) int score;
 
-- (id) init;
+- (void) takeDamage: (int) damage;
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
 
 @end

@@ -26,6 +26,8 @@
 		475C0F461B348AF900D65899 /* spitfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F441B348AF900D65899 /* spitfire.png */; };
 		475C0F4A1B348E0100D65899 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F491B348E0100D65899 /* GameOver.m */; };
 		475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4B1B348FB800D65899 /* game-over.mp3 */; };
+		475C0F4E1B34936500D65899 /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4D1B34936500D65899 /* health.png */; };
+		475C0F511B34937E00D65899 /* Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F501B34937E00D65899 /* Health.m */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -302,6 +304,9 @@
 		475C0F481B348DF400D65899 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		475C0F491B348E0100D65899 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		475C0F4B1B348FB800D65899 /* game-over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-over.mp3"; sourceTree = "<group>"; };
+		475C0F4D1B34936500D65899 /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
+		475C0F4F1B34937200D65899 /* Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Health.h; sourceTree = "<group>"; };
+		475C0F501B34937E00D65899 /* Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Health.m; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1692,6 +1697,8 @@
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				475C0F481B348DF400D65899 /* GameOver.h */,
 				475C0F491B348E0100D65899 /* GameOver.m */,
+				475C0F4F1B34937200D65899 /* Health.h */,
+				475C0F501B34937E00D65899 /* Health.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1708,6 +1715,7 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				475C0F4D1B34936500D65899 /* health.png */,
 				475C0F431B348AF900D65899 /* hurricane.png */,
 				475C0F441B348AF900D65899 /* spitfire.png */,
 				475C0F391B3481B100D65899 /* fw-19.png */,
@@ -1877,6 +1885,7 @@
 				5B09A994188B330300E8F2B7 /* Icon-76@2x.png in Resources */,
 				5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */,
 				47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */,
+				475C0F4E1B34936500D65899 /* health.png in Resources */,
 				5B09A9A2188B330300E8F2B7 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				475C0F3B1B3481B100D65899 /* fw-19.png in Resources */,
 				47C4933A1B2BB91F0007FA9F /* muzzle.png in Resources */,
@@ -1916,6 +1925,7 @@
 				5B09AA3A188B330400E8F2B7 /* CCResponder.m in Sources */,
 				5B09A9D1188B330400E8F2B7 /* CCClippingNode.m in Sources */,
 				5B09AA64188B330400E8F2B7 /* CCSpriteBatchNode.m in Sources */,
+				475C0F511B34937E00D65899 /* Health.m in Sources */,
 				5B09AA88188B330400E8F2B7 /* CCTransition.m in Sources */,
 				5B09AA67188B330400E8F2B7 /* CCSpriteFrame.m in Sources */,
 				5B09A9FB188B330400E8F2B7 /* CCNodeColor.m in Sources */,
