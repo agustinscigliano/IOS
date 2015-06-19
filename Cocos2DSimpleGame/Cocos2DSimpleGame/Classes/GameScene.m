@@ -23,6 +23,7 @@
 #import "Health.h"
 #import "Sparkle.h"
 #import "TrippleShot.h"
+#import "RapidFire.h"
 
 @implementation GameScene {
     Player *_player;
@@ -192,6 +193,12 @@
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player trippleShotCollision:(TrippleShot *)trippleShot {
     [trippleShot removeFromParent];
     _player.triple_shoot_power_up = YES;
+    return YES;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rapidFireCollision:(RapidFire *)rapidFire {
+    [rapidFire removeFromParent];
+    [_player updateFireRate:0.15];
     return YES;
 }
 

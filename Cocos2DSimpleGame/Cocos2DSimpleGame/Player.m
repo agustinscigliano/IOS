@@ -31,6 +31,7 @@
         self.scale = PLANE_SCALE;
         self.health = 100;
         _triple_shoot_power_up = NO;
+        _rapid_fire_power_up = NO;
     }
     return self;
 }
@@ -66,8 +67,13 @@
     _score += score;
 }
 
+- (void) updateFireRate: (CCTime) fire_rate {
+    _rapid_fire_power_up = YES;
+    [self unschedule: @selector(shoot:)];
+    [self schedule:@selector(shoot:) interval:fire_rate];
+}
+
 - (void)shoot:(CCTime)dt {
-    //ACA HABRIA QUE AGREGAR "IF TAL POWER UP THEN DISPARO_ZARPADO... ELSE SHOOT_NORMAL_BULLET"
     if (_triple_shoot_power_up) {
         [self trippleShot:dt from: ccp(self.position.x + 50, self.position.y)];
     } else {

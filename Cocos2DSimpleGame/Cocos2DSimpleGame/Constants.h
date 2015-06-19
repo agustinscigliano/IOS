@@ -21,6 +21,7 @@
 #define HEALTH_COLLISION @"healthCollision"
 #define EXPLOSION_COLLISION @"explosionCollision"
 #define TRIPPLE_SHOT_COLLISION @"trippleShotCollision"
+#define RAPID_FIRE_COLLISION @"rapidFireCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define SPARKLE_IMAGE @"sparkle.png"
@@ -45,5 +46,6 @@
 #define HEALTH_SCALE 0.05
 #define HEALTH_VALUE 25
 #define DEFAULT_EXPLOSION_DAMAGE 10
+#define RAPID_FIRE_SCALE 0.2
 
 #endif

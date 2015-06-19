@@ -1,5 +1,5 @@
 //
-//  TrippleShot.h
+//  RapidFire.h
 //  Cocos2DSimpleGame
 //
 //  Created by German Romarion on 19/6/15.
@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface TrippleShot : CCSprite
+@interface RapidFire : CCSprite
 
 - (id) initWithPosition: (CGPoint) position;
 
