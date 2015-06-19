@@ -7,30 +7,17 @@
 //
 // -----------------------------------------------------------------------
 
-// Import the interfaces
 #import "IntroScene.h"
 #import "PlaneSelectionScene.h"
 
-// -----------------------------------------------------------------------
-#pragma mark - IntroScene
-// -----------------------------------------------------------------------
 
 @implementation IntroScene
 
-// -----------------------------------------------------------------------
-#pragma mark - Create & Destroy
-// -----------------------------------------------------------------------
-
-+ (IntroScene *)scene
-{
++ (IntroScene *)scene {
 	return [[self alloc] init];
 }
 
-// -----------------------------------------------------------------------
-
-- (id)init
-{
-    // Apple recommend assigning self with supers return value
+- (id)init {
     self = [super init];
     if (!self) return(nil);
     
@@ -55,27 +42,18 @@
     p51_logo.position = ccp(0.15f, 0.75f);
     [self addChild:p51_logo];
     
-    // Spinning scene button
-    CCButton *spinningButton = [CCButton buttonWithTitle:@"Start" fontName:@"Courier New" fontSize:24.0f];
-    spinningButton.positionType = CCPositionTypeNormalized;
-    spinningButton.position = ccp(0.5f, 0.35f);
-    [spinningButton setTarget:self selector:@selector(onSpinningClicked:)];
-    [self addChild:spinningButton];
+    //Start game button
+    CCButton *startButton = [CCButton buttonWithTitle:@"Start" fontName:@"Courier New" fontSize:24.0f];
+    startButton.positionType = CCPositionTypeNormalized;
+    startButton.position = ccp(0.5f, 0.35f);
+    [startButton setTarget:self selector:@selector(onStartGameButtonClicked:)];
+    [self addChild:startButton];
 	
-    // done
 	return self;
 }
 
-// -----------------------------------------------------------------------
-#pragma mark - Button Callbacks
-// -----------------------------------------------------------------------
-
-- (void)onSpinningClicked:(id)sender
-{
-    // start spinning scene with transition
+- (void)onStartGameButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[PlaneSelectionScene scene]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
-
-// -----------------------------------------------------------------------
 @end
