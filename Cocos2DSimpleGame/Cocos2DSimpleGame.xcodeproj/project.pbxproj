@@ -12,9 +12,6 @@
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
 		475C0F271B344C2800D65899 /* game-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F261B344C2800D65899 /* game-music.mp3 */; };
 		475C0F2A1B344CF300D65899 /* PlaneSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F291B344CF300D65899 /* PlaneSelectionScene.m */; };
-		479143E31ABCE10700E46B2D /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 479143E21ABCE10700E46B2D /* Monster.m */; };
-		4793735C1AC57C3B00E81B8B /* Shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735B1AC57C3B00E81B8B /* Shell.m */; };
-		479373601AC5966300E81B8B /* Phantom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793735F1AC5966300E81B8B /* Phantom.m */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -272,12 +269,6 @@
 		475C0F261B344C2800D65899 /* game-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-music.mp3"; sourceTree = "<group>"; };
 		475C0F281B344CBE00D65899 /* PlaneSelectionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneSelectionScene.h; sourceTree = "<group>"; };
 		475C0F291B344CF300D65899 /* PlaneSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneSelectionScene.m; sourceTree = "<group>"; };
-		479143E11ABCE06C00E46B2D /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
-		479143E21ABCE10700E46B2D /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
-		4793735A1AC57B7700E81B8B /* Shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shell.h; sourceTree = "<group>"; };
-		4793735B1AC57C3B00E81B8B /* Shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shell.m; sourceTree = "<group>"; };
-		4793735E1AC5963C00E81B8B /* Phantom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phantom.h; sourceTree = "<group>"; };
-		4793735F1AC5966300E81B8B /* Phantom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phantom.m; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1645,12 +1636,6 @@
 				5B09AC12188B330600E8F2B7 /* GameScene.m */,
 				5B09AC14188B330600E8F2B7 /* IntroScene.h */,
 				5B09AC15188B330600E8F2B7 /* IntroScene.m */,
-				479143E11ABCE06C00E46B2D /* Monster.h */,
-				479143E21ABCE10700E46B2D /* Monster.m */,
-				4793735A1AC57B7700E81B8B /* Shell.h */,
-				4793735B1AC57C3B00E81B8B /* Shell.m */,
-				4793735E1AC5963C00E81B8B /* Phantom.h */,
-				4793735F1AC5966300E81B8B /* Phantom.m */,
 				47EE65911B18AA06006F8A00 /* Player.h */,
 				47EE65921B18AAA0006F8A00 /* Player.m */,
 				47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */,
@@ -1855,14 +1840,12 @@
 			files = (
 				5B09AA15188B330400E8F2B7 /* CCParticleBatchNode.m in Sources */,
 				5B09AB8D188B330500E8F2B7 /* CCBReader.m in Sources */,
-				479143E31ABCE10700E46B2D /* Monster.m in Sources */,
 				47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */,
 				5B09AB3D188B330500E8F2B7 /* CCButton.m in Sources */,
 				5B09AAE8188B330500E8F2B7 /* OALAudioActions.m in Sources */,
 				5B09AB2D188B330500E8F2B7 /* NSMutableArray+WeakReferences.m in Sources */,
 				47EE65931B18AAA0006F8A00 /* Player.m in Sources */,
 				5B09AAA7188B330400E8F2B7 /* CCGLView.m in Sources */,
-				479373601AC5966300E81B8B /* Phantom.m in Sources */,
 				5B09AB71188B330500E8F2B7 /* mat4.c in Sources */,
 				5B09A9CD188B330400E8F2B7 /* CCAtlasNode.m in Sources */,
 				5B09AB1B188B330500E8F2B7 /* OpenALManager.m in Sources */,
@@ -1898,7 +1881,6 @@
 				5B09AB87188B330500E8F2B7 /* CCBAnimationManager.m in Sources */,
 				5B09AB6B188B330500E8F2B7 /* mat4stack.c in Sources */,
 				5B09AA0A188B330400E8F2B7 /* CCNode.m in Sources */,
-				4793735C1AC57C3B00E81B8B /* Shell.m in Sources */,
 				5B09A9F5188B330400E8F2B7 /* CCLabelBMFont.m in Sources */,
 				5B09A9B3188B330400E8F2B7 /* CCActionEase.m in Sources */,
 				5B09A9C2188B330400E8F2B7 /* CCActionTween.m in Sources */,
