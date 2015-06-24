@@ -10,6 +10,7 @@
 #import "Player.h"
 #import "Projectile.h"
 #import "Muzzle.h"
+#import "Constants.h"
 #define SPEED 200
 #define POSITION_DELTA 5.0f
 
@@ -96,12 +97,11 @@
 
 - (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position {
     Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:_screen_size];
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(position.x - 25, position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.9, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
     [muzzle schedule:@selector(animate:) interval:0.05];
     [physics_world addChild:projectile];
-    [physics_world addChild:muzzle];
-//    NSString* shoot_sound_path = [NSString stringWithFormat: @"%@1.caf", SHOOT_SOUND_FILE_NAME];
-//    [[OALSimpleAudio sharedInstance] playEf: shoot_sound_path volume:0.1 pan:0.5 loop:NO];
+    [self addChild:muzzle];
 }
 
 @end

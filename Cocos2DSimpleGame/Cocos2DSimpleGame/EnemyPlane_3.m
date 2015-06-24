@@ -67,7 +67,8 @@
 - (void)shootEnemy:(CCTime)dt {
     EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(self.position.x - 25, self.position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
     muzzle.scaleX = -MUZZLE_SCALE;
     muzzle.scaleY = MUZZLE_SCALE;
     [muzzle schedule:@selector(animate:) interval:0.05];
@@ -78,7 +79,8 @@
 - (void)shootEnemy2:(CCTime)dt {
     Misile *missile = [[Misile alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(self.position.x - 25, self.position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
     muzzle.scaleX = -MUZZLE_SCALE;
     muzzle.scaleY = MUZZLE_SCALE;
     [muzzle schedule:@selector(animate:) interval:0.05];
