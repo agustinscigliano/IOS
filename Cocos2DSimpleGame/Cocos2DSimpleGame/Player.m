@@ -16,6 +16,10 @@
 
 @implementation Player {
     CCPhysicsNode* physics_world;
+    NSTimeInterval tripple_shot_timeout;
+    NSTimeInterval rapid_fire_timeout;
+    BOOL triple_shoot_power_up;
+    BOOL rapid_fire_power_up;
     int _screen_size;
 }
 
@@ -31,8 +35,8 @@
         self.bullet_speed = DEFAULT_BULLET_SPEED;
         self.scale = PLANE_SCALE;
         self.health = 100;
-        _triple_shoot_power_up = NO;
-        _rapid_fire_power_up = NO;
+        triple_shoot_power_up = NO;
+        rapid_fire_power_up = NO;
     }
     return self;
 }
@@ -44,10 +48,31 @@
     return self;
 }
 
+- (void) trippleShot {
+    triple_shoot_power_up = YES;
+    [self schedule:@selector(stopTrippleShot:) interval:10 repeat:0 delay:10];
+}
+
+- (void) stopTrippleShot:(CCTime)dt {
+    triple_shoot_power_up = NO;
+    [self unschedule:@selector(stopTrippleShot:)];
+}
+
+- (void) stopRapidFire:(CCTime)dt {
+    rapid_fire_power_up = NO;
+    [self updateFireRate:DEFAULT_SHOOTING_RATE];
+    [self unschedule:@selector(stopRapidFire:)];
+}
+
+- (void) rapidFire {
+    rapid_fire_power_up = YES;
+    [self updateFireRate:0.15];
+    [self schedule:@selector(stopRapidFire:) interval:100 repeat:0 delay:10];
+}
+
 - (void) update:(CCTime)delta {
     CGPoint position_difference = ccpSub(_final_position, self.position);
-    if(_isTouched && sqrt(pow(position_difference.x, 2) + pow(position_difference.y, 2)) > POSITION_DELTA)
-    {
+    if(_isTouched && sqrt(pow(position_difference.x, 2) + pow(position_difference.y, 2)) > POSITION_DELTA) {
         [self setPosition:ccp(self.position.x + _velocity.x * SPEED * delta, self.position.y + _velocity.y * SPEED * delta)];
     }
 }
@@ -69,16 +94,16 @@
 }
 
 - (void) updateFireRate: (CCTime) fire_rate {
-    _rapid_fire_power_up = YES;
     [self unschedule: @selector(shoot:)];
     [self schedule:@selector(shoot:) interval:fire_rate];
 }
 
 - (void)shoot:(CCTime)dt {
-    if (_triple_shoot_power_up) {
-        [self trippleShot:dt from: ccp(self.position.x + 50, self.position.y)];
+    CGPoint shoot_position = ccp(self.position.x + 50, self.position.y);
+    if (triple_shoot_power_up) {
+        [self trippleShot:dt from: shoot_position];
     } else {
-        [self shootNormalBullet:dt from:ccp(self.position.x + 50, self.position.y)];
+        [self shootNormalBullet:dt from: shoot_position];
     }
 }
 

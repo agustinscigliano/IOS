@@ -244,13 +244,13 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player trippleShotCollision:(TrippleShot *)trippleShot {
     [trippleShot removeFromParent];
-    _player.triple_shoot_power_up = YES;
+    [_player trippleShot];
     return YES;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rapidFireCollision:(RapidFire *)rapidFire {
     [rapidFire removeFromParent];
-    [_player updateFireRate:0.15];
+    [_player rapidFire];
     return YES;
 }
 
