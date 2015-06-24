@@ -7,12 +7,11 @@
 //
 
 #import "cocos2d.h"
+#import "Enemy.h"
 #include "Constants.h"
 
-@interface EnemyPlane_2 : CCSprite
+@interface EnemyPlane_2 : Enemy
 
-@property (nonatomic) int score;
-
-- (void) takeDamage: (int) damage;
 - (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
+
 @end

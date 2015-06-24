@@ -192,16 +192,18 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(EnemyPlane_1 *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
-    [enemy takeDamage: projectile.damage];
-    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _player.score]];
-    [_player addScore:1];
-    if ((_player.score - 1) % 5 == 0 && _player.score!=1) {
-        self.level+=1;
-        if(_level <= 9){
-        [_level_label setString:[NSString stringWithFormat:@"Level: %d",self.level]];
-        }else{
-            [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
-        }
+    BOOL enemy_died = [enemy takeDamage: projectile.damage];
+    if (enemy_died) {
+        _score += enemy.score;
+    } else {
+        _score += ENEMY_PLANE_IMPACT_SCORE;
+    }
+    _level = _score / 3000;
+    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
+    if(_level <= 9){
+        [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
+    }else{
+        [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
     }
     return YES;
 }
@@ -261,7 +263,7 @@
 
 - (void) checkIfPLayerLost {
     if (_player.health <= 0) {
-        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:_player.score]
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:_score]
                                    withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
     }
 }

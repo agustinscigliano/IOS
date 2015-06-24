@@ -20,17 +20,10 @@
 }
 
 - (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world {
-    self = [super init];
+    self = [super initWithPhysicsWorld:physics_world andSpriteName:ENEMY_PLANE_3_IMAGE andHealth:ENEMY_PLANE_3_HEALTH];
     if (self) {
-        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: ENEMY_PLANE_3_IMAGE]];
-        self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
-        self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
-        self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];
-        self.physicsBody.collisionType = ENEMY_COLLISION;
-        self.physicsBody.velocity = ccp(ENEMY_PLANE_2_SPEED, 0);
-        self.scale = PLANE_SCALE_3;
-        self.score = ENEMY_PLANE_1_SCORE;
-        _physics_world = physics_world;
+        self.physicsBody.velocity = ccp(ENEMY_PLANE_3_SPEED, 0);
+        self.score = ENEMY_PLANE_3_SCORE;
     }
     return self;
 }
@@ -48,14 +41,6 @@
         }
     }
     
-}
-
-- (void) takeDamage: (int) damage {
-    Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: self.position withScale: 1.0f withVelocityX:self.physicsBody.velocity.x];
-    [explosion_1 schedule:@selector(animate:) interval:	0.05];
-    [_physics_world addChild: explosion_1];
-    [self healthPowerUp: _physics_world];
-    [self removeFromParent];
 }
 
 - (void) healthPowerUp: (CCPhysicsNode*) physics_world {

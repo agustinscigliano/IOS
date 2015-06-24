@@ -12,8 +12,6 @@
 #import "Projectile.h"
 #import "Constants.h"
 
-#define DAMAGE ((int) 5)
-
 @implementation Projectile {
     int _screen_size;
 }
@@ -25,7 +23,7 @@
     self.physicsBody.collisionType  = PROJECTILE_COLLISION;
     self.physicsBody.velocity = ccp(speed, 0);
     self.position = position;
-    self.damage = DAMAGE;
+    self.damage = PROJECTILE_DAMAGE;
     self.scaleX = BULLET_SCALE_X;
     self.scaleY = BULLET_SCALE_Y;
     self.physicsBody.sensor = YES;
