@@ -36,12 +36,6 @@
     }
 }
 
-- (void) healthPowerUp: (CCPhysicsNode*) physics_world {
-    if (arc4random()%100 > 75) {
-        [physics_world addChild: [[Health alloc] initWithPosition:self.position]];
-    }
-}
-
 - (void)shootEnemy:(CCTime)dt {
     EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;

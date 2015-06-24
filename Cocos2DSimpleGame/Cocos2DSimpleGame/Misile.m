@@ -22,7 +22,7 @@
     self.physicsBody.collisionCategories = @[MISSILE_COLLISION];
     self.physicsBody.collisionMask = @[ENEMY_COLLISION];
     self.physicsBody.collisionType  = MISSILE_COLLISION;
-    self.physicsBody.velocity = ccp(-MISILE_SPEED-ENEMY_PLANE_3_SPEED, 0);
+    self.physicsBody.velocity = ccp(MISILE_SPEED + ENEMY_PLANE_3_SPEED, 0);
     self.scaleX = MISILE_SCALE_X;
     self.scaleY = MISILE_SCALE_Y;
     self.position = position;
