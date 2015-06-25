@@ -84,5 +84,7 @@
 #define SCORE_PER_LEVEL 2000
 #define INITIAL_CREDITS 2
 #define PLAYER_MAX_HEALTH 100
+#define MAX_LEVELS 3
+#define MIN_SPAWN_INTERVAL 0.5
 
 #endif

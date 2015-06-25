@@ -174,9 +174,9 @@
 - (void)onEnter {
     [super onEnter];
     [_player schedule:@selector(shoot:) interval:DEFAULT_SHOOTING_RATE];
-    [self schedule:@selector(addEnemy:) interval:1.5-self.level*0.2];
-    [self schedule:@selector(addEnemy2:) interval:2.5-self.level*0.2];
-    [self schedule:@selector(addEnemy3:) interval:3.5-self.level*0.2];
+    [self schedule:@selector(addEnemy:) interval:MAX(MIN_SPAWN_INTERVAL, 1.5-self.level*0.2)];
+    [self schedule:@selector(addEnemy2:) interval:MAX(MIN_SPAWN_INTERVAL, 2.5-self.level*0.2)];
+    [self schedule:@selector(addEnemy3:) interval:MAX(MIN_SPAWN_INTERVAL, 3.5-self.level*0.2)];
     [self schedule:@selector(addCloud:) interval:1.5];
 }
 
@@ -224,7 +224,7 @@
     }
     _level = _score / SCORE_PER_LEVEL;
     [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
-    if(_level <= 9){
+    if(_level < MAX_LEVELS){
         [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
     }else{
         [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
