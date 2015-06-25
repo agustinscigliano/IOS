@@ -26,6 +26,7 @@
         self.score = ENEMY_PLANE_3_SCORE;
         self.drop_probability = ENEMY_PLANE_3_DROP_PROBABILITY;
         self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY - difficulty;
+        self.scale=PLANE_SCALE_3;
     }
     return self;
 }
