@@ -14,10 +14,11 @@
     int frame_number;
 }
 
-- (id) initWithPosition:(CGPoint)position {
+- (id) init {
     self = [self initWithImageNamed: SPARKLE_IMAGE];
     frame_number = 1;
-    self.position = position;
+    self.positionType = CCPositionTypeNormalized;
+    self.position = ccp(0.5, 0.5);
     self.scale = SPARKLE_SCALE;
     [self schedule:@selector(animate:) interval:0.05];
     return self;

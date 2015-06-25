@@ -33,10 +33,10 @@
         [self removeFromParent];
     }
     else{
-        if (arc4random()%100 > 97) {
+        if (arc4random()%100 > ENEMY_PLANE_SHOOTING_PROBABILITY) {
             [self shootEnemy:delta];
         }
-        if(arc4random()%100 > 98){
+        if(arc4random()%100 > ENEMY_PLANE_MISSILE_PROBABILITY){
             [self shootEnemy2:delta];
         }
     }

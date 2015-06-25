@@ -209,7 +209,6 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(EnemyPlane_1 *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
-    [enemy addChild: [[Sparkle alloc] initWithPosition:enemy.position]];
     BOOL enemy_died = [enemy takeDamage: projectile.damage];
     if (enemy_died) {
         _score += enemy.score;
@@ -236,7 +235,6 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyBulletCollision:(EnemyBullet *)bullet {
-    [_physicsWorld addChild: [[Sparkle alloc] initWithPosition:bullet.position]];
     [bullet removeFromParent];
     [_player takeDamage: bullet.damage];
     [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];

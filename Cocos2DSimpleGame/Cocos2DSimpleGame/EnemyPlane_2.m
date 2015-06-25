@@ -23,17 +23,9 @@
     if (self) {
         self.physicsBody.velocity = ccp(ENEMY_PLANE_2_SPEED, 0);
         self.score = ENEMY_PLANE_2_SCORE;
+        self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY;
     }
     return self;
-}
-
-- (void) update:(CCTime)delta {
-    if (self.position.x < -self.contentSize.width) {
-        [self removeFromParent];
-    }
-    else if (arc4random()%100 > 97) {
-        [self shootEnemy:delta];
-    }
 }
 
 - (void)shootEnemy:(CCTime)dt {

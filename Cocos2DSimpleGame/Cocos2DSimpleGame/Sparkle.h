@@ -10,7 +10,7 @@
 
 @interface Sparkle : CCSprite
 
-- (id) initWithPosition: (CGPoint) position;
+- (id) init;
 - (void) animate: (CCTime) dt;
 
 @end

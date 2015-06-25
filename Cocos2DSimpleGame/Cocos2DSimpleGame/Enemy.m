@@ -13,6 +13,9 @@
 #import "Health.h"
 #import "TrippleShot.h"
 #import "RapidFire.h"
+#import "EnemyBullet.h"
+#import "Muzzle.h"
+#import "Sparkle.h"
 
 @implementation Enemy {
     CCPhysicsNode *_physics_world;
@@ -33,6 +36,26 @@
     return self;
 }
 
+- (void) update:(CCTime)delta {
+    if (self.position.x < -self.contentSize.width) {
+        [self removeFromParent];
+    }
+    else if (arc4random()%100 > 98) {
+        [self shootEnemy:delta];
+    }
+}
+
+- (void)shootEnemy:(CCTime)dt {
+    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
+    muzzle.scaleX = -MUZZLE_SCALE;
+    muzzle.scaleY = MUZZLE_SCALE;
+    [muzzle schedule:@selector(animate:) interval:0.05];
+    [self addChild:muzzle];
+    [_physics_world addChild:bullet];
+}
+
 - (BOOL) takeDamage: (int) damage {
     _health -= damage;
     if (_health <= 0) {
@@ -46,6 +69,7 @@
     int random_sound_index = (arc4random() % 2) + 1;
     NSString* random_sound_name = [NSString stringWithFormat:@"hit_%d.mp3", random_sound_index];
     [[OALSimpleAudio sharedInstance] playEffect:random_sound_name];
+    [self addChild: [[Sparkle alloc] init]];
     return NO;
 }
 

@@ -11,6 +11,7 @@
 #import "Projectile.h"
 #import "Muzzle.h"
 #import "Constants.h"
+#import "Sparkle.h"
 #define SPEED 200
 #define POSITION_DELTA 5.0f
 
@@ -81,6 +82,7 @@
     int random_sound_index = (arc4random() % 2) + 1;
     NSString* random_sound_name = [NSString stringWithFormat:@"hit_%d.mp3", random_sound_index];
     [[OALSimpleAudio sharedInstance] playEffect:random_sound_name volume:0.25f pitch:1.0f pan:0.5f loop:NO];
+    [self addChild: [[Sparkle alloc] init]];
     _health -= damage;
 }
 
