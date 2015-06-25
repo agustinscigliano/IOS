@@ -70,19 +70,19 @@
     
     _fuselage_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health] fontName:@"Courier New" fontSize:15.0f];
     _fuselage_label.positionType = CCPositionTypeNormalized;
-    _fuselage_label.position = ccp(0.15f, 0.85f);
+    _fuselage_label.position = ccp(0.40f, 0.95f);
     _fuselage_label.color = [CCColor whiteColor];
     [self addChild:_fuselage_label];
     
     _level_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d", self.level] fontName:@"Courier New" fontSize:15.0f];
     _level_label.positionType = CCPositionTypeNormalized;
-    _level_label.position = ccp(0.15f, 0.90f);
+    _level_label.position = ccp(0.60f, 0.95f);
     _level_label.color = [CCColor whiteColor];
     [self addChild:_level_label];
     
     _credits_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Credits: %d", _player.credits] fontName:@"Courier New" fontSize:15.0f];
     _credits_label.positionType = CCPositionTypeNormalized;
-    _credits_label.position = ccp(0.15f, 0.75f);
+    _credits_label.position = ccp(0.15f, 0.90f);
     _credits_label.color = [CCColor whiteColor];
     [self addChild:_credits_label];
 

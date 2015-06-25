@@ -43,14 +43,20 @@
     [self addChild:p51_logo];
     
     //Start game button
-    CCButton *startButton = [CCButton buttonWithTitle:@"Start" fontName:@"Courier New" fontSize:24.0f];
+    CCButton *startButton = [CCButton buttonWithTitle:@"START" fontName:@"Courier New" fontSize:24.0f];
     startButton.positionType = CCPositionTypeNormalized;
     startButton.position = ccp(0.5f, 0.35f);
     [startButton setTarget:self selector:@selector(onStartGameButtonClicked:)];
     [self addChild:startButton];
     
+    CCLabelTTF* created_by_label = [CCLabelTTF labelWithString:@"Created by Germán Romarión & Agustín Scigliano - ITBA - 2015" fontName:@"Courier New" fontSize:12.0f];
+    created_by_label.positionType = CCPositionTypeNormalized;
+    created_by_label.position = ccp(0.5f, 0.05f);
+    created_by_label.color = [CCColor whiteColor];
+    [self addChild:created_by_label];
+    
     [[OALSimpleAudio sharedInstance] playBg:@"game-menu-music.mp3" loop:YES];
-	
+    
 	return self;
 }
 

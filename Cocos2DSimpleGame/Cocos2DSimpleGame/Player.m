@@ -113,7 +113,7 @@
         [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:_plane_name]];
         [self unschedule:@selector(animateExplosion:)];
         [self unschedule:@selector(checkIfPlayerLost:)];
-        [game_scene.fuselage_label setString: @"Fuselage: 100%%"];
+        [game_scene.fuselage_label setString: @"Fuselage: 100%"];
         [game_scene.credits_label setString: [NSString stringWithFormat: @"Credits: %d", _credits]];
     } else {
         [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:game_scene.score]];
