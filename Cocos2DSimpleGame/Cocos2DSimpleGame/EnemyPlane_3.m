@@ -24,6 +24,7 @@
     if (self) {
         self.physicsBody.velocity = ccp(ENEMY_PLANE_3_SPEED, 0);
         self.score = ENEMY_PLANE_3_SCORE;
+        self.drop_probability = ENEMY_PLANE_3_DROP_PROBABILITY;
     }
     return self;
 }

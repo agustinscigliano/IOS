@@ -91,19 +91,19 @@
 }
 
 - (void) healthPowerUp {
-    if (arc4random()%100 > 75) {
+    if (arc4random()%100 > _drop_probability) {
         [_physics_world addChild: [[Health alloc] initWithPosition:self.position]];
     }
 }
 
 - (void) trippleShootPowerUp {
-    if (arc4random()%100 > 75) {
+    if (arc4random()%100 > _drop_probability) {
         [_physics_world addChild: [[TrippleShot alloc] initWithPosition:self.position]];
     }
 }
 
 - (void)rapidFirePowerUp {
-    if (arc4random()%100 > 75) {
+    if (arc4random()%100 > _drop_probability) {
         [_physics_world addChild: [[RapidFire alloc] initWithPosition:self.position]];
     }
 }

@@ -24,6 +24,7 @@
         self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);
         self.score = ENEMY_PLANE_1_SCORE;
         self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY;
+        self.drop_probability = ENEMY_PLANE_1_DROP_PROBABILITY;
     }
     return self;
 }
