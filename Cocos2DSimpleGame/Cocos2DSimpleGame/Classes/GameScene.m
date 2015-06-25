@@ -52,7 +52,7 @@
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
-    _player = [[Player alloc] initWithPhysicsWorld: _physicsWorld planeName: plane_name withScreenSize: self.contentSize.width];
+    _player = [[Player alloc] initWithPlaneName: plane_name withGameScene: self];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player];
     
@@ -216,7 +216,7 @@
     } else {
         _score += ENEMY_PLANE_IMPACT_SCORE;
     }
-    _level = _score / 3000;
+    _level = _score / SCORE_PER_LEVEL;
     [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
     if(_level <= 9){
         [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
@@ -226,7 +226,7 @@
     return YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player misileCollision:(Misile *)misile {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player missileCollision:(Misile *)misile {
     [self createExplosionWithPosition: misile.position withScale: 0.5f];
     [misile removeFromParent];
     [_player takeDamage: misile.damage];
@@ -281,7 +281,7 @@
 - (void) checkIfPLayerLost {
     if (_player.health <= 0) {
         [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:_score]
-                                   withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                                   withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
     }
 }
 
@@ -291,7 +291,7 @@
 
 - (void)goBackToMenu:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 @end

@@ -14,7 +14,7 @@
 #define ENEMY_PLANE_3_IMAGE @"ju-87.png"
 #define ENEMY_COLLISION @"enemyCollision"
 #define PROJECTILE_COLLISION @"projectileCollision"
-#define MISSILE_COLLISION @"misileCollision"
+#define MISSILE_COLLISION @"missileCollision"
 #define ENEMY_BULLET_COLLISION @"enemyBulletCollision"
 #define PLAYER_COLLISION @"playerCollision"
 #define BULLET_COLLISION @"bulletCollision"
@@ -81,5 +81,6 @@
 #define ENEMY_PLANE_1_DROP_PROBABILITY 75
 #define ENEMY_PLANE_2_DROP_PROBABILITY 65
 #define ENEMY_PLANE_3_DROP_PROBABILITY 55
+#define SCORE_PER_LEVEL 2000
 
 #endif

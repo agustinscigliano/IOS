@@ -25,6 +25,9 @@
     if (!self) return(nil);
     _plane_name = plane_name;
     
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
+    [self addChild:background];
+    
     // Selection plane title
     CCLabelTTF *title = [CCLabelTTF labelWithString:@"SELECT A DAYTIME" fontName:@"Courier New" fontSize:20.0];
     title.positionType = CCPositionTypeNormalized;
@@ -103,17 +106,17 @@
 
 - (void)onDayButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: DAY]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onSunsetButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: SUNSET]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onNightButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: NIGHT]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 @end

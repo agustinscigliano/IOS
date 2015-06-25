@@ -26,7 +26,7 @@
     if (!self) return(nil);
     _plane_name = plane_name;
     _dayTime = daytime;
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
     [self addChild:background];
     
     // Selection Difficulty title
@@ -107,15 +107,15 @@
 }
 
 - (void)onEasyButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: EASY] withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: EASY] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onMediumButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: MEDIUM] withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: MEDIUM] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onInsaneButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: INSANE] withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: _dayTime withDifficulty: INSANE] withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 

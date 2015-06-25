@@ -20,6 +20,9 @@
     self = [super init];
     if (!self) return(nil);
     
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
+    [self addChild:background];
+    
     // Selection plane title
     CCLabelTTF *title = [CCLabelTTF labelWithString:@"SELECT YOUR PLANE" fontName:@"Courier New" fontSize:20.0];
     title.positionType = CCPositionTypeNormalized;
@@ -95,17 +98,17 @@
 
 - (void)onP51ButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"p51.png"]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onSpitfireButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"spitfire.png"]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 - (void)onHurricaneButtonClicked:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"hurricane.png"]
-                               withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
+                               withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "cocos2d.h"
 #include "Constants.h"
+#import "GameScene.h"
 
 @interface Player : CCSprite
 
@@ -20,7 +21,7 @@
 @property (nonatomic) int score;
 @property (nonatomic) NSString* plane_name;
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name withScreenSize: (int) screen_size;
+- (id) initWithPlaneName: (NSString*) plane_name withGameScene: (GameScene*) gs;
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
 - (void) addScore: (int) score;

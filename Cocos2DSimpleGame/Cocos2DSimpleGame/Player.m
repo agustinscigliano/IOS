@@ -16,12 +16,11 @@
 #define POSITION_DELTA 5.0f
 
 @implementation Player {
-    CCPhysicsNode* physics_world;
+    GameScene* game_scene;
     NSTimeInterval tripple_shot_timeout;
     NSTimeInterval rapid_fire_timeout;
     BOOL triple_shoot_power_up;
     BOOL rapid_fire_power_up;
-    int _screen_size;
 }
 
 - (id) initWithPlaneName: (NSString*) plane_name {
@@ -42,10 +41,9 @@
     return self;
 }
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physicsWorld planeName:(NSString *)plane_name withScreenSize: (int) screen_size {
+- (id) initWithPlaneName: (NSString*) plane_name withGameScene: (GameScene*) gs {
     self = [self initWithPlaneName: plane_name];
-    physics_world = physicsWorld;
-    _screen_size = screen_size;
+    game_scene = gs;
     return self;
 }
 
@@ -119,18 +117,18 @@
 }
 
 - (void)shootDiagonal:(CCTime)dt from:(CGPoint)position direction:(int)direction {
-    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:_screen_size];
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:game_scene.contentSize.width];
     projectile.rotation = -direction*5;
     projectile.physicsBody.velocity = ccp(500, direction*100);
-    [physics_world addChild:projectile];
+    [game_scene.physicsWorld addChild:projectile];
 }
 
 - (void)shootNormalBullet:(CCTime)dt from:(CGPoint)position {
-    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:_screen_size];
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:game_scene.contentSize.width];
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.9, 0.5)];
     muzzle.positionType = CCPositionTypeNormalized;
     [muzzle schedule:@selector(animate:) interval:0.05];
-    [physics_world addChild:projectile];
+    [game_scene.physicsWorld addChild:projectile];
     [self addChild:muzzle];
 }
 
