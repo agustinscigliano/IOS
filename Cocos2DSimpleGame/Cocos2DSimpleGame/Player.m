@@ -78,6 +78,9 @@
 }
 
 - (void) takeDamage:(int)damage {
+    int random_sound_index = (arc4random() % 2) + 1;
+    NSString* random_sound_name = [NSString stringWithFormat:@"hit_%d.mp3", random_sound_index];
+    [[OALSimpleAudio sharedInstance] playEffect:random_sound_name volume:0.25f pitch:1.0f pan:0.5f loop:NO];
     _health -= damage;
 }
 

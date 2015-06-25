@@ -209,6 +209,7 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(EnemyPlane_1 *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
+    [enemy addChild: [[Sparkle alloc] initWithPosition:enemy.position]];
     BOOL enemy_died = [enemy takeDamage: projectile.damage];
     if (enemy_died) {
         _score += enemy.score;
