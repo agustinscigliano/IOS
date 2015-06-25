@@ -17,6 +17,10 @@
 		47384F741B3B289100E0C58A /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47384F731B3B289100E0C58A /* Enemy.m */; };
 		47384F771B3B2FA500E0C58A /* hit_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47384F751B3B2FA500E0C58A /* hit_1.mp3 */; };
 		47384F781B3B2FA500E0C58A /* hit_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47384F761B3B2FA500E0C58A /* hit_2.mp3 */; };
+		47384F7B1B3B6C1000E0C58A /* SelectDaytimeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 47384F7A1B3B6C1000E0C58A /* SelectDaytimeScene.m */; };
+		47384F7F1B3B727800E0C58A /* day.png in Resources */ = {isa = PBXBuildFile; fileRef = 47384F7C1B3B727800E0C58A /* day.png */; };
+		47384F801B3B727800E0C58A /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 47384F7D1B3B727800E0C58A /* night.png */; };
+		47384F811B3B727800E0C58A /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 47384F7E1B3B727800E0C58A /* sunset.png */; };
 		475C0F1B1B34404600D65899 /* 1943.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1A1B34404600D65899 /* 1943.png */; };
 		475C0F1D1B34427200D65899 /* p51-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F1C1B34427200D65899 /* p51-logo.png */; };
 		475C0F231B34471C00D65899 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F221B34471C00D65899 /* clouds.png */; };
@@ -303,6 +307,11 @@
 		47384F731B3B289100E0C58A /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		47384F751B3B2FA500E0C58A /* hit_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_1.mp3; sourceTree = "<group>"; };
 		47384F761B3B2FA500E0C58A /* hit_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_2.mp3; sourceTree = "<group>"; };
+		47384F791B3B6AE500E0C58A /* SelectDaytimeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDaytimeScene.h; sourceTree = "<group>"; };
+		47384F7A1B3B6C1000E0C58A /* SelectDaytimeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDaytimeScene.m; sourceTree = "<group>"; };
+		47384F7C1B3B727800E0C58A /* day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = day.png; sourceTree = "<group>"; };
+		47384F7D1B3B727800E0C58A /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
+		47384F7E1B3B727800E0C58A /* sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunset.png; sourceTree = "<group>"; };
 		475C0F1A1B34404600D65899 /* 1943.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1943.png; sourceTree = "<group>"; };
 		475C0F1C1B34427200D65899 /* p51-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p51-logo.png"; sourceTree = "<group>"; };
 		475C0F221B34471C00D65899 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
@@ -1731,6 +1740,8 @@
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 				47177E651B34D34300D5B820 /* TrippleShot.h */,
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
+				47384F791B3B6AE500E0C58A /* SelectDaytimeScene.h */,
+				47384F7A1B3B6C1000E0C58A /* SelectDaytimeScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1747,6 +1758,9 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				47384F7C1B3B727800E0C58A /* day.png */,
+				47384F7D1B3B727800E0C58A /* night.png */,
+				47384F7E1B3B727800E0C58A /* sunset.png */,
 				475C0F1A1B34404600D65899 /* 1943.png */,
 				47BF05C61B2B2EC9009D3E93 /* bf-109e.png */,
 				47C493141B2BAB190007FA9F /* bullet.png */,
@@ -1874,6 +1888,7 @@
 			files = (
 				47C493261B2BAB190007FA9F /* Explosion1-1.png in Resources */,
 				5B09A983188B330300E8F2B7 /* Default@2x.png in Resources */,
+				47384F811B3B727800E0C58A /* sunset.png in Resources */,
 				5B09A996188B330300E8F2B7 /* Icon-120.png in Resources */,
 				475C0F3C1B3481B100D65899 /* ju-87.png in Resources */,
 				475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */,
@@ -1908,6 +1923,7 @@
 				FB1434831B223ADC00E65CAF /* misile.png in Resources */,
 				5B09A99A188B330300E8F2B7 /* Icon-Small-50.png in Resources */,
 				47C493281B2BAB190007FA9F /* Explosion1-3.png in Resources */,
+				47384F7F1B3B727800E0C58A /* day.png in Resources */,
 				47C4932C1B2BAB190007FA9F /* Explosion1-7.png in Resources */,
 				47C493451B2C652B0007FA9F /* Explosion3.caf in Resources */,
 				47C493311B2BAB190007FA9F /* Explosion1-12.png in Resources */,
@@ -1925,6 +1941,7 @@
 				47384F771B3B2FA500E0C58A /* hit_1.mp3 in Resources */,
 				47C493301B2BAB190007FA9F /* Explosion1-11.png in Resources */,
 				47BF05CB1B2B2EC9009D3E93 /* bf-109e.png in Resources */,
+				47384F801B3B727800E0C58A /* night.png in Resources */,
 				5B09A994188B330300E8F2B7 /* Icon-76@2x.png in Resources */,
 				5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */,
 				47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */,
@@ -2040,6 +2057,7 @@
 				5B09AB7F188B330500E8F2B7 /* vec3.c in Sources */,
 				5B09AA02188B330400E8F2B7 /* CCLayoutBox.m in Sources */,
 				5B09A9FF188B330400E8F2B7 /* CCLayout.m in Sources */,
+				47384F7B1B3B6C1000E0C58A /* SelectDaytimeScene.m in Sources */,
 				5B09AB22188B330500E8F2B7 /* OALSuspendHandler.m in Sources */,
 				5B09AB81188B330500E8F2B7 /* vec4.c in Sources */,
 				5B09AA93188B330400E8F2B7 /* CCDirectorIOS.m in Sources */,

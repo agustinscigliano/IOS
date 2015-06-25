@@ -19,6 +19,6 @@
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 
-+ (GameScene *)sceneWithPlane:(NSString*) plane_name;
++ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime;
 
 @end

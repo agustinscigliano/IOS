@@ -31,18 +31,18 @@
     Player *_player;
 }
 
-+ (GameScene *)sceneWithPlane:(NSString*) plane_name {
-    return [[self alloc] initWithPlaneName: plane_name];
++ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime {
+    return [[self alloc] initWithPlaneName: plane_name withDaytime: (int) daytime];
     
 }
 
-- (id)initWithPlaneName:(NSString*) plane_name {
+- (id)initWithPlaneName:(NSString*) plane_name withDaytime: (int) daytime {
     self = [super init];
     if (!self) return(nil);
     self.level=0;
     self.userInteractionEnabled = YES;
     
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
+    CCNodeColor *background = [self fetchBackground: daytime];
     [self addChild:background];
     
     self.physicsWorld = [CCPhysicsNode node];
@@ -64,25 +64,42 @@
     _score_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", _player.score] fontName:@"Courier New" fontSize:15.0f];
     _score_label.positionType = CCPositionTypeNormalized;
     _score_label.position = ccp(0.15f, 0.95f);
-    _score_label.color = [CCColor redColor];
+    _score_label.color = [CCColor whiteColor];
     [self addChild:_score_label];
     
     _fuselage_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health] fontName:@"Courier New" fontSize:15.0f];
     _fuselage_label.positionType = CCPositionTypeNormalized;
     _fuselage_label.position = ccp(0.15f, 0.85f);
-    _fuselage_label.color = [CCColor redColor];
+    _fuselage_label.color = [CCColor whiteColor];
     [self addChild:_fuselage_label];
     
     _level_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d", self.level] fontName:@"Courier New" fontSize:15.0f];
     _level_label.positionType = CCPositionTypeNormalized;
     _level_label.position = ccp(0.15f, 0.90f);
-    _level_label.color = [CCColor redColor];
+    _level_label.color = [CCColor whiteColor];
     [self addChild:_level_label];
 
 
     [[OALSimpleAudio sharedInstance] playBg:@"game-music.mp3" loop:YES];
 
 	return self;
+}
+
+- (CCNodeColor*) fetchBackground: (int) daytime {
+    switch (daytime) {
+        case DAY:
+            return [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.75f blue:1.0f alpha:1.0f]];
+            break;
+        case SUNSET:
+            return [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.85f green:0.35f blue:0.0f alpha:1.0f]];
+            break;
+        case NIGHT:
+            return [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f]];
+            break;
+        default:
+            return nil;
+            break;
+    }
 }
 
 - (void)addEnemy:(CCTime)dt {

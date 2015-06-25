@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PlaneSelectionScene.h"
-#import "GameScene.h"
+#import "SelectDaytimeScene.h"
 
 @implementation PlaneSelectionScene
 
@@ -94,17 +94,17 @@
 }
 
 - (void)onP51ButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"p51.png"]
+    [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"p51.png"]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 - (void)onSpitfireButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"spitfire.png"]
+    [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"spitfire.png"]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 - (void)onHurricaneButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: @"hurricane.png"]
+    [[CCDirector sharedDirector] replaceScene:[SelectDaytimeScene sceneWithPlane: @"hurricane.png"]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
