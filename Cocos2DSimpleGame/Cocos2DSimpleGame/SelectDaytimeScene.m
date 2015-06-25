@@ -10,6 +10,7 @@
 #import "SelectDaytimeScene.h"
 #import "GameScene.h"
 #import "Constants.h"
+#import "DifficultyScene.h"
 
 @implementation SelectDaytimeScene {
     NSString* _plane_name;
@@ -101,17 +102,17 @@
 }
 
 - (void)onDayButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: DAY]
+    [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: DAY]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 - (void)onSunsetButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: SUNSET]
+    [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: SUNSET]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 
 - (void)onNightButtonClicked:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithPlane: _plane_name withDaytime: NIGHT]
+    [[CCDirector sharedDirector] replaceScene:[DifficultyScene sceneWithPlane: _plane_name withDaytime: NIGHT]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:0.5f]];
 }
 

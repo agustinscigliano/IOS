@@ -12,6 +12,6 @@
 
 @interface EnemyPlane_2 : Enemy
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world withDifficulty:(int)difficulty;
 
 @end

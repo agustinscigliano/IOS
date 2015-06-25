@@ -27,21 +27,22 @@
 #import "TrippleShot.h"
 #import "RapidFire.h"
 
+
 @implementation GameScene {
     Player *_player;
 }
 
-+ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime {
-    return [[self alloc] initWithPlaneName: plane_name withDaytime: (int) daytime];
++ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime withDifficulty: (int)difficulty {
+    return [[self alloc] initWithPlaneName: plane_name withDaytime: (int) daytime withDifficulty:(int) difficulty];
     
 }
 
-- (id)initWithPlaneName:(NSString*) plane_name withDaytime: (int) daytime {
+- (id)initWithPlaneName:(NSString*) plane_name withDaytime: (int) daytime withDifficulty:(int) difficulty{
     self = [super init];
     if (!self) return(nil);
     self.level=0;
     self.userInteractionEnabled = YES;
-    
+    self.difficulty=difficulty;
     CCNodeColor *background = [self fetchBackground: daytime];
     [self addChild:background];
     
@@ -128,7 +129,7 @@
 }
 
 - (void)addPlane:(CCTime)dt {
-    EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] initWithPhysicsWorld:_physicsWorld];
+    EnemyPlane_1 *enemy_plane1 = [[EnemyPlane_1 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
     int minY = enemy_plane1.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane1.contentSize.height / 2;
     int rangeY = maxY - minY;
@@ -139,7 +140,7 @@
 
 - (void)addPlane2:(CCTime)dt {
     if(self.level>=1){
-    EnemyPlane_2 *enemy_plane2 = [[EnemyPlane_2 alloc] initWithPhysicsWorld:_physicsWorld];
+    EnemyPlane_2 *enemy_plane2 = [[EnemyPlane_2 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
     int minY = enemy_plane2.contentSize.height / 2;
     int maxY = self.contentSize.height - enemy_plane2.contentSize.height / 2;
     int rangeY = maxY - minY;
@@ -151,7 +152,7 @@
 
 - (void)addPlane3:(CCTime)dt {
     if(self.level>=2){
-        EnemyPlane_3 *enemy_plane3 = [[EnemyPlane_3 alloc] initWithPhysicsWorld:_physicsWorld];
+        EnemyPlane_3 *enemy_plane3 = [[EnemyPlane_3 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
         int minY = enemy_plane3.contentSize.height / 2;
         int maxY = self.contentSize.height - enemy_plane3.contentSize.height / 2;
         int rangeY = maxY - minY;

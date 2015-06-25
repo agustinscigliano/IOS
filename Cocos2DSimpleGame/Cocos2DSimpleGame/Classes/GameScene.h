@@ -13,12 +13,13 @@
 
 @property (nonatomic) int score;
 @property (nonatomic) int level;
+@property (nonatomic) int difficulty;
 @property (nonatomic) CCLabelTTF* score_label;
 @property (nonatomic) CCLabelTTF* fuselage_label;
 @property (nonatomic) CCLabelTTF* level_label;
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 
-+ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime;
++ (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime withDifficulty: (int) difficulty;
 
 @end

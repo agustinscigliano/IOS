@@ -19,12 +19,13 @@
     CCPhysicsNode *_physics_world;
 }
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world {
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world withDifficulty: (int) difficulty {
     self = [super initWithPhysicsWorld:physics_world andSpriteName:ENEMY_PLANE_3_IMAGE andHealth:ENEMY_PLANE_3_HEALTH];
     if (self) {
         self.physicsBody.velocity = ccp(ENEMY_PLANE_3_SPEED, 0);
         self.score = ENEMY_PLANE_3_SCORE;
         self.drop_probability = ENEMY_PLANE_3_DROP_PROBABILITY;
+        self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY - difficulty;
     }
     return self;
 }
@@ -34,7 +35,7 @@
         [self removeFromParent];
     }
     else{
-        if (arc4random()%100 > ENEMY_PLANE_SHOOTING_PROBABILITY) {
+        if (arc4random()%100 > self.shooting_probability) {
             [self shootEnemy:delta];
         }
         if(arc4random()%100 > ENEMY_PLANE_MISSILE_PROBABILITY){

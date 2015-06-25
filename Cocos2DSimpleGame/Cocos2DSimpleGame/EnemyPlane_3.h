@@ -13,5 +13,5 @@
 @interface EnemyPlane_3 : Enemy
 
 @property (nonatomic) int score;
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world;
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world withDifficulty:(int)difficulty;
 @end

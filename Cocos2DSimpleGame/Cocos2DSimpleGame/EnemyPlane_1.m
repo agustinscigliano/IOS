@@ -18,12 +18,12 @@
     CCPhysicsNode *_physics_world;
 }
 
-- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world {
+- (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world withDifficulty: (int) difficulty{
     self = [super initWithPhysicsWorld:physics_world andSpriteName:ENEMY_PLANE_1_IMAGE andHealth:ENEMY_PLANE_1_HEALTH];
     if (self) {
         self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);
         self.score = ENEMY_PLANE_1_SCORE;
-        self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY;
+        self.shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY - difficulty;
         self.drop_probability = ENEMY_PLANE_1_DROP_PROBABILITY;
     }
     return self;

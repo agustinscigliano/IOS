@@ -40,7 +40,7 @@
     if (self.position.x < -self.contentSize.width) {
         [self removeFromParent];
     }
-    else if (arc4random()%100 > 98) {
+    else if (arc4random()%100 > self.shooting_probability) {
         [self shootEnemy:delta];
     }
 }
