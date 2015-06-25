@@ -36,28 +36,16 @@
     }
     else{
         if (arc4random()%100 > self.shooting_probability) {
-            [self shootEnemy:delta];
+            [self shootEnemy];
         }
         if(arc4random()%100 > ENEMY_PLANE_MISSILE_PROBABILITY){
-            [self shootEnemy2:delta];
+            [self shootEnemy2];
         }
     }
     
 }
 
-- (void)shootEnemy:(CCTime)dt {
-    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
-    CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
-    muzzle.positionType = CCPositionTypeNormalized;
-    muzzle.scaleX = -MUZZLE_SCALE;
-    muzzle.scaleY = MUZZLE_SCALE;
-    [muzzle schedule:@selector(animate:) interval:0.05];
-    [pw addChild:muzzle];
-    [pw addChild:bullet];
-}
-
-- (void)shootEnemy2:(CCTime)dt {
+- (void)shootEnemy2 {
     Misile *missile = [[Misile alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
@@ -65,9 +53,8 @@
     muzzle.scaleX = -MUZZLE_SCALE;
     muzzle.scaleY = MUZZLE_SCALE;
     [muzzle schedule:@selector(animate:) interval:0.05];
-    [pw addChild:muzzle];
+    [self addChild:muzzle];
     [pw addChild:missile];
 }
-
 
 @end

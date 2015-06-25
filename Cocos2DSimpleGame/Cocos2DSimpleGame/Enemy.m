@@ -41,11 +41,11 @@
         [self removeFromParent];
     }
     else if (arc4random()%100 > self.shooting_probability) {
-        [self shootEnemy:delta];
+        [self shootEnemy];
     }
 }
 
-- (void)shootEnemy:(CCTime)dt {
+- (void) shootEnemy {
     EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
     Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
     muzzle.positionType = CCPositionTypeNormalized;

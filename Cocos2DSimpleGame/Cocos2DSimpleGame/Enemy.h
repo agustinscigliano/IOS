@@ -17,5 +17,6 @@
 
 - (BOOL) takeDamage:(int) damage;
 - (id) initWithPhysicsWorld: (CCPhysicsNode*) physics_world andSpriteName: (NSString*) sprite_name andHealth: (int) heath;
+- (void) shootEnemy;
 
 @end
