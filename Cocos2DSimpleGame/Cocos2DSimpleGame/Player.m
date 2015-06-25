@@ -12,6 +12,7 @@
 #import "Muzzle.h"
 #import "Constants.h"
 #import "Sparkle.h"
+#import "GameOver.h"
 #define SPEED 200
 #define POSITION_DELTA 5.0f
 
@@ -21,6 +22,7 @@
     NSTimeInterval rapid_fire_timeout;
     BOOL triple_shoot_power_up;
     BOOL rapid_fire_power_up;
+    int frame_number;
 }
 
 - (id) initWithPlaneName: (NSString*) plane_name {
@@ -34,9 +36,10 @@
         self.fire_rate = DEFAULT_SHOOTING_RATE;
         self.bullet_speed = DEFAULT_BULLET_SPEED;
         self.scale = PLANE_SCALE;
-        self.health = 100;
+        self.health = PLAYER_MAX_HEALTH;
         triple_shoot_power_up = NO;
         rapid_fire_power_up = NO;
+        _credits = INITIAL_CREDITS;
     }
     return self;
 }
@@ -70,9 +73,11 @@
 }
 
 - (void) update:(CCTime)delta {
-    CGPoint position_difference = ccpSub(_final_position, self.position);
-    if(_isTouched && sqrt(pow(position_difference.x, 2) + pow(position_difference.y, 2)) > POSITION_DELTA) {
-        [self setPosition:ccp(self.position.x + _velocity.x * SPEED * delta, self.position.y + _velocity.y * SPEED * delta)];
+    if (!_player_dead) {
+        CGPoint position_difference = ccpSub(_final_position, self.position);
+        if(_isTouched && sqrt(pow(position_difference.x, 2) + pow(position_difference.y, 2)) > POSITION_DELTA) {
+            [self setPosition:ccp(self.position.x + _velocity.x * SPEED * delta, self.position.y + _velocity.y * SPEED * delta)];
+        }
     }
 }
 
@@ -82,18 +87,51 @@
     [[OALSimpleAudio sharedInstance] playEffect:random_sound_name volume:0.25f pitch:1.0f pan:0.5f loop:NO];
     [self addChild: [[Sparkle alloc] init]];
     _health -= damage;
-}
-
-- (void) recoverHealth:(int)health {
-    if (_health + health > 100) {
-        _health = 100;
-    } else {
-        _health += health;
+    if (_health <= 0) {
+        _player_dead = YES;
+        [self playRandomExplosionSound];
+        [self schedule:@selector(animateExplosion:) interval:0.1];
+        [self schedule:@selector(checkIfPlayerLost:) interval:1 repeat:0 delay:0.1*MAX_FRAMES_FOR_EXPLOSION_1];
     }
 }
 
-- (void) addScore: (int) score {
-    _score += score;
+- (void) animateExplosion: (CCTime) dt {
+    self.scale = 1.0;
+    NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", EXPLOSION_1_IMAGE, frame_number];
+    [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
+    frame_number++;
+}
+
+- (void) checkIfPlayerLost:(CCTime) dt {
+    [self unschedule:@selector(animateExplosion:)];
+    if (_credits > 0) {
+        _credits--;
+        frame_number = 1;
+        self.health = PLAYER_MAX_HEALTH;
+        self.scale = PLANE_SCALE;
+        _player_dead = NO;
+        [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:_plane_name]];
+        [self unschedule:@selector(animateExplosion:)];
+        [self unschedule:@selector(checkIfPlayerLost:)];
+        [game_scene.fuselage_label setString: @"Fuselage: 100%%"];
+        [game_scene.credits_label setString: [NSString stringWithFormat: @"Credits: %d", _credits]];
+    } else {
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:game_scene.score]];
+    }
+}
+
+- (void) playRandomExplosionSound {
+    int image_number = (arc4random() % EXPLOSION_SOUNDS_AMOUNT) + 1;
+    NSString* explosion_sound_path = [NSString stringWithFormat: @"%@%d.caf", EXPLOSION_SOUND_FILE_NAME, image_number];
+    [[OALSimpleAudio sharedInstance] playEffect: explosion_sound_path volume:1.5 pitch:1.0 pan:0.5 loop: NO];
+}
+
+- (void) recoverHealth:(int)health {
+    if (_health + health > PLAYER_MAX_HEALTH) {
+        _health = PLAYER_MAX_HEALTH;
+    } else {
+        _health += health;
+    }
 }
 
 - (void) updateFireRate: (CCTime) fire_rate {
@@ -102,11 +140,13 @@
 }
 
 - (void)shoot:(CCTime)dt {
-    CGPoint shoot_position = ccp(self.position.x + 50, self.position.y);
-    if (triple_shoot_power_up) {
-        [self trippleShot:dt from: shoot_position];
-    } else {
-        [self shootNormalBullet:dt from: shoot_position];
+    if (!_player_dead) {
+        CGPoint shoot_position = ccp(self.position.x + 50, self.position.y);
+        if (triple_shoot_power_up) {
+            [self trippleShot:dt from: shoot_position];
+        } else {
+            [self shootNormalBullet:dt from: shoot_position];
+        }
     }
 }
 

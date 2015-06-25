@@ -17,6 +17,7 @@
 @property (nonatomic) CCLabelTTF* score_label;
 @property (nonatomic) CCLabelTTF* fuselage_label;
 @property (nonatomic) CCLabelTTF* level_label;
+@property (nonatomic) CCLabelTTF* credits_label;
 
 @property (nonatomic, strong) CCPhysicsNode* physicsWorld;
 

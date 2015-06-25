@@ -18,8 +18,9 @@
 @property (nonatomic) CGPoint velocity;
 @property (nonatomic) CGPoint final_position;
 @property (nonatomic) BOOL isTouched;
-@property (nonatomic) int score;
 @property (nonatomic) NSString* plane_name;
+@property (nonatomic) int credits;
+@property (nonatomic) BOOL player_dead;
 
 - (id) initWithPlaneName: (NSString*) plane_name withGameScene: (GameScene*) gs;
 - (void) takeDamage:(int) damage;

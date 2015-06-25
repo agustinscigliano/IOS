@@ -62,7 +62,7 @@
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
     
-    _score_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", _player.score] fontName:@"Courier New" fontSize:15.0f];
+    _score_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", _score] fontName:@"Courier New" fontSize:15.0f];
     _score_label.positionType = CCPositionTypeNormalized;
     _score_label.position = ccp(0.15f, 0.95f);
     _score_label.color = [CCColor whiteColor];
@@ -79,6 +79,12 @@
     _level_label.position = ccp(0.15f, 0.90f);
     _level_label.color = [CCColor whiteColor];
     [self addChild:_level_label];
+    
+    _credits_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Credits: %d", _player.credits] fontName:@"Courier New" fontSize:15.0f];
+    _credits_label.positionType = CCPositionTypeNormalized;
+    _credits_label.position = ccp(0.15f, 0.75f);
+    _credits_label.color = [CCColor whiteColor];
+    [self addChild:_credits_label];
 
 
     [[OALSimpleAudio sharedInstance] playBg:@"game-music.mp3" loop:YES];
@@ -227,62 +233,72 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player missileCollision:(Misile *)misile {
-    [self createExplosionWithPosition: misile.position withScale: 0.5f];
-    [misile removeFromParent];
-    [_player takeDamage: misile.damage];
-    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
-    [self checkIfPLayerLost];
-    return YES;
+    if (!_player.player_dead) {
+        [self createExplosionWithPosition: misile.position withScale: 0.5f];
+        [misile removeFromParent];
+        [_player takeDamage: misile.damage];
+        [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyBulletCollision:(EnemyBullet *)bullet {
-    [bullet removeFromParent];
-    [_player takeDamage: bullet.damage];
-    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
-    [self checkIfPLayerLost];
-    return YES;
+    if (!_player.player_dead) {
+        [bullet removeFromParent];
+        [_player takeDamage: bullet.damage];
+        [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player enemyCollision:(CCNode *)enemy {
-    [self createExplosionWithPosition: enemy.position withScale: 1.0f];
-    [enemy removeFromParent];
-    [_player takeDamage: PLANE_COLLISION_DAMAGE];
-    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
-    [self checkIfPLayerLost];
-    return YES;
+    if (!_player.player_dead) {
+        [self createExplosionWithPosition: enemy.position withScale: 1.0f];
+        [enemy removeFromParent];
+        [_player takeDamage: PLANE_COLLISION_DAMAGE];
+        [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player healthCollision:(Health *)health {
-    [health removeFromParent];
-    [_player recoverHealth: health.health];
-    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
-    return YES;
+    if (!_player.player_dead) {
+        [health removeFromParent];
+        [_player recoverHealth: health.health];
+        [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player trippleShotCollision:(TrippleShot *)trippleShot {
-    [trippleShot removeFromParent];
-    [_player trippleShot];
-    return YES;
+    if (!_player.player_dead) {
+        [trippleShot removeFromParent];
+        [_player trippleShot];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rapidFireCollision:(RapidFire *)rapidFire {
-    [rapidFire removeFromParent];
-    [_player rapidFire];
-    return YES;
+    if (!_player.player_dead) {
+        [rapidFire removeFromParent];
+        [_player rapidFire];
+        return YES;
+    }
+    return NO;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player explosionCollision:(Explosion1 *)explosion {
-    [_player takeDamage: explosion.damage];
-    [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
-    [self checkIfPLayerLost];
-    return YES;
-}
-
-- (void) checkIfPLayerLost {
-    if (_player.health <= 0) {
-        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:_score]
-                                   withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+    if (!_player.player_dead) {
+        [_player takeDamage: explosion.damage];
+        [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
     }
+    return NO;
 }
 
 - (void)onBackClicked:(id)sender {
