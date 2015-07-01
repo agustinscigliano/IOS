@@ -12,6 +12,6 @@
 
 @property (nonatomic) int damage;
 
-- (id) initWithPosition:(CGPoint)position;
+- (id)initWithPosition: (CGPoint)position screenSize: (int) screen_size;
 
 @end

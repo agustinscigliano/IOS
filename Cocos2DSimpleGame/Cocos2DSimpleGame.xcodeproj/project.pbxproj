@@ -47,6 +47,7 @@
 		47622AF41B4420F7000CF64C /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF11B4420F7000CF64C /* shield.png */; };
 		47622AF71B44222B000CF64C /* RocketPowerup.m in Sources */ = {isa = PBXBuildFile; fileRef = 47622AF61B44222B000CF64C /* RocketPowerup.m */; };
 		47622AFA1B442FF5000CF64C /* PlayerRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 47622AF91B442FF5000CF64C /* PlayerRocket.m */; };
+		47622AFC1B449848000CF64C /* missile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47622AFB1B449848000CF64C /* missile.mp3 */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -75,7 +76,6 @@
 		47C493421B2C60CF0007FA9F /* Explosion2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493401B2C60CF0007FA9F /* Explosion2.caf */; };
 		47C493451B2C652B0007FA9F /* Explosion3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493431B2C652B0007FA9F /* Explosion3.caf */; };
 		47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493441B2C652B0007FA9F /* Explosion4.caf */; };
-		47C493481B2C67350007FA9F /* Shoot1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493471B2C67350007FA9F /* Shoot1.caf */; };
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
@@ -356,6 +356,7 @@
 		47622AF61B44222B000CF64C /* RocketPowerup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RocketPowerup.m; sourceTree = "<group>"; };
 		47622AF81B442EFF000CF64C /* PlayerRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerRocket.h; sourceTree = "<group>"; };
 		47622AF91B442FF5000CF64C /* PlayerRocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerRocket.m; sourceTree = "<group>"; };
+		47622AFB1B449848000CF64C /* missile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missile.mp3; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -389,7 +390,6 @@
 		47C493401B2C60CF0007FA9F /* Explosion2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion2.caf; sourceTree = "<group>"; };
 		47C493431B2C652B0007FA9F /* Explosion3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion3.caf; sourceTree = "<group>"; };
 		47C493441B2C652B0007FA9F /* Explosion4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion4.caf; sourceTree = "<group>"; };
-		47C493471B2C67350007FA9F /* Shoot1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shoot1.caf; sourceTree = "<group>"; };
 		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1837,16 +1837,16 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				47384F751B3B2FA500E0C58A /* hit_1.mp3 */,
-				47384F761B3B2FA500E0C58A /* hit_2.mp3 */,
-				475C0F4B1B348FB800D65899 /* game-over.mp3 */,
-				475C0F311B346E0500D65899 /* game-menu-music.mp3 */,
-				475C0F261B344C2800D65899 /* game-music.mp3 */,
-				47C493471B2C67350007FA9F /* Shoot1.caf */,
-				47C493431B2C652B0007FA9F /* Explosion3.caf */,
-				47C493441B2C652B0007FA9F /* Explosion4.caf */,
 				47C4933F1B2C60CF0007FA9F /* Explosion1.caf */,
 				47C493401B2C60CF0007FA9F /* Explosion2.caf */,
+				47C493431B2C652B0007FA9F /* Explosion3.caf */,
+				47C493441B2C652B0007FA9F /* Explosion4.caf */,
+				475C0F311B346E0500D65899 /* game-menu-music.mp3 */,
+				475C0F261B344C2800D65899 /* game-music.mp3 */,
+				475C0F4B1B348FB800D65899 /* game-over.mp3 */,
+				47384F751B3B2FA500E0C58A /* hit_1.mp3 */,
+				47384F761B3B2FA500E0C58A /* hit_2.mp3 */,
+				47622AFB1B449848000CF64C /* missile.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1935,6 +1935,7 @@
 				5B09A99E188B330300E8F2B7 /* Icon-Small@2x.png in Resources */,
 				47C4932D1B2BAB190007FA9F /* Explosion1-8.png in Resources */,
 				475C0F301B34680A00D65899 /* cloud-3.png in Resources */,
+				47622AFC1B449848000CF64C /* missile.mp3 in Resources */,
 				5B09A990188B330300E8F2B7 /* Icon-72@2x.png in Resources */,
 				475C0F2F1B34680A00D65899 /* cloud-2.png in Resources */,
 				5B09A981188B330300E8F2B7 /* Default.png in Resources */,
@@ -1947,7 +1948,6 @@
 				47C4932E1B2BAB190007FA9F /* Explosion1-9.png in Resources */,
 				FBEBB5881B3C803C00249EF0 /* easy.png in Resources */,
 				475C0F461B348AF900D65899 /* spitfire.png in Resources */,
-				47C493481B2C67350007FA9F /* Shoot1.caf in Resources */,
 				475C0F2E1B34680A00D65899 /* cloud-1.png in Resources */,
 				47C493321B2BAB190007FA9F /* Explosion1-13.png in Resources */,
 				47C493411B2C60CF0007FA9F /* Explosion1.caf in Resources */,

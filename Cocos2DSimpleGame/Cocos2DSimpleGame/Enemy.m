@@ -28,8 +28,8 @@
         [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: sprite_name]];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
-        self.physicsBody.collisionMask = @[PROJECTILE_COLLISION, PLAYER_ROCKET_COLLISION];
         self.physicsBody.collisionType = ENEMY_COLLISION;
+        self.physicsBody.sensor = YES;
         self.scale = PLANE_SCALE;
         _health = heath;
         _physics_world = physics_world;

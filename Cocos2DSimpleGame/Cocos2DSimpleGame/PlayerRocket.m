@@ -14,9 +14,11 @@
 
 #define DAMAGE ((int) 15)
 
-@implementation PlayerRocket
+@implementation PlayerRocket {
+    int _screen_size;
+}
 
--(id)initWithPosition: (CGPoint)position {
+- (id)initWithPosition: (CGPoint)position screenSize: (int) screen_size {
     self = [super initWithImageNamed:MISSILE_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
     self.physicsBody.collisionCategories = @[PLAYER_ROCKET_COLLISION];
@@ -25,12 +27,14 @@
     self.scaleX = -MISILE_SCALE_X;
     self.scaleY = MISILE_SCALE_Y;
     self.position = position;
+    self.physicsBody.sensor = YES;
     _damage = DAMAGE;
+    _screen_size = screen_size;
     return self;
 }
 
 - (void) update:(CCTime) delta {
-    if (self.position.x < -self.contentSize.width) {
+    if (self.position.x > _screen_size + self.contentSize.width) {
         [self removeFromParent];
     }
 }

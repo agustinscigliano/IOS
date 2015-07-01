@@ -51,8 +51,7 @@
 
 - (void) trippleShot {
     triple_shoot_power_up = YES;
-    [self unschedule:@selector(stopTrippleShot:)];
-    [self schedule:@selector(stopTrippleShot:) interval:10 repeat:0 delay:TRIPPLE_SHOT_DURATION];
+    [self schedule:@selector(stopTrippleShot:) interval:1 repeat:0 delay:TRIPPLE_SHOT_DURATION];
 }
 
 - (void) stopTrippleShot:(CCTime)dt {
@@ -64,9 +63,8 @@
 }
 
 - (void) rapidFire {
-    [self unschedule:@selector(stopRapidFire:)];
     [self updateFireRate:0.15];
-    [self schedule:@selector(stopRapidFire:) interval:10 repeat:0 delay:RAPID_FIRE_DURATION];
+    [self schedule:@selector(stopRapidFire:) interval:1 repeat:0 delay:RAPID_FIRE_DURATION];
 }
 
 - (void) update:(CCTime)delta {
@@ -112,10 +110,9 @@
         self.scale = PLANE_SCALE;
         _player_dead = NO;
         [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed:_plane_name]];
-        [self unschedule:@selector(animateExplosion:)];
-        [self unschedule:@selector(checkIfPlayerLost:)];
         [game_scene.fuselage_label setString: @"Fuselage: 100%"];
         [game_scene.credits_label setString: [NSString stringWithFormat: @"Credits: %d", _credits]];
+        [self unschedule:@selector(checkIfPlayerLost:)];
     } else {
         [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:game_scene.score]];
     }
@@ -152,15 +149,13 @@
 }
 
 - (void) rocketPowerup {
-    [self unschedule:@selector(shootRockets:)];
-    [self unschedule:@selector(stopRockets:)];
     [self schedule:@selector(shootRockets:) interval:0.5];
-    [self schedule:@selector(stopRockets:) interval:0 repeat:0 delay:ROCKET_POWERUP_DURATION];
+    [self schedule:@selector(stopRockets:) interval:1 repeat:0 delay:ROCKET_POWERUP_DURATION];
 }
 
 - (void) shootRockets: (CCTime)dt {
     if (!_player_dead) {
-        PlayerRocket *player_rocket = [[PlayerRocket alloc] initWithPosition:ccp(self.position.x + 50, self.position.y)];
+        PlayerRocket *player_rocket = [[PlayerRocket alloc] initWithPosition:ccp(self.position.x + 50, self.position.y) screenSize:game_scene.contentSize.width];
         [game_scene.physicsWorld addChild:player_rocket];
     }
 }

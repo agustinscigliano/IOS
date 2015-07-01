@@ -30,16 +30,4 @@
     return self;
 }
 
-- (void)shootEnemy:(CCTime)dt {
-    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
-    CCPhysicsNode* pw = ((GameScene*)[CCDirector sharedDirector].runningScene).physicsWorld;
-    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
-    muzzle.positionType = CCPositionTypeNormalized;
-    muzzle.scaleX = -MUZZLE_SCALE;
-    muzzle.scaleY = MUZZLE_SCALE;
-    [muzzle schedule:@selector(animate:) interval:0.05];
-    [pw addChild:muzzle];
-    [pw addChild:bullet];
-}
-
 @end

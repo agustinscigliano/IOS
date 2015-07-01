@@ -20,9 +20,9 @@
     self = [super initWithImageNamed:BULLET_IMAGE];
     self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
     self.physicsBody.collisionCategories = @[ENEMY_BULLET_COLLISION];
-    self.physicsBody.collisionMask = @[ENEMY_COLLISION];
     self.physicsBody.collisionType  = ENEMY_BULLET_COLLISION;
     self.physicsBody.velocity = ccp(-DEFAULT_BULLET_SPEED, 0);
+    self.physicsBody.sensor = YES;
     self.scaleX = BULLET_SCALE_X;
     self.scaleY = BULLET_SCALE_Y;
     self.position = position;

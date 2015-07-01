@@ -294,6 +294,7 @@
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy playerRocketCollision:(PlayerRocket *)player_rocket {
+    [self createExplosionWithPosition: player_rocket.position withScale: 0.5f];
     [player_rocket removeFromParent];
     BOOL enemy_died = [enemy takeDamage: player_rocket.damage];
     if (enemy_died) {

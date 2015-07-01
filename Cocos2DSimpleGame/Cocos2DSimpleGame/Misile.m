@@ -27,6 +27,7 @@
     self.scaleY = MISILE_SCALE_Y;
     self.position = position;
     _damage = DAMAGE;
+    [[OALSimpleAudio sharedInstance] playEffect:@"missile.mp3"];
     return self;
 }
 

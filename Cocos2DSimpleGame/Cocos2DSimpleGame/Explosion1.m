@@ -34,8 +34,9 @@
     NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", EXPLOSION_1_IMAGE, frame_number];
     [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
     frame_number++;
-    if (frame_number == MAX_FRAMES_FOR_EXPLOSION_1)
+    if (frame_number == MAX_FRAMES_FOR_EXPLOSION_1) {
         [self removeFromParent];
+    }
 }
 
 - (void) playRandomExplosionSound {
