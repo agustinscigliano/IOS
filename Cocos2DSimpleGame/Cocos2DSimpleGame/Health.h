@@ -7,8 +7,9 @@
 //
 
 #import "cocos2d.h"
+#import "PowerUp.h"
 
-@interface Health : CCSprite
+@interface Health : PowerUp
 
 @property (nonatomic) int health;
 

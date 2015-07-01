@@ -7,8 +7,9 @@
 //
 
 #import "cocos2d.h"
+#import "PowerUp.h"
 
-@interface TrippleShot : CCSprite
+@interface TrippleShot : PowerUp
 
 - (id) initWithPosition: (CGPoint) position;
 

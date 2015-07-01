@@ -25,10 +25,4 @@
     return self;
 }
 
--(void) update:(CCTime)delta {
-    if (self.position.x < -self.contentSize.width) {
-        [self removeFromParent];
-    }
-}
-
 @end

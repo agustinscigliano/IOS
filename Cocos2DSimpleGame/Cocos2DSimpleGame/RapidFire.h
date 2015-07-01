@@ -7,8 +7,9 @@
 //
 
 #import "cocos2d.h"
+#import "PowerUp.h"
 
-@interface RapidFire : CCSprite
+@interface RapidFire : PowerUp
 
 - (id) initWithPosition: (CGPoint) position;
 

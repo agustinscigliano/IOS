@@ -1,5 +1,5 @@
 //
-//  RocketPowerup.h
+//  PowerUp.h
 //  Cocos2DSimpleGame
 //
 //  Created by German Romarion on 1/7/15.
@@ -7,10 +7,9 @@
 //
 
 #import "cocos2d.h"
-#import "PowerUp.h"
 
-@interface RocketPowerup : PowerUp
+@interface PowerUp : CCSprite
 
-- (id) initWithPosition: (CGPoint) position;
+- (void) update: (CCTime) dt;
 
 @end
