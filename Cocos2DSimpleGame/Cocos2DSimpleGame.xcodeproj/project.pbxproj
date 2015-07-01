@@ -49,6 +49,7 @@
 		47622AFA1B442FF5000CF64C /* PlayerRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 47622AF91B442FF5000CF64C /* PlayerRocket.m */; };
 		47622AFC1B449848000CF64C /* missile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47622AFB1B449848000CF64C /* missile.mp3 */; };
 		47856AB61B44AA0800E301B4 /* PowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 47856AB51B44AA0800E301B4 /* PowerUp.m */; };
+		47856AB91B44ACBE00E301B4 /* ShieldPowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 47856AB81B44ACBE00E301B4 /* ShieldPowerUp.m */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -360,6 +361,8 @@
 		47622AFB1B449848000CF64C /* missile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missile.mp3; sourceTree = "<group>"; };
 		47856AB41B44A9C600E301B4 /* PowerUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUp.h; sourceTree = "<group>"; };
 		47856AB51B44AA0800E301B4 /* PowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUp.m; sourceTree = "<group>"; };
+		47856AB71B44AC6B00E301B4 /* ShieldPowerUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldPowerUp.h; sourceTree = "<group>"; };
+		47856AB81B44ACBE00E301B4 /* ShieldPowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldPowerUp.m; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1774,6 +1777,8 @@
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
 				47856AB41B44A9C600E301B4 /* PowerUp.h */,
 				47856AB51B44AA0800E301B4 /* PowerUp.m */,
+				47856AB71B44AC6B00E301B4 /* ShieldPowerUp.h */,
+				47856AB81B44ACBE00E301B4 /* ShieldPowerUp.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2016,6 +2021,7 @@
 				5B09AA15188B330400E8F2B7 /* CCParticleBatchNode.m in Sources */,
 				5B09AB8D188B330500E8F2B7 /* CCBReader.m in Sources */,
 				47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */,
+				47856AB91B44ACBE00E301B4 /* ShieldPowerUp.m in Sources */,
 				5B09AB3D188B330500E8F2B7 /* CCButton.m in Sources */,
 				5B09AAE8188B330500E8F2B7 /* OALAudioActions.m in Sources */,
 				5B09AB2D188B330500E8F2B7 /* NSMutableArray+WeakReferences.m in Sources */,

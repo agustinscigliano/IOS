@@ -11,6 +11,14 @@
 
 @implementation PowerUp
 
+- (id) initializeWithPosition: (CGPoint) position {
+    self.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:self.contentSize.width/2.0f andCenter:self.anchorPointInPoints];
+    self.physicsBody.velocity = ccp(-100, 0);
+    self.physicsBody.sensor = YES;
+    self.position = position;
+    return self;
+}
+
 - (void) update:(CCTime)delta {
     if (self.position.x < -self.contentSize.width) {
         [self removeFromParent];

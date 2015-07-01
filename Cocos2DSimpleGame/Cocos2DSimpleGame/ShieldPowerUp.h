@@ -1,5 +1,5 @@
 //
-//  PowerUp.h
+//  ShieldPowerUp.h
 //  Cocos2DSimpleGame
 //
 //  Created by German Romarion on 1/7/15.
@@ -7,10 +7,10 @@
 //
 
 #import "cocos2d.h"
+#import "PowerUp.h"
 
-@interface PowerUp : CCSprite
+@interface ShieldPowerUp : PowerUp
 
-- (void) initializeWithPosition: (CGPoint) position;
-- (void) update: (CCTime) dt;
+- (id) initWithPosition: (CGPoint) position;
 
 @end
