@@ -16,7 +16,6 @@
 
 +(CCSprite*) initCloud {
     int cloud_number = (arc4random() % CLOUDS_AMOUNT) + 1;
-    NSLog(@"cloud = %d", cloud_number);
     NSString *cloud_name = [NSString stringWithFormat:@"cloud-%d.png", cloud_number];
     CCSprite *cloud = [[CCSprite alloc] initWithImageNamed: cloud_name];
     cloud.opacity = MAX(0.5, ((double)arc4random() / ARC4RANDOM_MAX));

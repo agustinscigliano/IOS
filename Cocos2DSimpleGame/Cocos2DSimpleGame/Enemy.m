@@ -16,6 +16,7 @@
 #import "EnemyBullet.h"
 #import "Muzzle.h"
 #import "Sparkle.h"
+#import "RocketPowerup.h"
 
 @implementation Enemy {
     CCPhysicsNode *_physics_world;
@@ -27,7 +28,7 @@
         [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: sprite_name]];
         self.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, self.contentSize} cornerRadius:0];
         self.physicsBody.collisionCategories = @[ENEMY_COLLISION];
-        self.physicsBody.collisionMask = @[PROJECTILE_COLLISION];
+        self.physicsBody.collisionMask = @[PROJECTILE_COLLISION, PLAYER_ROCKET_COLLISION];
         self.physicsBody.collisionType = ENEMY_COLLISION;
         self.scale = PLANE_SCALE;
         _health = heath;
@@ -85,6 +86,9 @@
         case 2:
             [self rapidFirePowerUp];
             break;
+        case 3:
+            [self rocketPowerup];
+            break;
         default:
             break;
     }
@@ -105,6 +109,12 @@
 - (void)rapidFirePowerUp {
     if (arc4random()%100 > _drop_probability) {
         [_physics_world addChild: [[RapidFire alloc] initWithPosition:self.position]];
+    }
+}
+
+- (void)rocketPowerup {
+    if (arc4random()%100 > _drop_probability) {
+        [_physics_world addChild: [[RocketPowerup alloc] initWithPosition:self.position]];
     }
 }
 

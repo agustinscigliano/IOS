@@ -26,7 +26,8 @@
 #import "Sparkle.h"
 #import "TrippleShot.h"
 #import "RapidFire.h"
-
+#import "RocketPowerup.h"
+#import "PlayerRocket.h"
 
 @implementation GameScene {
     Player *_player;
@@ -214,7 +215,7 @@
     _player.isTouched = YES;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(EnemyPlane_1 *)enemy projectileCollision:(Projectile *)projectile {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
     BOOL enemy_died = [enemy takeDamage: projectile.damage];
     if (enemy_died) {
@@ -281,6 +282,33 @@
         return YES;
     }
     return NO;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rocketPowerupCollision:(RocketPowerup *)rocketPowerup {
+    if (!_player.player_dead) {
+        [rocketPowerup removeFromParent];
+        [_player rocketPowerup];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy playerRocketCollision:(PlayerRocket *)player_rocket {
+    [player_rocket removeFromParent];
+    BOOL enemy_died = [enemy takeDamage: player_rocket.damage];
+    if (enemy_died) {
+        _score += enemy.score;
+    } else {
+        _score += ENEMY_PLANE_IMPACT_SCORE;
+    }
+    _level = _score / SCORE_PER_LEVEL;
+    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
+    if(_level < MAX_LEVELS){
+        [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
+    }else{
+        [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
+    }
+    return YES;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rapidFireCollision:(RapidFire *)rapidFire {

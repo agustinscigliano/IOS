@@ -25,9 +25,9 @@
 - (id) initWithPlaneName: (NSString*) plane_name withGameScene: (GameScene*) gs;
 - (void) takeDamage:(int) damage;
 - (void) recoverHealth: (int) health;
-- (void) addScore: (int) score;
 - (void) updateFireRate: (CCTime) fire_rate;
 - (void) trippleShot;
 - (void) rapidFire;
+- (void) rocketPowerup;
 
 @end

@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "Sparkle.h"
 #import "GameOver.h"
+#import "PlayerRocket.h"
 #define SPEED 200
 #define POSITION_DELTA 5.0f
 
@@ -21,7 +22,6 @@
     NSTimeInterval tripple_shot_timeout;
     NSTimeInterval rapid_fire_timeout;
     BOOL triple_shoot_power_up;
-    BOOL rapid_fire_power_up;
     int frame_number;
 }
 
@@ -38,7 +38,6 @@
         self.scale = PLANE_SCALE;
         self.health = PLAYER_MAX_HEALTH;
         triple_shoot_power_up = NO;
-        rapid_fire_power_up = NO;
         _credits = INITIAL_CREDITS;
     }
     return self;
@@ -52,24 +51,22 @@
 
 - (void) trippleShot {
     triple_shoot_power_up = YES;
-    [self schedule:@selector(stopTrippleShot:) interval:10 repeat:0 delay:10];
+    [self unschedule:@selector(stopTrippleShot:)];
+    [self schedule:@selector(stopTrippleShot:) interval:10 repeat:0 delay:TRIPPLE_SHOT_DURATION];
 }
 
 - (void) stopTrippleShot:(CCTime)dt {
     triple_shoot_power_up = NO;
-    [self unschedule:@selector(stopTrippleShot:)];
 }
 
 - (void) stopRapidFire:(CCTime)dt {
-    rapid_fire_power_up = NO;
     [self updateFireRate:DEFAULT_SHOOTING_RATE];
-    [self unschedule:@selector(stopRapidFire:)];
 }
 
 - (void) rapidFire {
-    rapid_fire_power_up = YES;
+    [self unschedule:@selector(stopRapidFire:)];
     [self updateFireRate:0.15];
-    [self schedule:@selector(stopRapidFire:) interval:100 repeat:0 delay:10];
+    [self schedule:@selector(stopRapidFire:) interval:10 repeat:0 delay:RAPID_FIRE_DURATION];
 }
 
 - (void) update:(CCTime)delta {
@@ -90,8 +87,12 @@
     if (_health <= 0) {
         _player_dead = YES;
         [self playRandomExplosionSound];
-        [self schedule:@selector(animateExplosion:) interval:0.1];
+        [self schedule:@selector(animateExplosion:) interval:0.1 repeat:0 delay:0];
         [self schedule:@selector(checkIfPlayerLost:) interval:1 repeat:0 delay:0.1*MAX_FRAMES_FOR_EXPLOSION_1];
+        [self updateFireRate:DEFAULT_SHOOTING_RATE];
+        triple_shoot_power_up = NO;
+        [self unschedule:@selector(shootRockets:)];
+        [self unschedule:@selector(stopRockets:)];
     }
 }
 
@@ -148,6 +149,24 @@
             [self shootNormalBullet:dt from: shoot_position];
         }
     }
+}
+
+- (void) rocketPowerup {
+    [self unschedule:@selector(shootRockets:)];
+    [self unschedule:@selector(stopRockets:)];
+    [self schedule:@selector(shootRockets:) interval:0.5];
+    [self schedule:@selector(stopRockets:) interval:0 repeat:0 delay:ROCKET_POWERUP_DURATION];
+}
+
+- (void) shootRockets: (CCTime)dt {
+    if (!_player_dead) {
+        PlayerRocket *player_rocket = [[PlayerRocket alloc] initWithPosition:ccp(self.position.x + 50, self.position.y)];
+        [game_scene.physicsWorld addChild:player_rocket];
+    }
+}
+
+- (void) stopRockets: (CCTime) dt {
+    [self unschedule:@selector(shootRockets:)];
 }
 
 - (void)trippleShot: (CCTime)dt from: (CGPoint)position {

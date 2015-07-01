@@ -22,6 +22,8 @@
 #define EXPLOSION_COLLISION @"explosionCollision"
 #define TRIPPLE_SHOT_COLLISION @"trippleShotCollision"
 #define RAPID_FIRE_COLLISION @"rapidFireCollision"
+#define ROCKET_POWERUP_COLLISION @"rocketPowerupCollision"
+#define PLAYER_ROCKET_COLLISION @"playerRocketCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define SPARKLE_IMAGE @"sparkle.png"
@@ -68,8 +70,8 @@
 #define ENEMY_PLANE_2_HEALTH 15
 #define ENEMY_PLANE_3_HEALTH 30
 #define PROJECTILE_DAMAGE 5
-#define TRIPPLE_SHOT_DURATION = 15
-#define RAPID_FIRE_DURATION = 15
+#define TRIPPLE_SHOT_DURATION 15
+#define RAPID_FIRE_DURATION 15
 #define DAY 1
 #define SUNSET 2
 #define NIGHT 3
@@ -86,5 +88,9 @@
 #define PLAYER_MAX_HEALTH 100
 #define MAX_LEVELS 3
 #define MIN_SPAWN_INTERVAL 0.5
+#define ROCKET_POWERUP_SCALE 0.1
+#define ROCKET_FIRE_RATE 0.5
+#define PLAYER_ROCKET_SPEED 200
+#define ROCKET_POWERUP_DURATION 15
 
 #endif

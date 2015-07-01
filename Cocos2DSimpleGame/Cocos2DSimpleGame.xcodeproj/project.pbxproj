@@ -42,6 +42,11 @@
 		475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4B1B348FB800D65899 /* game-over.mp3 */; };
 		475C0F4E1B34936500D65899 /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4D1B34936500D65899 /* health.png */; };
 		475C0F511B34937E00D65899 /* Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F501B34937E00D65899 /* Health.m */; };
+		47622AF21B4420F7000CF64C /* rocket-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AEF1B4420F7000CF64C /* rocket-powerup.png */; };
+		47622AF31B4420F7000CF64C /* shield-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF01B4420F7000CF64C /* shield-powerup.png */; };
+		47622AF41B4420F7000CF64C /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF11B4420F7000CF64C /* shield.png */; };
+		47622AF71B44222B000CF64C /* RocketPowerup.m in Sources */ = {isa = PBXBuildFile; fileRef = 47622AF61B44222B000CF64C /* RocketPowerup.m */; };
+		47622AFA1B442FF5000CF64C /* PlayerRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 47622AF91B442FF5000CF64C /* PlayerRocket.m */; };
 		479B8B4F1B221995000E38CA /* p51.png in Resources */ = {isa = PBXBuildFile; fileRef = 479B8B4A1B221995000E38CA /* p51.png */; };
 		47BF05B41B2B047B009D3E93 /* EnemyPlane_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */; };
 		47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BF05C31B2B28B8009D3E93 /* EnemyFactory.m */; };
@@ -344,6 +349,13 @@
 		475C0F4D1B34936500D65899 /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
 		475C0F4F1B34937200D65899 /* Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Health.h; sourceTree = "<group>"; };
 		475C0F501B34937E00D65899 /* Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Health.m; sourceTree = "<group>"; };
+		47622AEF1B4420F7000CF64C /* rocket-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket-powerup.png"; sourceTree = "<group>"; };
+		47622AF01B4420F7000CF64C /* shield-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield-powerup.png"; sourceTree = "<group>"; };
+		47622AF11B4420F7000CF64C /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		47622AF51B44216F000CF64C /* RocketPowerup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RocketPowerup.h; sourceTree = "<group>"; };
+		47622AF61B44222B000CF64C /* RocketPowerup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RocketPowerup.m; sourceTree = "<group>"; };
+		47622AF81B442EFF000CF64C /* PlayerRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerRocket.h; sourceTree = "<group>"; };
+		47622AF91B442FF5000CF64C /* PlayerRocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerRocket.m; sourceTree = "<group>"; };
 		479B8B4A1B221995000E38CA /* p51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p51.png; sourceTree = "<group>"; };
 		47BF05B21B2B0461009D3E93 /* EnemyPlane_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPlane_1.h; sourceTree = "<group>"; };
 		47BF05B31B2B047B009D3E93 /* EnemyPlane_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyPlane_1.m; sourceTree = "<group>"; };
@@ -1753,6 +1765,10 @@
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 				47177E651B34D34300D5B820 /* TrippleShot.h */,
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
+				47622AF51B44216F000CF64C /* RocketPowerup.h */,
+				47622AF61B44222B000CF64C /* RocketPowerup.m */,
+				47622AF81B442EFF000CF64C /* PlayerRocket.h */,
+				47622AF91B442FF5000CF64C /* PlayerRocket.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1769,12 +1785,6 @@
 		5B09AC3D188B34D600E8F2B7 /* Art */ = {
 			isa = PBXGroup;
 			children = (
-				47384F7C1B3B727800E0C58A /* day.png */,
-				FBEBB5851B3C803C00249EF0 /* easy.png */,
-				FBEBB5861B3C803C00249EF0 /* insane.png */,
-				FBEBB5871B3C803C00249EF0 /* medium.png */,
-				47384F7D1B3B727800E0C58A /* night.png */,
-				47384F7E1B3B727800E0C58A /* sunset.png */,
 				475C0F1A1B34404600D65899 /* 1943.png */,
 				47BF05C61B2B2EC9009D3E93 /* bf-109e.png */,
 				47C493141B2BAB190007FA9F /* bullet.png */,
@@ -1782,6 +1792,8 @@
 				475C0F2C1B34680A00D65899 /* cloud-2.png */,
 				475C0F2D1B34680A00D65899 /* cloud-3.png */,
 				475C0F221B34471C00D65899 /* clouds.png */,
+				47384F7C1B3B727800E0C58A /* day.png */,
+				FBEBB5851B3C803C00249EF0 /* easy.png */,
 				47C493151B2BAB190007FA9F /* Explosion1-1.png */,
 				47C493161B2BAB190007FA9F /* Explosion1-2.png */,
 				47C493171B2BAB190007FA9F /* Explosion1-3.png */,
@@ -1801,15 +1813,22 @@
 				475C0F391B3481B100D65899 /* fw-19.png */,
 				475C0F4D1B34936500D65899 /* health.png */,
 				475C0F431B348AF900D65899 /* hurricane.png */,
+				FBEBB5861B3C803C00249EF0 /* insane.png */,
 				475C0F3A1B3481B100D65899 /* ju-87.png */,
+				FBEBB5871B3C803C00249EF0 /* medium.png */,
 				FB1434821B223ADC00E65CAF /* misile.png */,
 				47C493391B2BB91F0007FA9F /* muzzle.png */,
+				47384F7D1B3B727800E0C58A /* night.png */,
 				475C0F1C1B34427200D65899 /* p51-logo.png */,
 				479B8B4A1B221995000E38CA /* p51.png */,
 				47177E6A1B34D77000D5B820 /* rapid-fire.png */,
+				47622AEF1B4420F7000CF64C /* rocket-powerup.png */,
+				47622AF01B4420F7000CF64C /* shield-powerup.png */,
+				47622AF11B4420F7000CF64C /* shield.png */,
 				47177E631B34C90800D5B820 /* smoke.png */,
 				47177E581B34BA7000D5B820 /* sparkle.png */,
 				475C0F441B348AF900D65899 /* spitfire.png */,
+				47384F7E1B3B727800E0C58A /* sunset.png */,
 				47177E681B34D39100D5B820 /* triple-shot.png */,
 			);
 			path = Art;
@@ -1911,6 +1930,7 @@
 				5B09AB9A188B330500E8F2B7 /* LICENSE_CCBReader.txt in Resources */,
 				475C0F1B1B34404600D65899 /* 1943.png in Resources */,
 				475C0F231B34471C00D65899 /* clouds.png in Resources */,
+				47622AF31B4420F7000CF64C /* shield-powerup.png in Resources */,
 				5B09A98C188B330300E8F2B7 /* Icon@2x.png in Resources */,
 				5B09A99E188B330300E8F2B7 /* Icon-Small@2x.png in Resources */,
 				47C4932D1B2BAB190007FA9F /* Explosion1-8.png in Resources */,
@@ -1937,6 +1957,7 @@
 				47177E591B34BA7000D5B820 /* sparkle.png in Resources */,
 				FB1434831B223ADC00E65CAF /* misile.png in Resources */,
 				5B09A99A188B330300E8F2B7 /* Icon-Small-50.png in Resources */,
+				47622AF41B4420F7000CF64C /* shield.png in Resources */,
 				47C493281B2BAB190007FA9F /* Explosion1-3.png in Resources */,
 				47384F7F1B3B727800E0C58A /* day.png in Resources */,
 				47C4932C1B2BAB190007FA9F /* Explosion1-7.png in Resources */,
@@ -1947,6 +1968,7 @@
 				5B09A98E188B330300E8F2B7 /* Icon-72.png in Resources */,
 				5B09AADC188B330500E8F2B7 /* LICENSE_cocos2d.txt in Resources */,
 				5B09A985188B330300E8F2B7 /* Default-568h@2x.png in Resources */,
+				47622AF21B4420F7000CF64C /* rocket-powerup.png in Resources */,
 				475C0F451B348AF900D65899 /* hurricane.png in Resources */,
 				47177E691B34D39100D5B820 /* triple-shot.png in Resources */,
 				5B09A9A5188B330300E8F2B7 /* iTunesArtwork in Resources */,
@@ -2103,6 +2125,7 @@
 				5B09AB7D188B330500E8F2B7 /* vec2.c in Sources */,
 				5B09A9AD188B330300E8F2B7 /* CCAction.m in Sources */,
 				5B09AA11188B330400E8F2B7 /* CCParallaxNode.m in Sources */,
+				47622AF71B44222B000CF64C /* RocketPowerup.m in Sources */,
 				5B09AB79188B330500E8F2B7 /* ray2.c in Sources */,
 				5B09AAF5188B330500E8F2B7 /* OALAudioTracks.m in Sources */,
 				5B09AAF2188B330500E8F2B7 /* OALAudioTrackNotifications.m in Sources */,
@@ -2143,6 +2166,7 @@
 				5B09AA3D188B330400E8F2B7 /* CCResponderManager.m in Sources */,
 				5B09A9D5188B330400E8F2B7 /* CCConfiguration.m in Sources */,
 				47C4933E1B2BBE0A0007FA9F /* Muzzle.m in Sources */,
+				47622AFA1B442FF5000CF64C /* PlayerRocket.m in Sources */,
 				5B09AB18188B330500E8F2B7 /* ALWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
