@@ -176,6 +176,7 @@
 - (void) shieldPowerUp {
     [[OALSimpleAudio sharedInstance] playEffect:@"shield.wav"];
     [self unschedule:@selector(stopShieldPowerup:)];
+    [self removeChild:_shield];
     shield_powerup = YES;
     CCSprite *shield = [[CCSprite alloc] initWithImageNamed:@"shield.png"];
     shield.scale = SHIELD_SCALE;
@@ -189,6 +190,7 @@
 - (void) stopShieldPowerup: (CCTime) dt {
     shield_powerup = NO;
     [self removeChild:_shield];
+    _shield = NULL;
     [self unschedule:@selector(stopShieldPowerup:)];
 }
 
