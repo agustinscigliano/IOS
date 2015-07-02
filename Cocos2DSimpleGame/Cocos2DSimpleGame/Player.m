@@ -41,6 +41,7 @@
         self.health = PLAYER_MAX_HEALTH;
         triple_shoot_power_up = NO;
         shield_powerup = NO;
+        frame_number = 1;
         _credits = INITIAL_CREDITS;
     }
     return self;

@@ -46,7 +46,7 @@
     self.userInteractionEnabled = YES;
     self.difficulty=difficulty;
     CCNodeColor *background = [self fetchBackground: daytime];
-    [self addChild:background];
+    [self addChild:background z:-50];
     
     self.physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
@@ -56,7 +56,7 @@
     
     _player = [[Player alloc] initWithPlaneName: plane_name withGameScene: self];
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
-    [_physicsWorld addChild:_player];
+    [_physicsWorld addChild:_player z:1];
     
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Courier New" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
@@ -125,7 +125,6 @@
 
 - (void)addCloud:(CCTime)dt {
     CCSprite *cloud = [Cloud initCloud];
-
     int minY = cloud.contentSize.height / 4;
     int maxY = self.contentSize.height - cloud.contentSize.height / 2;
     int rangeY = maxY;
@@ -133,7 +132,9 @@
     cloud.position = ccp(self.contentSize.width, randomY);
     CCAction *action = [CCActionMoveTo actionWithDuration:5.0f position:ccp(-cloud.contentSize.width, randomY)];
     [cloud runAction:action];
-    [self addChild: cloud];
+    int rand = (arc4random()%100)-50;
+    NSLog(@"RAND = %d", rand);
+    [self addChild: cloud z:rand];
 }
 
 - (void)addPlane:(CCTime)dt {
@@ -147,19 +148,19 @@
 }
 
 - (void)addPlane2:(CCTime)dt {
-    if(self.level>=1){
-    EnemyPlane_2 *enemy_plane2 = [[EnemyPlane_2 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
-    int minY = enemy_plane2.contentSize.height / 2;
-    int maxY = self.contentSize.height - enemy_plane2.contentSize.height / 2;
-    int rangeY = maxY - minY;
-    int randomY = (arc4random() % rangeY) + minY;
-    enemy_plane2.position = ccp(self.contentSize.width, randomY);
-    [_physicsWorld addChild:enemy_plane2];
+    if(self.level >= 1) {
+        EnemyPlane_2 *enemy_plane2 = [[EnemyPlane_2 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
+        int minY = enemy_plane2.contentSize.height / 2;
+        int maxY = self.contentSize.height - enemy_plane2.contentSize.height / 2;
+        int rangeY = maxY - minY;
+        int randomY = (arc4random() % rangeY) + minY;
+        enemy_plane2.position = ccp(self.contentSize.width, randomY);
+        [_physicsWorld addChild:enemy_plane2];
     }
 }
 
 - (void)addPlane3:(CCTime)dt {
-    if(self.level>=2){
+    if(self.level >= 2){
         EnemyPlane_3 *enemy_plane3 = [[EnemyPlane_3 alloc] initWithPhysicsWorld:_physicsWorld withDifficulty:_difficulty];
         int minY = enemy_plane3.contentSize.height / 2;
         int maxY = self.contentSize.height - enemy_plane3.contentSize.height / 2;
