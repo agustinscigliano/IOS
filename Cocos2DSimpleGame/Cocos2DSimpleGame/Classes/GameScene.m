@@ -28,6 +28,7 @@
 #import "RapidFire.h"
 #import "RocketPowerup.h"
 #import "PlayerRocket.h"
+#import "ShieldPowerUp.h"
 
 @implementation GameScene {
     Player *_player;
@@ -288,6 +289,15 @@
     if (!_player.player_dead) {
         [rocketPowerup removeFromParent];
         [_player rocketPowerup];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player shieldPowerupCollision:(ShieldPowerUp *)shieldPowerUp {
+    if (!_player.player_dead) {
+        [shieldPowerUp removeFromParent];
+        [_player shieldPowerUp];
         return YES;
     }
     return NO;

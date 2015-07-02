@@ -1763,6 +1763,8 @@
 				47EE65921B18AAA0006F8A00 /* Player.m */,
 				47622AF81B442EFF000CF64C /* PlayerRocket.h */,
 				47622AF91B442FF5000CF64C /* PlayerRocket.m */,
+				47856AB41B44A9C600E301B4 /* PowerUp.h */,
+				47856AB51B44AA0800E301B4 /* PowerUp.m */,
 				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				47177E6C1B34D7D200D5B820 /* RapidFire.h */,
@@ -1771,14 +1773,12 @@
 				47622AF61B44222B000CF64C /* RocketPowerup.m */,
 				47384F791B3B6AE500E0C58A /* SelectDaytimeScene.h */,
 				47384F7A1B3B6C1000E0C58A /* SelectDaytimeScene.m */,
+				47856AB71B44AC6B00E301B4 /* ShieldPowerUp.h */,
+				47856AB81B44ACBE00E301B4 /* ShieldPowerUp.m */,
 				47177E5A1B34BA8A00D5B820 /* Sparkle.h */,
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 				47177E651B34D34300D5B820 /* TrippleShot.h */,
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
-				47856AB41B44A9C600E301B4 /* PowerUp.h */,
-				47856AB51B44AA0800E301B4 /* PowerUp.m */,
-				47856AB71B44AC6B00E301B4 /* ShieldPowerUp.h */,
-				47856AB81B44ACBE00E301B4 /* ShieldPowerUp.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

@@ -17,6 +17,7 @@
 #import "Muzzle.h"
 #import "Sparkle.h"
 #import "RocketPowerup.h"
+#import "ShieldPowerUp.h"
 
 @implementation Enemy {
     CCPhysicsNode *_physics_world;
@@ -75,7 +76,7 @@
 }
 
 - (void) dropPowerUp {
-    int powerup_selector = arc4random() % 4;
+    int powerup_selector = arc4random() % POWERUPS_AMMOUNT;
     switch (powerup_selector) {
         case 0:
             [self healthPowerUp];
@@ -88,6 +89,9 @@
             break;
         case 3:
             [self rocketPowerup];
+            break;
+        case 4:
+            [self shieldPowerup];
             break;
         default:
             break;
@@ -115,6 +119,12 @@
 - (void)rocketPowerup {
     if (arc4random()%100 > _drop_probability) {
         [_physics_world addChild: [[RocketPowerup alloc] initWithPosition:self.position]];
+    }
+}
+
+- (void) shieldPowerup {
+    if (arc4random()%100 > _drop_probability) {
+        [_physics_world addChild: [[ShieldPowerUp alloc] initWithPosition:self.position]];
     }
 }
 

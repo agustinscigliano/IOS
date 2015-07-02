@@ -22,7 +22,9 @@
     NSTimeInterval tripple_shot_timeout;
     NSTimeInterval rapid_fire_timeout;
     BOOL triple_shoot_power_up;
+    BOOL shield_powerup;
     int frame_number;
+    CCSprite *_shield;
 }
 
 - (id) initWithPlaneName: (NSString*) plane_name {
@@ -38,6 +40,7 @@
         self.scale = PLANE_SCALE;
         self.health = PLAYER_MAX_HEALTH;
         triple_shoot_power_up = NO;
+        shield_powerup = NO;
         _credits = INITIAL_CREDITS;
     }
     return self;
@@ -81,16 +84,18 @@
     NSString* random_sound_name = [NSString stringWithFormat:@"hit_%d.mp3", random_sound_index];
     [[OALSimpleAudio sharedInstance] playEffect:random_sound_name volume:0.25f pitch:1.0f pan:0.5f loop:NO];
     [self addChild: [[Sparkle alloc] init]];
-    _health -= damage;
-    if (_health <= 0) {
-        _player_dead = YES;
-        [self playRandomExplosionSound];
-        [self schedule:@selector(animateExplosion:) interval:0.1 repeat:0 delay:0];
-        [self schedule:@selector(checkIfPlayerLost:) interval:1 repeat:0 delay:0.1*MAX_FRAMES_FOR_EXPLOSION_1];
-        [self updateFireRate:DEFAULT_SHOOTING_RATE];
-        triple_shoot_power_up = NO;
-        [self unschedule:@selector(shootRockets:)];
-        [self unschedule:@selector(stopRockets:)];
+    if (!shield_powerup) {
+        _health -= damage;
+        if (_health <= 0) {
+            _player_dead = YES;
+            [self playRandomExplosionSound];
+            [self schedule:@selector(animateExplosion:) interval:0.1 repeat:0 delay:0];
+            [self schedule:@selector(checkIfPlayerLost:) interval:1 repeat:0 delay:0.1*MAX_FRAMES_FOR_EXPLOSION_1];
+            [self updateFireRate:DEFAULT_SHOOTING_RATE];
+            triple_shoot_power_up = NO;
+            [self unschedule:@selector(shootRockets:)];
+            [self unschedule:@selector(stopRockets:)];
+        }
     }
 }
 
@@ -162,6 +167,24 @@
 
 - (void) stopRockets: (CCTime) dt {
     [self unschedule:@selector(shootRockets:)];
+}
+
+- (void) shieldPowerUp {
+    [self unschedule:@selector(stopShieldPowerup:)];
+    shield_powerup = YES;
+    CCSprite *shield = [[CCSprite alloc] initWithImageNamed:@"shield.png"];
+    shield.scale = SHIELD_SCALE;
+    shield.positionType = CCPositionTypeNormalized;
+    shield.position = ccp(0.5, 0.5);
+    _shield = shield;
+    [self addChild:shield];
+    [self schedule:@selector(stopShieldPowerup:) interval:1 repeat:0 delay:SHIELD_POWERUP_DURATION];
+}
+
+- (void) stopShieldPowerup: (CCTime) dt {
+    shield_powerup = NO;
+    [self removeChild:_shield];
+    [self unschedule:@selector(stopShieldPowerup:)];
 }
 
 - (void)trippleShot: (CCTime)dt from: (CGPoint)position {

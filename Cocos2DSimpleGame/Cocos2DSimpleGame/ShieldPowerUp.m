@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "ShieldPowerUp.h"
+#import "Constants.h"
 
 @implementation ShieldPowerUp
 
 - (id) initWithPosition: (CGPoint) position {
-    
+    self = [super initWithImageNamed:@"shield-powerup.png"];
+    [super initializeWithPosition:position];
+    self.physicsBody.collisionCategories = @[SHIELD_POWERUP_COLLISION];
+    self.physicsBody.collisionType  = SHIELD_POWERUP_COLLISION;
+    self.scale = SHIELD_POWERUP_SCALE;
+    return self;
 }
 
 @end

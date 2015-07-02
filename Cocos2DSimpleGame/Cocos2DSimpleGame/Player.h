@@ -29,5 +29,6 @@
 - (void) trippleShot;
 - (void) rapidFire;
 - (void) rocketPowerup;
+- (void) shieldPowerUp;
 
 @end

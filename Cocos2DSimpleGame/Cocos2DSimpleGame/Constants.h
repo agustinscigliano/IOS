@@ -24,6 +24,7 @@
 #define RAPID_FIRE_COLLISION @"rapidFireCollision"
 #define ROCKET_POWERUP_COLLISION @"rocketPowerupCollision"
 #define PLAYER_ROCKET_COLLISION @"playerRocketCollision"
+#define SHIELD_POWERUP_COLLISION @"shieldPowerupCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define SPARKLE_IMAGE @"sparkle.png"
@@ -92,5 +93,9 @@
 #define ROCKET_FIRE_RATE 0.5
 #define PLAYER_ROCKET_SPEED 200
 #define ROCKET_POWERUP_DURATION 15
+#define POWERUPS_AMMOUNT 5
+#define SHIELD_POWERUP_DURATION 15
+#define SHIELD_POWERUP_SCALE 0.1
+#define SHIELD_SCALE 0.5
 
 #endif
