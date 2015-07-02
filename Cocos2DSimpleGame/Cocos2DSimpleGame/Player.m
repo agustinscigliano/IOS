@@ -53,6 +53,7 @@
 }
 
 - (void) trippleShot {
+    [[OALSimpleAudio sharedInstance] playEffect:@"tripple-shot.wav"];
     triple_shoot_power_up = YES;
     [self schedule:@selector(stopTrippleShot:) interval:1 repeat:0 delay:TRIPPLE_SHOT_DURATION];
 }
@@ -66,6 +67,7 @@
 }
 
 - (void) rapidFire {
+    [[OALSimpleAudio sharedInstance] playEffect:@"rapid-fire.wav"];
     [self updateFireRate:0.15];
     [self schedule:@selector(stopRapidFire:) interval:1 repeat:0 delay:RAPID_FIRE_DURATION];
 }
@@ -130,6 +132,7 @@
 }
 
 - (void) recoverHealth:(int)health {
+    [[OALSimpleAudio sharedInstance] playEffect:@"health.wav"];
     if (_health + health > PLAYER_MAX_HEALTH) {
         _health = PLAYER_MAX_HEALTH;
     } else {
@@ -154,6 +157,7 @@
 }
 
 - (void) rocketPowerup {
+    [[OALSimpleAudio sharedInstance] playEffect:@"rockets.wav"];
     [self schedule:@selector(shootRockets:) interval:0.5];
     [self schedule:@selector(stopRockets:) interval:1 repeat:0 delay:ROCKET_POWERUP_DURATION];
 }
@@ -170,6 +174,7 @@
 }
 
 - (void) shieldPowerUp {
+    [[OALSimpleAudio sharedInstance] playEffect:@"shield.wav"];
     [self unschedule:@selector(stopShieldPowerup:)];
     shield_powerup = YES;
     CCSprite *shield = [[CCSprite alloc] initWithImageNamed:@"shield.png"];
