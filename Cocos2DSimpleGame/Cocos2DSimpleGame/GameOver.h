@@ -11,7 +11,6 @@
 
 @interface GameOver : CCScene
 
-+ (GameOver *)sceneWithFinalScore:(int) final_score;
-- (id)initWithFinalScore:(int) final_score;
++ (GameOver *)sceneWithFinalScore:(int) final_score isGameOver: (BOOL) is_game_over;
 
 @end

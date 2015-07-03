@@ -8,16 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Enemy.h"
-#import "Explosion1.h"
-#import "Constants.h"
-#import "Health.h"
-#import "TrippleShot.h"
-#import "RapidFire.h"
-#import "EnemyBullet.h"
-#import "Muzzle.h"
-#import "Sparkle.h"
-#import "RocketPowerup.h"
-#import "ShieldPowerUp.h"
 
 @implementation Enemy {
     CCPhysicsNode *_physics_world;
@@ -64,7 +54,7 @@
         Explosion1* explosion_1 = [[Explosion1 alloc] initWithPosition: self.position withScale: 1.0f withVelocityX:self.physicsBody.velocity.x];
         [explosion_1 schedule:@selector(animate:) interval:	0.05];
         [_physics_world addChild: explosion_1];
-        [self dropPowerUp];
+        [PowerUpFactory randomPowerUp:_physics_world dropProbability:_drop_probability position:self.position];
         [self removeFromParent];
         return YES;
     }
@@ -73,59 +63,6 @@
     [[OALSimpleAudio sharedInstance] playEffect:random_sound_name];
     [self addChild: [[Sparkle alloc] init]];
     return NO;
-}
-
-- (void) dropPowerUp {
-    int powerup_selector = arc4random() % POWERUPS_AMMOUNT;
-    switch (powerup_selector) {
-        case 0:
-            [self healthPowerUp];
-            break;
-        case 1:
-            [self trippleShootPowerUp];
-            break;
-        case 2:
-            [self rapidFirePowerUp];
-            break;
-        case 3:
-            [self rocketPowerup];
-            break;
-        case 4:
-            [self shieldPowerup];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void) healthPowerUp {
-    if (arc4random()%100 > _drop_probability) {
-        [_physics_world addChild: [[Health alloc] initWithPosition:self.position]];
-    }
-}
-
-- (void) trippleShootPowerUp {
-    if (arc4random()%100 > _drop_probability) {
-        [_physics_world addChild: [[TrippleShot alloc] initWithPosition:self.position]];
-    }
-}
-
-- (void)rapidFirePowerUp {
-    if (arc4random()%100 > _drop_probability) {
-        [_physics_world addChild: [[RapidFire alloc] initWithPosition:self.position]];
-    }
-}
-
-- (void)rocketPowerup {
-    if (arc4random()%100 > _drop_probability) {
-        [_physics_world addChild: [[RocketPowerup alloc] initWithPosition:self.position]];
-    }
-}
-
-- (void) shieldPowerup {
-    if (arc4random()%100 > _drop_probability) {
-        [_physics_world addChild: [[ShieldPowerUp alloc] initWithPosition:self.position]];
-    }
 }
 
 @end

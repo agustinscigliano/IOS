@@ -8,13 +8,24 @@
 
 
 #import "cocos2d.h"
-#include "Constants.h"
+#import "Constants.h"
+#import "Player.h"
+#import "EnemyBullet.h"
+#import "GameScene.h"
+#import "Muzzle.h"
+#import "Explosion1.h"
+#import "Health.h"
+#import "Misile.h"
+#import "Sparkle.h"
+#import "Player.h"
+#import "GameOver.h"
+#import "PowerUpFactory.h"
 
 @interface Boss : CCSprite
 
 @property (nonatomic) int score;
 @property (nonatomic) BOOL is_alive;
 
-- (id) initWithGameScene: (CCScene*) gs withDifficulty:(int)difficulty;
+- (id) initWithGameScene: (GameScene*) gs withDifficulty:(int)difficulty withPlayer: (Player*) p;
 - (BOOL) takeDamage:(int) damage;
 @end

@@ -6,9 +6,12 @@
 //  Copyright (c) 2015 Razeware LLC. All rights reserved.
 //
 
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #import "cocos2d.h"
 #include "Constants.h"
-#import "GameScene.h"
+#include "GameScene.h"
 
 @interface Player : CCSprite
 
@@ -32,3 +35,5 @@
 - (void) shieldPowerUp;
 
 @end
+
+#endif

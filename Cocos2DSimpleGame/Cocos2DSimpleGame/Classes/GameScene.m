@@ -230,7 +230,7 @@
             [self unschedule:@selector(addEnemy2:)];
             [self unschedule:@selector(addEnemy3:)];
             [[OALSimpleAudio sharedInstance] playBg:@"boss.mp3"];
-            [_physicsWorld addChild:[[Boss alloc] initWithGameScene:self withDifficulty:self.difficulty]];
+            [_physicsWorld addChild:[[Boss alloc] initWithGameScene:self withDifficulty:self.difficulty withPlayer:_player]];
         }
     }
 }

@@ -7,6 +7,12 @@
 //
 
 #import "cocos2d.h"
+#import "Explosion1.h"
+#import "Constants.h"
+#import "EnemyBullet.h"
+#import "Muzzle.h"
+#import "Sparkle.h"
+#import "PowerUpFactory.h"
 
 @interface Enemy : CCSprite
 

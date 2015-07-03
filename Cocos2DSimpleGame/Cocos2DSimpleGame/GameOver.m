@@ -12,16 +12,25 @@
 
 @implementation GameOver
 
-+ (GameOver *)sceneWithFinalScore:(int) final_score {
-    return [[self alloc] initWithFinalScore: final_score];
++ (GameOver *)sceneWithFinalScore:(int) final_score isGameOver:(BOOL)is_game_over {
+    return [[self alloc] initWithFinalScore: final_score isGameOver: is_game_over];
 }
 
-- (id)initWithFinalScore:(int) final_score {
+- (id)initWithFinalScore:(int) final_score isGameOver: (BOOL) is_game_over {
     self = [super init];
     if (!self) return(nil);
     
-    // Game over
-    CCLabelTTF *game_over = [CCLabelTTF labelWithString:@"GAME OVER" fontName:@"Courier New" fontSize:24.0f];
+    // Title
+    NSString *title = @"";
+    NSString *song_name = @"";
+    if (is_game_over) {
+        title = @"GAME OVER";
+        song_name = @"game-over.mp3";
+    } else {
+        title = @"YOU WON";
+        song_name = @"ending.mp3";
+    }
+    CCLabelTTF *game_over = [CCLabelTTF labelWithString:title fontName:@"Courier New" fontSize:24.0f];
     game_over.positionType = CCPositionTypeNormalized;
     game_over.position = ccp(0.5f, 0.75f);
     [self addChild:game_over];
@@ -40,7 +49,7 @@
     [startButton setTarget:self selector:@selector(onBackToMenuClicked:)];
     [self addChild:startButton];
     
-    [[OALSimpleAudio sharedInstance] playBg:@"game-over.mp3" loop:NO];
+    [[OALSimpleAudio sharedInstance] playBg:song_name loop:NO];
     
     return self;
 }

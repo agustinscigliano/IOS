@@ -6,6 +6,9 @@
 //  Copyright Razeware LLC 2014. All rights reserved.
 //
 
+#ifndef GAME_SCENE_H
+#define GAME_SCENE_H
+
 #import "cocos2d.h"
 #import "cocos2d-ui.h"
 
@@ -24,3 +27,5 @@
 + (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime withDifficulty: (int) difficulty;
 
 @end
+
+#endif

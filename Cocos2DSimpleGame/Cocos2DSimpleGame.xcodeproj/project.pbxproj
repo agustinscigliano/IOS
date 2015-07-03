@@ -42,6 +42,7 @@
 		475C0F4C1B348FB800D65899 /* game-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4B1B348FB800D65899 /* game-over.mp3 */; };
 		475C0F4E1B34936500D65899 /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4D1B34936500D65899 /* health.png */; };
 		475C0F511B34937E00D65899 /* Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F501B34937E00D65899 /* Health.m */; };
+		475D5FF81B46BC1E0098CEF8 /* PowerUpFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */; };
 		47622AF21B4420F7000CF64C /* rocket-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AEF1B4420F7000CF64C /* rocket-powerup.png */; };
 		47622AF31B4420F7000CF64C /* shield-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF01B4420F7000CF64C /* shield-powerup.png */; };
 		47622AF41B4420F7000CF64C /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF11B4420F7000CF64C /* shield.png */; };
@@ -87,7 +88,6 @@
 		47FD5FEA1B461E7E002FEB6C /* boss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE81B461E7E002FEB6C /* boss.mp3 */; };
 		47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE91B461E7E002FEB6C /* ending.mp3 */; };
 		47FD5FED1B4620B9002FEB6C /* boss.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FEC1B4620B9002FEB6C /* boss.png */; };
-		47FD5FF01B462102002FEB6C /* YouWonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD5FEF1B462102002FEB6C /* YouWonScene.m */; };
 		47FD5FF31B46224C002FEB6C /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD5FF21B46224C002FEB6C /* Boss.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
@@ -361,6 +361,8 @@
 		475C0F4D1B34936500D65899 /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
 		475C0F4F1B34937200D65899 /* Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Health.h; sourceTree = "<group>"; };
 		475C0F501B34937E00D65899 /* Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Health.m; sourceTree = "<group>"; };
+		475D5FF61B46BB1F0098CEF8 /* PowerUpFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpFactory.h; sourceTree = "<group>"; };
+		475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpFactory.m; sourceTree = "<group>"; };
 		47622AEF1B4420F7000CF64C /* rocket-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket-powerup.png"; sourceTree = "<group>"; };
 		47622AF01B4420F7000CF64C /* shield-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield-powerup.png"; sourceTree = "<group>"; };
 		47622AF11B4420F7000CF64C /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
@@ -416,8 +418,6 @@
 		47FD5FE81B461E7E002FEB6C /* boss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boss.mp3; sourceTree = "<group>"; };
 		47FD5FE91B461E7E002FEB6C /* ending.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ending.mp3; sourceTree = "<group>"; };
 		47FD5FEC1B4620B9002FEB6C /* boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boss.png; sourceTree = "<group>"; };
-		47FD5FEE1B4620F0002FEB6C /* YouWonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonScene.h; sourceTree = "<group>"; };
-		47FD5FEF1B462102002FEB6C /* YouWonScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouWonScene.m; sourceTree = "<group>"; };
 		47FD5FF11B4621F5002FEB6C /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boss.h; sourceTree = "<group>"; };
 		47FD5FF21B46224C002FEB6C /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1789,6 +1789,8 @@
 				47622AF91B442FF5000CF64C /* PlayerRocket.m */,
 				47856AB41B44A9C600E301B4 /* PowerUp.h */,
 				47856AB51B44AA0800E301B4 /* PowerUp.m */,
+				475D5FF61B46BB1F0098CEF8 /* PowerUpFactory.h */,
+				475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */,
 				FB5BBC491B18BBCE0014A8AE /* Projectile.h */,
 				FB5BBC4A1B18BBCE0014A8AE /* Projectile.m */,
 				47177E6C1B34D7D200D5B820 /* RapidFire.h */,
@@ -1803,8 +1805,6 @@
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 				47177E651B34D34300D5B820 /* TrippleShot.h */,
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
-				47FD5FEE1B4620F0002FEB6C /* YouWonScene.h */,
-				47FD5FEF1B462102002FEB6C /* YouWonScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2069,6 +2069,7 @@
 				5B09AAE8188B330500E8F2B7 /* OALAudioActions.m in Sources */,
 				5B09AB2D188B330500E8F2B7 /* NSMutableArray+WeakReferences.m in Sources */,
 				47EE65931B18AAA0006F8A00 /* Player.m in Sources */,
+				475D5FF81B46BC1E0098CEF8 /* PowerUpFactory.m in Sources */,
 				FBEBB5831B3C52EB00249EF0 /* DifficultyScene.m in Sources */,
 				5B09AAA7188B330400E8F2B7 /* CCGLView.m in Sources */,
 				5B09AB71188B330500E8F2B7 /* mat4.c in Sources */,
@@ -2148,7 +2149,6 @@
 				47856AB61B44AA0800E301B4 /* PowerUp.m in Sources */,
 				5B09AB1F188B330500E8F2B7 /* OALAudioSession.m in Sources */,
 				5B09AB96188B330500E8F2B7 /* CCBLocalizationManager.m in Sources */,
-				47FD5FF01B462102002FEB6C /* YouWonScene.m in Sources */,
 				5B09AA82188B330400E8F2B7 /* CCTiledMapObjectGroup.m in Sources */,
 				5B09AB7F188B330500E8F2B7 /* vec3.c in Sources */,
 				5B09AA02188B330400E8F2B7 /* CCLayoutBox.m in Sources */,

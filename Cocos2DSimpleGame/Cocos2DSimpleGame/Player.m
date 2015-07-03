@@ -122,7 +122,7 @@
         [game_scene.credits_label setString: [NSString stringWithFormat: @"Credits: %d", _credits]];
         [self unschedule:@selector(checkIfPlayerLost:)];
     } else {
-        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:game_scene.score]];
+        [[CCDirector sharedDirector] replaceScene:[GameOver sceneWithFinalScore:game_scene.score isGameOver:YES]];
     }
 }
 
