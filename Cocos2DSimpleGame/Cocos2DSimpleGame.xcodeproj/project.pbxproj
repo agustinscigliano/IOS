@@ -88,6 +88,7 @@
 		47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE91B461E7E002FEB6C /* ending.mp3 */; };
 		47FD5FED1B4620B9002FEB6C /* boss.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FEC1B4620B9002FEB6C /* boss.png */; };
 		47FD5FF01B462102002FEB6C /* YouWonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD5FEF1B462102002FEB6C /* YouWonScene.m */; };
+		47FD5FF31B46224C002FEB6C /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD5FF21B46224C002FEB6C /* Boss.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
 		5B09A96B188B330300E8F2B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A96A188B330300E8F2B7 /* OpenAL.framework */; };
@@ -417,6 +418,8 @@
 		47FD5FEC1B4620B9002FEB6C /* boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boss.png; sourceTree = "<group>"; };
 		47FD5FEE1B4620F0002FEB6C /* YouWonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonScene.h; sourceTree = "<group>"; };
 		47FD5FEF1B462102002FEB6C /* YouWonScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouWonScene.m; sourceTree = "<group>"; };
+		47FD5FF11B4621F5002FEB6C /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boss.h; sourceTree = "<group>"; };
+		47FD5FF21B46224C002FEB6C /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09A966188B330300E8F2B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B09A968188B330300E8F2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1745,6 +1748,8 @@
 			children = (
 				5B09AC0E188B330600E8F2B7 /* AppDelegate.h */,
 				5B09AC0F188B330600E8F2B7 /* AppDelegate.m */,
+				47FD5FF11B4621F5002FEB6C /* Boss.h */,
+				47FD5FF21B46224C002FEB6C /* Boss.m */,
 				475C0F331B34700500D65899 /* Cloud.h */,
 				475C0F341B34701000D65899 /* Cloud.m */,
 				47BF05B51B2B0693009D3E93 /* Constants.h */,
@@ -2055,6 +2060,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FD5FF31B46224C002FEB6C /* Boss.m in Sources */,
 				5B09AA15188B330400E8F2B7 /* CCParticleBatchNode.m in Sources */,
 				5B09AB8D188B330500E8F2B7 /* CCBReader.m in Sources */,
 				47BF05C41B2B28B8009D3E93 /* EnemyFactory.m in Sources */,

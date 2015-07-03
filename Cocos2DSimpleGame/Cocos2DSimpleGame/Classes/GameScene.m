@@ -133,7 +133,6 @@
     CCAction *action = [CCActionMoveTo actionWithDuration:5.0f position:ccp(-cloud.contentSize.width, randomY)];
     [cloud runAction:action];
     int rand = (arc4random()%100)-50;
-    NSLog(@"RAND = %d", rand);
     [self addChild: cloud z:rand];
 }
 
@@ -217,6 +216,20 @@
     _player.isTouched = YES;
 }
 
+- (void) checkLevels {
+    _level = _score / SCORE_PER_LEVEL;
+    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
+    if(_level < MAX_LEVELS){
+        [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
+    }else{
+        [_level_label setString:[NSString stringWithFormat:@"BOSS FIGHT"]];
+        [self unschedule:@selector(addEnemy:)];
+        [self unschedule:@selector(addEnemy2:)];
+        [self unschedule:@selector(addEnemy3:)];
+        [[OALSimpleAudio sharedInstance] playBg:@"boss.mp3"];
+    }
+}
+
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
     BOOL enemy_died = [enemy takeDamage: projectile.damage];
@@ -225,13 +238,7 @@
     } else {
         _score += ENEMY_PLANE_IMPACT_SCORE;
     }
-    _level = _score / SCORE_PER_LEVEL;
-    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
-    if(_level < MAX_LEVELS){
-        [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
-    }else{
-        [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
-    }
+    [self checkLevels];
     return YES;
 }
 
@@ -314,12 +321,7 @@
         _score += ENEMY_PLANE_IMPACT_SCORE;
     }
     _level = _score / SCORE_PER_LEVEL;
-    [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
-    if(_level < MAX_LEVELS){
-        [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
-    }else{
-        [_level_label setString:[NSString stringWithFormat:@"NIGHTMARE"]];
-    }
+    [self checkLevels];
     return YES;
 }
 

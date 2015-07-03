@@ -20,7 +20,7 @@
     self = [super init];
     if (!self) return(nil);
     
-    // Game over
+    // You won
     CCLabelTTF *game_over = [CCLabelTTF labelWithString:@"YOU WON" fontName:@"Courier New" fontSize:24.0f];
     game_over.positionType = CCPositionTypeNormalized;
     game_over.position = ccp(0.5f, 0.75f);

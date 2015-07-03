@@ -25,11 +25,13 @@
 #define ROCKET_POWERUP_COLLISION @"rocketPowerupCollision"
 #define PLAYER_ROCKET_COLLISION @"playerRocketCollision"
 #define SHIELD_POWERUP_COLLISION @"shieldPowerupCollision"
+#define BOSS_COLLISION @"bossCollision"
 #define EXPLOSION_1_IMAGE @"Explosion1-"
 #define MUZZLE_IMAGE @"muzzle.png"
 #define SPARKLE_IMAGE @"sparkle.png"
 #define BULLET_IMAGE @"bullet.png"
 #define MISSILE_IMAGE @"misile.png"
+#define BOSS_SPRITE @"boss.png"
 #define EXPLOSION_SOUND_FILE_NAME @"Explosion"
 #define SHOOT_SOUND_FILE_NAME @"Shoot"
 #define MUZZLE_SCALE 0.25
@@ -97,5 +99,6 @@
 #define SHIELD_POWERUP_DURATION 15
 #define SHIELD_POWERUP_SCALE 0.1
 #define SHIELD_SCALE 0.5
+#define BOSS_HEALTH 150
 
 #endif
