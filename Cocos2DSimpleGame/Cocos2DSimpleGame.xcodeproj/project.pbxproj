@@ -86,6 +86,7 @@
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
 		47FD5FEA1B461E7E002FEB6C /* boss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE81B461E7E002FEB6C /* boss.mp3 */; };
 		47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE91B461E7E002FEB6C /* ending.mp3 */; };
+		47FD5FED1B4620B9002FEB6C /* boss.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FEC1B4620B9002FEB6C /* boss.png */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
 		5B09A96B188B330300E8F2B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A96A188B330300E8F2B7 /* OpenAL.framework */; };
@@ -412,6 +413,7 @@
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		47FD5FE81B461E7E002FEB6C /* boss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boss.mp3; sourceTree = "<group>"; };
 		47FD5FE91B461E7E002FEB6C /* ending.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ending.mp3; sourceTree = "<group>"; };
+		47FD5FEC1B4620B9002FEB6C /* boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boss.png; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09A966188B330300E8F2B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B09A968188B330300E8F2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1811,6 +1813,7 @@
 			children = (
 				475C0F1A1B34404600D65899 /* 1943.png */,
 				47BF05C61B2B2EC9009D3E93 /* bf-109e.png */,
+				47FD5FEC1B4620B9002FEB6C /* boss.png */,
 				47C493141B2BAB190007FA9F /* bullet.png */,
 				475C0F2B1B34680A00D65899 /* cloud-1.png */,
 				475C0F2C1B34680A00D65899 /* cloud-2.png */,
@@ -1976,6 +1979,7 @@
 				47C493251B2BAB190007FA9F /* bullet.png in Resources */,
 				5B09A998188B330300E8F2B7 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				479B8B4F1B221995000E38CA /* p51.png in Resources */,
+				47FD5FED1B4620B9002FEB6C /* boss.png in Resources */,
 				5B09A987188B330300E8F2B7 /* Default-Landscape~ipad.png in Resources */,
 				47C4932E1B2BAB190007FA9F /* Explosion1-9.png in Resources */,
 				FBEBB5881B3C803C00249EF0 /* easy.png in Resources */,
