@@ -202,7 +202,7 @@
 }
 
 - (void)shootDiagonal:(CCTime)dt from:(CGPoint)position direction:(int)direction {
-    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed: (self.bullet_speed + self.physicsBody.velocity.x) screenSize:game_scene.contentSize.width];
+    Projectile *projectile = [[Projectile alloc] initWithPosition:position withSpeed:0 screenSize:game_scene.contentSize.width];
     projectile.rotation = -direction*5;
     projectile.physicsBody.velocity = ccp(500, direction*100);
     [game_scene.physicsWorld addChild:projectile];

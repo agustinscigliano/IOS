@@ -40,9 +40,17 @@
     return self;
 }
 
-- (void) update:(CCTime)delta
-{
+- (void) update:(CCTime)delta {
     if (_is_alive) {
+        if (arc4random()%100 > shooting_probability) {
+            [self shoot];
+        }
+        if (arc4random()%100 > shooting_probability) {
+            [self shootMissile];
+        }
+        if (arc4random()%100 > shooting_probability) {
+            [self trippleShot];
+        }
         if (self.position.x < game_scene.contentSize.width*0.8) {
             if (direction == GOING_UP) {
                 if (self.position.y > player.position.y) {
@@ -63,6 +71,41 @@
     } else {
         self.physicsBody.velocity = ccp(0, 0);
     }
+}
+
+- (void) shoot {
+    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
+    muzzle.scaleX = -MUZZLE_SCALE;
+    muzzle.scaleY = MUZZLE_SCALE;
+    [muzzle schedule:@selector(animate:) interval:0.05];
+    [self addChild:muzzle];
+    [game_scene.physicsWorld addChild:bullet];
+}
+
+- (void)shootMissile {
+    Misile *missile = [[Misile alloc] initWithPosition:ccp(self.position.x - 25, self.position.y)];
+    Muzzle* muzzle = [[Muzzle alloc] initWithPosition: ccp(0.1, 0.5)];
+    muzzle.positionType = CCPositionTypeNormalized;
+    muzzle.scaleX = -MUZZLE_SCALE;
+    muzzle.scaleY = MUZZLE_SCALE;
+    [muzzle schedule:@selector(animate:) interval:0.05];
+    [self addChild:muzzle];
+    [game_scene.physicsWorld addChild:missile];
+}
+
+- (void)trippleShot {
+    [self shoot];
+    [self shootDiagonalWithDirection: GOING_UP];
+    [self shootDiagonalWithDirection: GOING_DOWN];
+}
+
+- (void)shootDiagonalWithDirection:(int)d {
+    EnemyBullet *bullet = [[EnemyBullet alloc] initWithPosition:self.position];
+    bullet.rotation = d*5;
+    bullet.physicsBody.velocity = ccp(-500, d*100);
+    [game_scene.physicsWorld addChild:bullet];
 }
 
 - (BOOL) takeDamage: (int) damage {

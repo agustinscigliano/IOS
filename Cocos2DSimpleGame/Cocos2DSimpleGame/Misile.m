@@ -12,8 +12,6 @@
 #import "Misile.h"
 #import "Constants.h"
 
-#define DAMAGE ((int) 10)
-
 @implementation Misile
 
 -(id)initWithPosition: (CGPoint)position {
@@ -26,7 +24,7 @@
     self.scaleX = MISILE_SCALE_X;
     self.scaleY = MISILE_SCALE_Y;
     self.position = position;
-    _damage = DAMAGE;
+    _damage = MISSILE_DAMAGE;
     [[OALSimpleAudio sharedInstance] playEffect:@"missile.mp3"];
     return self;
 }
