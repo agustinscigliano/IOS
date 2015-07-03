@@ -84,6 +84,8 @@
 		47C493451B2C652B0007FA9F /* Explosion3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493431B2C652B0007FA9F /* Explosion3.caf */; };
 		47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 47C493441B2C652B0007FA9F /* Explosion4.caf */; };
 		47EE65931B18AAA0006F8A00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EE65921B18AAA0006F8A00 /* Player.m */; };
+		47FD5FEA1B461E7E002FEB6C /* boss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE81B461E7E002FEB6C /* boss.mp3 */; };
+		47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE91B461E7E002FEB6C /* ending.mp3 */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
 		5B09A96B188B330300E8F2B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A96A188B330300E8F2B7 /* OpenAL.framework */; };
@@ -408,6 +410,8 @@
 		47C493441B2C652B0007FA9F /* Explosion4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion4.caf; sourceTree = "<group>"; };
 		47EE65911B18AA06006F8A00 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47EE65921B18AAA0006F8A00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		47FD5FE81B461E7E002FEB6C /* boss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boss.mp3; sourceTree = "<group>"; };
+		47FD5FE91B461E7E002FEB6C /* ending.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ending.mp3; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09A966188B330300E8F2B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B09A968188B330300E8F2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1857,6 +1861,8 @@
 		5B09AC44188B34D600E8F2B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				47FD5FE81B461E7E002FEB6C /* boss.mp3 */,
+				47FD5FE91B461E7E002FEB6C /* ending.mp3 */,
 				47C4933F1B2C60CF0007FA9F /* Explosion1.caf */,
 				47C493401B2C60CF0007FA9F /* Explosion2.caf */,
 				47C493431B2C652B0007FA9F /* Explosion3.caf */,
@@ -2020,10 +2026,12 @@
 				5B09A992188B330300E8F2B7 /* Icon-76.png in Resources */,
 				47C4932B1B2BAB190007FA9F /* Explosion1-6.png in Resources */,
 				47C493351B2BAB190007FA9F /* Explosion1-16.png in Resources */,
+				47FD5FEA1B461E7E002FEB6C /* boss.mp3 in Resources */,
 				475C0F1D1B34427200D65899 /* p51-logo.png in Resources */,
 				FBEBB5891B3C803C00249EF0 /* insane.png in Resources */,
 				47856AC11B44C57000E301B4 /* tripple-shot.wav in Resources */,
 				47C493291B2BAB190007FA9F /* Explosion1-4.png in Resources */,
+				47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */,
 				47C493341B2BAB190007FA9F /* Explosion1-15.png in Resources */,
 				5B09AB68188B330500E8F2B7 /* ChangeLog in Resources */,
 				475C0F271B344C2800D65899 /* game-music.mp3 in Resources */,
