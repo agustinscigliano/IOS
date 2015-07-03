@@ -47,14 +47,14 @@
             if (direction == GOING_UP) {
                 if (self.position.y > player.position.y) {
                     direction = GOING_DOWN;
-                } else {
-                    self.physicsBody.velocity = ccp(0, 50);
+                } else if (self.position.y < player.position.y) {
+                    self.physicsBody.velocity = ccp(0, BOSS_VERTICAL_VELOCITY);
                 }
             } else {
                 if (self.position.y < player.position.y) {
                     direction = GOING_UP;
-                } else {
-                    self.physicsBody.velocity = ccp(0, -50);
+                } else if (self.position.y > player.position.y) {
+                    self.physicsBody.velocity = ccp(0, -BOSS_VERTICAL_VELOCITY);
                 }
             }
         } else {
