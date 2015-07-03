@@ -100,5 +100,8 @@
 #define SHIELD_POWERUP_SCALE 0.1
 #define SHIELD_SCALE 0.5
 #define BOSS_HEALTH 150
+#define BOSS_SCALE 0.75
+#define GOING_UP 1
+#define GOING_DOWN -1
 
 #endif

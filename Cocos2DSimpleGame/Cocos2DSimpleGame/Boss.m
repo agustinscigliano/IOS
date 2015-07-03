@@ -19,7 +19,7 @@
     CCScene *game_scene;
     int health;
     int shooting_probability;
-    int y_value;
+    int direction;
 }
 
 - (id) initWithGameScene: (CCScene*) gs withDifficulty:(int)difficulty {
@@ -30,27 +30,32 @@
         self.physicsBody.collisionCategories = @[BOSS_COLLISION];
         self.physicsBody.collisionType = BOSS_COLLISION;
         self.physicsBody.sensor = YES;
-        self.scale = PLANE_SCALE;
         health = BOSS_HEALTH;
         game_scene = gs;
-        self.physicsBody.velocity = ccp(ENEMY_PLANE_3_SPEED, 0);
         self.score = ENEMY_PLANE_3_SCORE;
+        self.scale = BOSS_SCALE;
         shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY - difficulty;
-        self.scale=PLANE_SCALE_3;
+        self.position = ccp(game_scene.contentSize.width, game_scene.contentSize.height/2);
+        direction = GOING_UP;
     }
     return self;
 }
 
 - (void) update:(CCTime)delta
 {
-    int step = 100;
-    [self setPosition: ccp(self.position.x - step*delta, self.position.y - y_value*delta)];
     if (self.position.x < game_scene.contentSize.width*0.8) {
-        self.physicsBody.velocity = ccp(0,0);
-        if (arc4random() % 10 == 0) {
-            int lowerBound = -step;
-            int upperBound = step;
-            y_value = lowerBound + arc4random() % (upperBound - lowerBound);
+        if (direction == GOING_UP) {
+            if (self.position.y > game_scene.contentSize.height * 0.9) {
+                direction = GOING_DOWN;
+            } else {
+                self.physicsBody.velocity = ccp(0, 50);
+            }
+        } else {
+            if (self.position.y < game_scene.contentSize.height *0.1) {
+                direction = GOING_UP;
+            } else {
+                self.physicsBody.velocity = ccp(0, -50);
+            }
         }
     } else {
         self.physicsBody.velocity = ccp(ENEMY_PLANE_1_SPEED, 0);

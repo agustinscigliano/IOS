@@ -29,9 +29,11 @@
 #import "RocketPowerup.h"
 #import "PlayerRocket.h"
 #import "ShieldPowerUp.h"
+#import "Boss.h"
 
 @implementation GameScene {
     Player *_player;
+    BOOL boss_fight;
 }
 
 + (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime withDifficulty: (int)difficulty {
@@ -219,14 +221,18 @@
 - (void) checkLevels {
     _level = _score / SCORE_PER_LEVEL;
     [_score_label setString:[NSString stringWithFormat:@"Score: %d", _score]];
-    if(_level < MAX_LEVELS){
+    if (_level < MAX_LEVELS) {
         [_level_label setString:[NSString stringWithFormat:@"Level: %d", _level]];
-    }else{
-        [_level_label setString:[NSString stringWithFormat:@"BOSS FIGHT"]];
-        [self unschedule:@selector(addEnemy:)];
-        [self unschedule:@selector(addEnemy2:)];
-        [self unschedule:@selector(addEnemy3:)];
-        [[OALSimpleAudio sharedInstance] playBg:@"boss.mp3"];
+    } else {
+        if (!boss_fight) {
+            boss_fight = true;
+            [_level_label setString:[NSString stringWithFormat:@"BOSS FIGHT"]];
+            [self unschedule:@selector(addEnemy:)];
+            [self unschedule:@selector(addEnemy2:)];
+            [self unschedule:@selector(addEnemy3:)];
+            [[OALSimpleAudio sharedInstance] playBg:@"boss.mp3"];
+            [_physicsWorld addChild:[[Boss alloc] initWithGameScene:self withDifficulty:self.difficulty]];
+        }
     }
 }
 
