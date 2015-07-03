@@ -34,6 +34,9 @@
 @implementation GameScene {
     Player *_player;
     BOOL boss_fight;
+    CCButton *pause_button;
+    CCButton *resume_button;
+    CCButton *menu_button;
 }
 
 + (GameScene *)sceneWithPlane:(NSString*) plane_name withDaytime: (int) daytime withDifficulty: (int)difficulty {
@@ -60,11 +63,22 @@
     _player.position  = ccp(self.contentSize.width/8, self.contentSize.height/2);
     [_physicsWorld addChild:_player z:1];
     
-    CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Courier New" fontSize:18.0f];
-    backButton.positionType = CCPositionTypeNormalized;
-    backButton.position = ccp(0.85f, 0.95f);
-    [backButton setTarget:self selector:@selector(onBackClicked:)];
-    [self addChild:backButton];
+    menu_button = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Courier New" fontSize:16.0f];
+    menu_button.positionType = CCPositionTypeNormalized;
+    menu_button.position = ccp(0.75f, 0.95f);
+    [menu_button setTarget:self selector:@selector(onBackClicked:)];
+    [self addChild:menu_button];
+    
+    pause_button = [CCButton buttonWithTitle:@"[ Pause ]" fontName:@"Courier New" fontSize:16.0f];
+    pause_button.positionType = CCPositionTypeNormalized;
+    pause_button.position = ccp(0.90f, 0.95f);
+    [pause_button setTarget:self selector:@selector(onPauseClicked:)];
+    [self addChild:pause_button];
+    
+    resume_button = [CCButton buttonWithTitle:@"[ Resume ]" fontName:@"Courier New" fontSize:18.0f];
+    resume_button.positionType = CCPositionTypeNormalized;
+    resume_button.position = ccp(0.5f, 0.5f);
+    [resume_button setTarget:self selector:@selector(onResumeClicked:)];
     
     _score_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", _score] fontName:@"Courier New" fontSize:15.0f];
     _score_label.positionType = CCPositionTypeNormalized;
@@ -74,19 +88,19 @@
     
     _fuselage_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health] fontName:@"Courier New" fontSize:15.0f];
     _fuselage_label.positionType = CCPositionTypeNormalized;
-    _fuselage_label.position = ccp(0.40f, 0.95f);
+    _fuselage_label.position = ccp(0.4f, 0.95f);
     _fuselage_label.color = [CCColor whiteColor];
     [self addChild:_fuselage_label];
     
     _level_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d", self.level] fontName:@"Courier New" fontSize:15.0f];
     _level_label.positionType = CCPositionTypeNormalized;
-    _level_label.position = ccp(0.60f, 0.95f);
+    _level_label.position = ccp(0.6f, 0.95f);
     _level_label.color = [CCColor whiteColor];
     [self addChild:_level_label];
     
     _credits_label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Credits: %d", _player.credits] fontName:@"Courier New" fontSize:15.0f];
     _credits_label.positionType = CCPositionTypeNormalized;
-    _credits_label.position = ccp(0.15f, 0.90f);
+    _credits_label.position = ccp(0.15f, 0.9f);
     _credits_label.color = [CCColor whiteColor];
     [self addChild:_credits_label];
 
@@ -392,6 +406,23 @@
 - (void)goBackToMenu:(id)sender {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
                                withTransition:[CCTransition transitionFadeWithDuration:0.5f]];
+}
+
+- (void)onPauseClicked:(id)sender {
+    [[CCDirector sharedDirector] pause];
+    [[OALSimpleAudio sharedInstance] stopBg];
+    [[OALSimpleAudio sharedInstance] playEffect:@"pause.wav"];
+    [self removeChild:pause_button];
+    [self removeChild:menu_button];
+    [self addChild:resume_button];
+}
+
+- (void)onResumeClicked:(id)sender {
+    [[CCDirector sharedDirector] resume];
+    [[OALSimpleAudio sharedInstance] playBg];
+    [self removeChild:resume_button];
+    [self addChild:menu_button];
+    [self addChild:pause_button];
 }
 
 @end

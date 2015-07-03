@@ -44,6 +44,7 @@
 		475C0F511B34937E00D65899 /* Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F501B34937E00D65899 /* Health.m */; };
 		475D5FF81B46BC1E0098CEF8 /* PowerUpFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */; };
 		475D5FFB1B46D4670098CEF8 /* ScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D5FFA1B46D4670098CEF8 /* ScoreLabel.m */; };
+		475D5FFD1B46FF4A0098CEF8 /* pause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475D5FFC1B46FF4A0098CEF8 /* pause.wav */; };
 		47622AF21B4420F7000CF64C /* rocket-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AEF1B4420F7000CF64C /* rocket-powerup.png */; };
 		47622AF31B4420F7000CF64C /* shield-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF01B4420F7000CF64C /* shield-powerup.png */; };
 		47622AF41B4420F7000CF64C /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF11B4420F7000CF64C /* shield.png */; };
@@ -366,6 +367,7 @@
 		475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpFactory.m; sourceTree = "<group>"; };
 		475D5FF91B46D3BA0098CEF8 /* ScoreLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreLabel.h; sourceTree = "<group>"; };
 		475D5FFA1B46D4670098CEF8 /* ScoreLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreLabel.m; sourceTree = "<group>"; };
+		475D5FFC1B46FF4A0098CEF8 /* pause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pause.wav; sourceTree = "<group>"; };
 		47622AEF1B4420F7000CF64C /* rocket-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket-powerup.png"; sourceTree = "<group>"; };
 		47622AF01B4420F7000CF64C /* shield-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield-powerup.png"; sourceTree = "<group>"; };
 		47622AF11B4420F7000CF64C /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
@@ -1892,6 +1894,7 @@
 				47384F751B3B2FA500E0C58A /* hit_1.mp3 */,
 				47384F761B3B2FA500E0C58A /* hit_2.mp3 */,
 				47622AFB1B449848000CF64C /* missile.mp3 */,
+				475D5FFC1B46FF4A0098CEF8 /* pause.wav */,
 				47856ABB1B44C57000E301B4 /* rapid-fire.wav */,
 				47856AC21B44C5C400E301B4 /* rockets.wav */,
 				47856ABC1B44C57000E301B4 /* shield.wav */,
@@ -2035,6 +2038,7 @@
 				47384F801B3B727800E0C58A /* night.png in Resources */,
 				5B09A994188B330300E8F2B7 /* Icon-76@2x.png in Resources */,
 				FBEBB58A1B3C803C00249EF0 /* medium.png in Resources */,
+				475D5FFD1B46FF4A0098CEF8 /* pause.wav in Resources */,
 				5B09AC08188B330600E8F2B7 /* LICENSE_Chipmunk.txt in Resources */,
 				47C493461B2C652B0007FA9F /* Explosion4.caf in Resources */,
 				475C0F4E1B34936500D65899 /* health.png in Resources */,
