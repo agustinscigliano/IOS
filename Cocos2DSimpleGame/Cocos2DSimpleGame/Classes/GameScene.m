@@ -21,7 +21,6 @@
 #import "Constants.h"
 #import "Cloud.h"
 #import "EnemyBullet.h"
-#import "GameOver.h"
 #import "Health.h"
 #import "Sparkle.h"
 #import "TrippleShot.h"
@@ -238,8 +237,7 @@
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
-    BOOL enemy_died = [enemy takeDamage: projectile.damage];
-    if (enemy_died) {
+    if ([enemy takeDamage: projectile.damage]) { // Asks if enemy died
         _score += enemy.score;
     } else {
         _score += ENEMY_PLANE_IMPACT_SCORE;
@@ -344,6 +342,35 @@
     if (!_player.player_dead) {
         [_player takeDamage: explosion.damage];
         [_fuselage_label setString:[NSString stringWithFormat:@"Fuselage: %d%%", _player.health]];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair bossCollision:(Boss *)boss projectileCollision:(Projectile *)projectile {
+    if (boss.is_alive) {
+        [projectile removeFromParent];
+        if ([boss takeDamage: projectile.damage]) { // Asks if Boss died
+            _score += boss.score;
+        } else {
+            _score += ENEMY_PLANE_IMPACT_SCORE;
+        }
+        [self checkLevels];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair bossCollision:(Boss *)boss playerRocketCollision:(PlayerRocket *)player_rocket {
+    if (boss.is_alive) {
+        [self createExplosionWithPosition: player_rocket.position withScale: 0.5f];
+        [player_rocket removeFromParent];
+        if ([boss takeDamage: player_rocket.damage]) { // Asks if Boss died
+            _score += boss.score;
+        } else {
+            _score += ENEMY_PLANE_IMPACT_SCORE;
+        }
+        [self checkLevels];
         return YES;
     }
     return NO;

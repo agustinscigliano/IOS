@@ -13,7 +13,8 @@
 @interface Boss : CCSprite
 
 @property (nonatomic) int score;
+@property (nonatomic) BOOL is_alive;
 
 - (id) initWithGameScene: (CCScene*) gs withDifficulty:(int)difficulty;
-
+- (BOOL) takeDamage:(int) damage;
 @end

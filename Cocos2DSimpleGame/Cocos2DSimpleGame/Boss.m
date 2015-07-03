@@ -14,12 +14,15 @@
 #include "Explosion1.h"
 #include "Health.h"
 #include "Misile.h"
+#include "Sparkle.h"
+#include "YouWonScene.h"
 
 @implementation Boss {
-    CCScene *game_scene;
+    GameScene *game_scene;
     int health;
     int shooting_probability;
     int direction;
+    int frame_number;
 }
 
 - (id) initWithGameScene: (CCScene*) gs withDifficulty:(int)difficulty {
@@ -37,6 +40,8 @@
         shooting_probability = ENEMY_PLANE_SHOOTING_PROBABILITY - difficulty;
         self.position = ccp(game_scene.contentSize.width, game_scene.contentSize.height/2);
         direction = GOING_UP;
+        frame_number = 1;
+        _is_alive = YES;
     }
     return self;
 }
@@ -62,19 +67,39 @@
     }
 }
 
-//- (void) update:(CCTime)delta {
-//    if (self.position.x < -self.contentSize.width) {
-//        [self removeFromParent];
-//    }
-//    else{
-//        if (arc4random()%100 > shooting_probability) {
-//            [self shootEnemy];
-//        }
-//        if(arc4random()%100 > ENEMY_PLANE_MISSILE_PROBABILITY){
-//            [self shootEnemy2];
-//        }
-//    }
-//    
-//}
+- (BOOL) takeDamage: (int) damage {
+    health -= damage;
+    if (health <= 0) {
+        [self playRandomExplosionSound];
+        self.physicsBody.velocity = ccp(0, 0);
+        _is_alive = NO;
+        [self schedule:@selector(animateExplosion:) interval:0.20 repeat:0 delay:0];
+    }
+    int random_sound_index = (arc4random() % 2) + 1;
+    NSString* random_sound_name = [NSString stringWithFormat:@"hit_%d.mp3", random_sound_index];
+    [[OALSimpleAudio sharedInstance] playEffect:random_sound_name];
+    [self addChild: [[Sparkle alloc] init]];
+    return NO;
+}
+
+- (void) animateExplosion: (CCTime) dt {
+    self.scale = 3.0;
+    NSString *frame_path = [NSString stringWithFormat:@"%@%d.png", EXPLOSION_1_IMAGE, frame_number];
+    [self setSpriteFrame:[CCSpriteFrame frameWithImageNamed: frame_path]];
+    frame_number++;
+    if (frame_number >= MAX_FRAMES_FOR_EXPLOSION_1) {
+        [self playerWon];
+    }
+}
+
+- (void) playRandomExplosionSound {
+    int image_number = (arc4random() % EXPLOSION_SOUNDS_AMOUNT) + 1;
+    NSString* explosion_sound_path = [NSString stringWithFormat: @"%@%d.caf", EXPLOSION_SOUND_FILE_NAME, image_number];
+    [[OALSimpleAudio sharedInstance] playEffect: explosion_sound_path volume:1.5 pitch:1.0 pan:0.5 loop: NO];
+}
+
+- (void) playerWon {
+    [[CCDirector sharedDirector] replaceScene:[YouWonScene sceneWithFinalScore:game_scene.score]];
+}
 
 @end
