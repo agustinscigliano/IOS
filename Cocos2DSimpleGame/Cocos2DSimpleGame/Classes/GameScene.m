@@ -29,6 +29,7 @@
 #import "PlayerRocket.h"
 #import "ShieldPowerUp.h"
 #import "Boss.h"
+#import "ScoreLabel.h"
 
 @implementation GameScene {
     Player *_player;
@@ -238,8 +239,10 @@
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair enemyCollision:(Enemy *)enemy projectileCollision:(Projectile *)projectile {
     [projectile removeFromParent];
     if ([enemy takeDamage: projectile.damage]) { // Asks if enemy died
+        [ScoreLabel label:self position:enemy.position value:enemy.score];
         _score += enemy.score;
     } else {
+        [ScoreLabel label:self position:projectile.position value:ENEMY_PLANE_IMPACT_SCORE];
         _score += ENEMY_PLANE_IMPACT_SCORE;
     }
     [self checkLevels];
@@ -320,8 +323,10 @@
     [player_rocket removeFromParent];
     BOOL enemy_died = [enemy takeDamage: player_rocket.damage];
     if (enemy_died) {
+        [ScoreLabel label:self position:enemy.position value:enemy.score];
         _score += enemy.score;
     } else {
+        [ScoreLabel label:self position:player_rocket.position value:ENEMY_PLANE_IMPACT_SCORE];
         _score += ENEMY_PLANE_IMPACT_SCORE;
     }
     _level = _score / SCORE_PER_LEVEL;
@@ -351,8 +356,10 @@
     if (boss.is_alive) {
         [projectile removeFromParent];
         if ([boss takeDamage: projectile.damage]) { // Asks if Boss died
+            [ScoreLabel label:self position:boss.position value:boss.score];
             _score += boss.score;
         } else {
+            [ScoreLabel label:self position:projectile.position value:ENEMY_PLANE_IMPACT_SCORE];
             _score += ENEMY_PLANE_IMPACT_SCORE;
         }
         [self checkLevels];
@@ -366,8 +373,10 @@
         [self createExplosionWithPosition: player_rocket.position withScale: 0.5f];
         [player_rocket removeFromParent];
         if ([boss takeDamage: player_rocket.damage]) { // Asks if Boss died
+            [ScoreLabel label:self position:boss.position value:boss.score];
             _score += boss.score;
         } else {
+            [ScoreLabel label:self position:player_rocket.position value:ENEMY_PLANE_IMPACT_SCORE];
             _score += ENEMY_PLANE_IMPACT_SCORE;
         }
         [self checkLevels];

@@ -43,6 +43,7 @@
 		475C0F4E1B34936500D65899 /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 475C0F4D1B34936500D65899 /* health.png */; };
 		475C0F511B34937E00D65899 /* Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C0F501B34937E00D65899 /* Health.m */; };
 		475D5FF81B46BC1E0098CEF8 /* PowerUpFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */; };
+		475D5FFB1B46D4670098CEF8 /* ScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D5FFA1B46D4670098CEF8 /* ScoreLabel.m */; };
 		47622AF21B4420F7000CF64C /* rocket-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AEF1B4420F7000CF64C /* rocket-powerup.png */; };
 		47622AF31B4420F7000CF64C /* shield-powerup.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF01B4420F7000CF64C /* shield-powerup.png */; };
 		47622AF41B4420F7000CF64C /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 47622AF11B4420F7000CF64C /* shield.png */; };
@@ -363,6 +364,8 @@
 		475C0F501B34937E00D65899 /* Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Health.m; sourceTree = "<group>"; };
 		475D5FF61B46BB1F0098CEF8 /* PowerUpFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpFactory.h; sourceTree = "<group>"; };
 		475D5FF71B46BC1E0098CEF8 /* PowerUpFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpFactory.m; sourceTree = "<group>"; };
+		475D5FF91B46D3BA0098CEF8 /* ScoreLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreLabel.h; sourceTree = "<group>"; };
+		475D5FFA1B46D4670098CEF8 /* ScoreLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreLabel.m; sourceTree = "<group>"; };
 		47622AEF1B4420F7000CF64C /* rocket-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket-powerup.png"; sourceTree = "<group>"; };
 		47622AF01B4420F7000CF64C /* shield-powerup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield-powerup.png"; sourceTree = "<group>"; };
 		47622AF11B4420F7000CF64C /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
@@ -1797,6 +1800,8 @@
 				4717817D1B34D80500D5B820 /* RapidFire.m */,
 				47622AF51B44216F000CF64C /* RocketPowerup.h */,
 				47622AF61B44222B000CF64C /* RocketPowerup.m */,
+				475D5FF91B46D3BA0098CEF8 /* ScoreLabel.h */,
+				475D5FFA1B46D4670098CEF8 /* ScoreLabel.m */,
 				47384F791B3B6AE500E0C58A /* SelectDaytimeScene.h */,
 				47384F7A1B3B6C1000E0C58A /* SelectDaytimeScene.m */,
 				47856AB71B44AC6B00E301B4 /* ShieldPowerUp.h */,
@@ -2084,6 +2089,7 @@
 				475C0F511B34937E00D65899 /* Health.m in Sources */,
 				5B09AA88188B330400E8F2B7 /* CCTransition.m in Sources */,
 				5B09AA67188B330400E8F2B7 /* CCSpriteFrame.m in Sources */,
+				475D5FFB1B46D4670098CEF8 /* ScoreLabel.m in Sources */,
 				5B09A9FB188B330400E8F2B7 /* CCNodeColor.m in Sources */,
 				5B09AAD4188B330500E8F2B7 /* TransformUtils.m in Sources */,
 				5B09AA75188B330400E8F2B7 /* CCTextureCache.m in Sources */,
