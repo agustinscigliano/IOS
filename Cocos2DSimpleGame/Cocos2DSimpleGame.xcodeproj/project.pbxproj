@@ -87,6 +87,7 @@
 		47FD5FEA1B461E7E002FEB6C /* boss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE81B461E7E002FEB6C /* boss.mp3 */; };
 		47FD5FEB1B461E7E002FEB6C /* ending.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FE91B461E7E002FEB6C /* ending.mp3 */; };
 		47FD5FED1B4620B9002FEB6C /* boss.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD5FEC1B4620B9002FEB6C /* boss.png */; };
+		47FD5FF01B462102002FEB6C /* YouWonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD5FEF1B462102002FEB6C /* YouWonScene.m */; };
 		5B09A967188B330300E8F2B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A966188B330300E8F2B7 /* QuartzCore.framework */; };
 		5B09A969188B330300E8F2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A968188B330300E8F2B7 /* OpenGLES.framework */; };
 		5B09A96B188B330300E8F2B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B09A96A188B330300E8F2B7 /* OpenAL.framework */; };
@@ -414,6 +415,8 @@
 		47FD5FE81B461E7E002FEB6C /* boss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boss.mp3; sourceTree = "<group>"; };
 		47FD5FE91B461E7E002FEB6C /* ending.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ending.mp3; sourceTree = "<group>"; };
 		47FD5FEC1B4620B9002FEB6C /* boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boss.png; sourceTree = "<group>"; };
+		47FD5FEE1B4620F0002FEB6C /* YouWonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonScene.h; sourceTree = "<group>"; };
+		47FD5FEF1B462102002FEB6C /* YouWonScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouWonScene.m; sourceTree = "<group>"; };
 		5B09A963188B330300E8F2B7 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09A966188B330300E8F2B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B09A968188B330300E8F2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1795,6 +1798,8 @@
 				47177E5B1B34BAB800D5B820 /* Sparkle.m */,
 				47177E651B34D34300D5B820 /* TrippleShot.h */,
 				47177E661B34D35300D5B820 /* TrippleShot.m */,
+				47FD5FEE1B4620F0002FEB6C /* YouWonScene.h */,
+				47FD5FEF1B462102002FEB6C /* YouWonScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2137,6 +2142,7 @@
 				47856AB61B44AA0800E301B4 /* PowerUp.m in Sources */,
 				5B09AB1F188B330500E8F2B7 /* OALAudioSession.m in Sources */,
 				5B09AB96188B330500E8F2B7 /* CCBLocalizationManager.m in Sources */,
+				47FD5FF01B462102002FEB6C /* YouWonScene.m in Sources */,
 				5B09AA82188B330400E8F2B7 /* CCTiledMapObjectGroup.m in Sources */,
 				5B09AB7F188B330500E8F2B7 /* vec3.c in Sources */,
 				5B09AA02188B330400E8F2B7 /* CCLayoutBox.m in Sources */,
